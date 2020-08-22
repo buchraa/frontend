@@ -1,0 +1,171 @@
+#admin-content #admin-items {
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: baseline;
+        -ms-flex-pack: baseline;
+            justify-content: baseline;
+    position: relative;
+  
+  
+  }
+  
+
+  #admin-content {
+    position: relative;
+  }
+  
+  #admin-items {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    -webkit-transition: -webkit-filter ease 0.5s;
+    transition: -webkit-filter ease 0.5s;
+    -o-transition: filter ease 0.5s;
+    transition: filter ease 0.5s;
+    transition: filter ease 0.5s, -webkit-filter ease 0.5s;
+  }
+  
+
+  #admin-content #admin-items .adminItem {
+    margin: 5px auto;
+  }
+  
+  #admin-content #admin-items .adminItem {
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 5px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #admin-content #admin-items .adminItemValidated {
+  
+    background-color:lightseagreen;
+    color:#fff;
+  }
+  
+  
+  
+  #admin-content #admin-items .adminItem {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+  }
+  
+  #admin-content #admin-items .adminItem:hover {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+  }
+  
+
+  
+  
+  #admin-content #admin-items .adminItem .estateOptions {
+    background-color: #fff;
+    height: 45px;
+    width: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 5px;
+    padding: 0 15px;
+    margin: 0;
+  
+  }
+  
+  #admin-content #admin-items .adminItem .estateOptions div {
+    display: block;
+    height: 30px;
+    margin-left: 15px;
+    width: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+    cursor: pointer;
+  }
+  
+  #admin-content #admin-items .adminItem .estateOptions div:hover {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+  }
+  
+ 
+  
+  #admin-content #admin-items .adminItem .estateOptions .seeEstate {
+    background-color: orange;
+  
+  }
+  
+  #admin-content #admin-items .adminItem .estateOptions .clearEstate {
+    background-color: orangered;
+    margin-right: 15px;
+  }
+
+
+
+  
+  #admin-content #admin-items .adminItem .estateTitle {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  

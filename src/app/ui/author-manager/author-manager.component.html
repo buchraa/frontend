@@ -1,0 +1,26 @@
+<section id="pageAdmin">
+   
+    <div>        
+        <div id="admin-content">
+            <div id="admin-items">
+                <h3 style="margin-top: 50px;">Admin</h3>
+                <div>
+                    <a [routerLink]="['/add-author']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+                </div>
+                <div *ngFor="let author of authors" class="adminItem">
+                   
+                    <p class="estateTitle">{{ author.name}}</p>
+                    <!--<p class="estateCountry">{{ estate.description}}</p>-->
+                    <input class="estateId" type="hidden" [value]="author.authorId">
+                    <div class="estateOptions">
+                        <div (click)="goDetails()" class="seeEstate"><i class="material-icons">delete</i></div>
+                        <div (click)="deleteFrom(author)" class="clearEstate"><i class="material-icons">see</i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    
+</section>
