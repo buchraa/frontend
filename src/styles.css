@@ -3,3 +3,361 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* All Dashboard */
+#admin-content #admin-items {
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: baseline;
+        -ms-flex-pack: baseline;
+            justify-content: baseline;
+    position: relative;
+  
+  
+  }
+  
+
+  #admin-content {
+    position: relative;
+  }
+  
+  #admin-items {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    -webkit-transition: -webkit-filter ease 0.5s;
+    transition: -webkit-filter ease 0.5s;
+    -o-transition: filter ease 0.5s;
+    transition: filter ease 0.5s;
+    transition: filter ease 0.5s, -webkit-filter ease 0.5s;
+  }
+  
+
+  #admin-content #admin-items .adminItem {
+    margin: 5px auto;
+  }
+  
+  #admin-content #admin-items .adminItem {
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 5px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #admin-content #admin-items .adminItemValidated {
+  
+    background-color:lightseagreen;
+    color:#fff;
+  }
+  
+  
+  
+  #admin-content #admin-items .adminItem {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+  }
+  
+  #admin-content #admin-items .adminItem:hover {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+  }
+  
+
+  
+  
+  #admin-content #admin-items .adminItem .estateOptions {
+    background-color: #fff;
+    height: 45px;
+    width: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 5px;
+    padding: 0 15px;
+    margin: 0;
+  
+  }
+  
+  #admin-content #admin-items .adminItem .estateOptions div {
+    display: block;
+    height: 30px;
+    margin-left: 15px;
+    width: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+    cursor: pointer;
+  }
+  
+  #admin-content #admin-items .adminItem .estateOptions div:hover {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+    -webkit-transition: -webkit-box-shadow ease 0.5s;
+    transition: -webkit-box-shadow ease 0.5s;
+    -o-transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s;
+    transition: box-shadow ease 0.5s, -webkit-box-shadow ease 0.5s;
+  }
+  
+ 
+  
+  #admin-content #admin-items .adminItem .estateOptions .seeEstate {
+    background-color: orange;
+  
+  }
+  
+  #admin-content #admin-items .adminItem .estateOptions .clearEstate {
+    background-color: orangered;
+    margin-right: 15px;
+  }
+
+
+
+  
+  #admin-content #admin-items .adminItem .estateTitle {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  /* All Forms*/
+  
+  section {
+    width: 100%;
+    height: 100%;
+    background-color:#fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-top: 50px;
+  }
+  
+  #add-estate {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+  
+  
+  
+   .add-estate-form {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 1px solid rgba(0, 114, 112, 0.2);
+    padding: 10px;
+    border-radius: 4px;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 114, 112, 0.5);
+            box-shadow: 1px 1px 2px rgba(0, 114, 112, 0.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 10px auto 10px;
+  }
+  
+  #add-estate .add-estate-form .addEstateLine {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  
+  }
+  
+  
+  
+  #add-estate .add-estate-form .addEstateDescription {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  
+  }
+  
+ 
+  
+  
+  
+  
+  #add-estate .add-estate-form .addEstateLine {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 20px auto;
+  }
+  
+  #add-estate .add-estate-form .addEstateLine .addEstateItem {
+    margin-right: 20px;
+  
+  }
+  
+  #add-estate .add-estate-form .addEstateLine .addEstateItem input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid #007792;
+    height:35px;
+  
+  }
+  
+  #add-estate .add-estate-form .addEstateLine .addEstateItem input:focus {
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-bottom: 1px solid #007792;
+    -webkit-box-shadow: 0 0 1px #007792;
+            box-shadow: 0 0 1px #007792;
+    outline-color: rgba(0, 119, 146, 1);
+    outline-width: thin;
+    height:35px;
+  
+  
+  }
+  #add-estate .add-estate-form .addEstateDescription{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+    width:80%;
+  
+  
+  }
+
+  #add-estate .add-estate-form .addEstateDescription textarea{
+    width:100%;
+    margin:0;
+    padding:0;
+    padding:5px;
+    -webkit-box-shadow: border-box;
+            box-shadow: border-box;
+    margin-top: 10px;
+    height:50px;
+    border-bottom:solid 1px #007792;
+   
+    margin-bottom: 20px;
+  }
+  
+  .SAVEMYESTATECTA{
+    font-family: 'Roboto',sans-serif;
+  
+    display:block;
+    background-color:lightseagreen;
+    color:#FFF;
+    height:35px;
+    width:200px;
+    margin:20px auto;
+    line-height: 35px;
+    text-align:center;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border:1px solid lightseagreen;
+  }
+  
+  .SAVEMYESTATECTA:hover{
+    color:lightseagreen;
+    background-color:#fff;
+    border:1px solid lightseagreen;
+  }
+  

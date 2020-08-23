@@ -15,13 +15,21 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddCategoryComponent } from './ui/add-category/add-category.component';
+import { CategoryManagerComponent } from './ui/category-manager/category-manager.component';
+import { CategoryComponent } from './ui/category/category.component';
+import { AuthorComponent } from './ui/author/author.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorManagerComponent,
-    AddAuthorComponent
+    AddAuthorComponent,
+    AddCategoryComponent,
+    CategoryManagerComponent,
+    CategoryComponent,
+    AuthorComponent,
   ],
   imports: [
     BrowserModule,

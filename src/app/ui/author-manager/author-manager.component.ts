@@ -35,17 +35,22 @@ export class AuthorManagerComponent implements OnInit {
     this.router.navigate(["/"]);
   }
 
+  editItem(object: Author) {
+    this.router.navigate(["/edit-author", object.authorId]);
+  }
+
+
   deleteFrom(object: Author){
     this.api.deleteItem('Author', object.authorId).subscribe(
       (t) => {
         this.router.navigate(['/']);
-        window.location.reload();
+       
       },
       (error) => {        
        console.log(error);
      }
 
     )
-   
+       
   }
 }

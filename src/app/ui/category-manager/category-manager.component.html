@@ -7,15 +7,14 @@
                 <div>
                     <a [routerLink]="['/add-author']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
                 </div>
-                <div *ngFor="let author of authors" class="adminItem">
+                <div *ngFor="let category of categories" class="adminItem">
                    
-                    <p class="estateTitle">{{ author.name}}</p>
-                    <!--<p class="estateCountry">{{ estate.description}}</p>-->
-                    <input class="estateId" type="hidden" [value]="author.authorId">
+                    <p class="estateTitle">{{ category.name }}</p>                   
+                    <input class="estateId" type="hidden" [value]="category.authorId">
                     <div class="estateOptions">
-                        <div  (click)="editItem(author)"><span class="material-icons">create</span></div>
+                        <div ><span class="material-icons">create</span></div>
                         <div (click)="goDetails()" ><span class="material-icons">visibility</span></div>
-                        <div (click)="deleteFrom(author)"><span class="material-icons">clear</span></div>                        
+                        <div (click)="deleteFrom(author)"><span class="material-icons">clear</span></div>
                     </div>
                 </div>
             </div>
@@ -25,3 +24,4 @@
   
     
 </section>
+
