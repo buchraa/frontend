@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AuthorManagerComponent } from './ui/author-manager/author-manager.component';
@@ -19,6 +19,11 @@ import { AddCategoryComponent } from './ui/add-category/add-category.component';
 import { CategoryManagerComponent } from './ui/category-manager/category-manager.component';
 import { CategoryComponent } from './ui/category/category.component';
 import { AuthorComponent } from './ui/author/author.component';
+import { AuthTokenInterceptor }  from './token.interceptor';
+import { LoginComponent } from './ui/login/login.component';
+import { SignupComponent } from './ui/signup/signup.component';
+import { OeuvreManageComponent } from './ui/oeuvre-manage/oeuvre-manage.component';
+import { ChapterManagerComponent } from './ui/chapter-manager/chapter-manager.component';
 
 
 @NgModule({
@@ -30,6 +35,10 @@ import { AuthorComponent } from './ui/author/author.component';
     CategoryManagerComponent,
     CategoryComponent,
     AuthorComponent,
+    LoginComponent,
+    SignupComponent,
+    OeuvreManageComponent,
+    ChapterManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +55,9 @@ import { AuthorComponent } from './ui/author/author.component';
     MatSelectModule, 
    
   ],
-  providers: [],
+  providers: [ {provide: HTTP_INTERCEPTORS,
+    useClass: AuthTokenInterceptor, multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

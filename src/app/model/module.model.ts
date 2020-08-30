@@ -1,8 +1,8 @@
-import{ Traduction } from './traduction.model';
+import{ ModuleTraduction } from './moduleTraduction.model';
 
 export class Module {
     moduleId: number;
     name: string;
     isAvailable: boolean;
-    traductions: Traduction[] = null;  
+    traductions: ModuleTraduction[];  
   }

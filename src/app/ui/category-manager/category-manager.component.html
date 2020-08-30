@@ -10,11 +10,11 @@
                 <div *ngFor="let category of categories" class="adminItem">
                    
                     <p class="estateTitle">{{ category.name }}</p>                   
-                    <input class="estateId" type="hidden" [value]="category.authorId">
+                    <input class="estateId" type="hidden" [value]="category.categoryId">
                     <div class="estateOptions">
-                        <div ><span class="material-icons">create</span></div>
-                        <div (click)="goDetails()" ><span class="material-icons">visibility</span></div>
-                        <div (click)="deleteFrom(author)"><span class="material-icons">clear</span></div>
+                        <div (click)="editItem(category)" ><span class="material-icons">create</span></div>
+                        <div (click)="goDetails(category)" ><span class="material-icons">visibility</span></div>
+                        <div (click)="deleteFrom(category)"><span class="material-icons">clear</span></div>
                     </div>
                 </div>
             </div>

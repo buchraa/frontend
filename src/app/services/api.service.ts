@@ -41,7 +41,6 @@ saveOrUpdateItem(url: string, item): Observable<any> {
 }
 
 
-
  deleteItem(url: string, Id: number): Observable<any> {
     return this.http.delete(`${baseUrl}/${url}/${Id}`);
   }

@@ -33,8 +33,8 @@ export class CategoryManagerComponent implements OnInit {
     this.router.navigate(["/"]);
   }
 
-  editItem() {
-    this.router.navigate(["/"]);
+  editItem(object: Category) {
+    this.router.navigate(["/edit-category", object.categoryId]);
   }
 
   deleteFrom(object: Category){

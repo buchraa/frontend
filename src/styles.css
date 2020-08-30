@@ -1,9 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/purple-green.css';
+/* You can add global styles to this file, and also import other style files 
+@import '@angular/material/prebuilt-themes/purple-green.css';*/
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.mat-select-panel {
+  /*background: none !important;*/
+  color: #fff !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #fff !important;
+}
 
 /* All Dashboard */
 #admin-content #admin-items {

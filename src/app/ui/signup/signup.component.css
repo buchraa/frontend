@@ -1,0 +1,152 @@
+#signupSection{
+    background-color: aliceblue;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #signupSection .container{
+    height: 600px;
+    width: 800px;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color:#fff;
+    border: rgba(0, 170, 170, 1) 1px solid;
+    border-radius: 20px;
+    box-shadow: 0px  3px  10px  rgba(0, 170, 170, 0.3);
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    padding:20px 10px;
+  }
+  
+  #signupSection .container-title{
+    height:auto;
+  
+  }
+  
+  #signupSection .container-title h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    color: #797979;
+    text-align: right;
+  }
+  #signupSection .container-title h2+a{
+    font-family: 'Roboto-Light', 'Roboto Light', 'Roboto';
+    font-weight: 200;
+    font-style: normal;
+    font-size: 17px;
+    color: #007979;
+    text-align: right;
+  }
+  #signupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:95%;
+    width:80%;
+    align-content: center;
+    align-items: center;
+  }
+  #signupForm label{
+    font-family: 'Roboto-Regular', 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    color: #797979;
+    width:100%;
+    text-align: left;
+  }
+  #signupForm input{
+    display: block;
+    width:100%;
+    border:none;
+    padding: 3px 2px 3px 2px;
+    font-family: 'Roboto-Regular', 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #797979;
+    text-align: left;
+    text-transform: none;
+    background-color: transparent;
+    border-color: transparent;
+    padding:5px 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #CB4840;
+  }
+  #signupForm input:focus{
+    outline: none;
+    border-bottom: 1px solid rgba(0, 170, 170, 1);
+  }
+  #signupForm button[type="submit"]{
+    border:none;
+    height:40px;
+    width:200px;
+    background-color: rgba(0, 170, 170, 1);
+    border:1px solid #fff;
+    color:#fff;
+    font-family: 'Roboto-Bold', 'Roboto Bold', 'Roboto';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  #signupForm button[type="submit"]:hover{
+    background-color: #fff;
+    border:1px solid rgba(0, 170, 170, 1);
+    color:rgba(0, 170, 170, 1);
+  }
+  #signupForm label:last-child{
+    font-family: 'Roboto-Regular', 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #797979;
+    width:100%;
+    position: relative;
+    height:20px;
+    width:150px;
+  }
+  #signupForm label:last-child:after{
+    content:"Se souvenir de moi";
+    position: absolute;
+    right:0;
+    top:0;
+    width:auto;
+    height:20px;
+    line-height: 20px;
+  }
+  
+  .container #FormErrors{
+    background-color: rgba(203, 71, 64, 0.557);
+    color:#fff;
+    box-sizing: border-box;
+    width:80%;
+    line-height: 22px;
+    margin:20px;
+  }
+  
+  @media only screen and (max-width: 1023px) {
+    #signupSection .container{
+        width:80%;
+    }
+    #signupSection #signupForm{
+        width:90%;
+    }
+    #signupForm label{
+        font-size: 20px;
+    }
+  }
+  
