@@ -2,7 +2,7 @@ import { Oeuvre } from "./oeuvre.model";
 import { ChapitreTraduction } from "./chapitreTraduction.model";
 export class Chapter {   
     chapterId: number;
-    oeuvre: Oeuvre;
+    oeuvreId: number;
     num: number;
     chapterType: string;
     chapterSection: number;

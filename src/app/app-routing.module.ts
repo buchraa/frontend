@@ -12,16 +12,18 @@ import { NotConnectedGuard } from './guard/notconnected.guard';
 import { SignupComponent } from './ui/signup/signup.component';
 import { OeuvreManageComponent } from './ui/oeuvre-manage/oeuvre-manage.component';
 import { AddCategoryComponent } from './ui/add-category/add-category.component';
+import { ChapterManagerComponent } from './ui/chapter-manager/chapter-manager.component';
 
 
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
+  { path: 'chapter-manage', component:ChapterManagerComponent},
   { path: 'author-manage', component:AuthorManagerComponent},
   { path: 'add-author', component:AddAuthorComponent},
   { path: 'add-category', component:AddCategoryComponent},
   { path: 'category-manage', component:CategoryManagerComponent},
-  { path: 'edit-category/:id', component:CategoryComponent},
+  { path: 'edit-category/:id', component:AddCategoryComponent},
   { path: 'edit-author/:id', component:AuthorComponent},
   { path: 'signup',  component:SignupComponent},
 

@@ -3,7 +3,7 @@
       <div class="add-estate-form">
         <form class="col s12">         
           <div class="addEstateLine">
-            <div class="addEstateItem"><label for="name">Nom</label>
+            <div class="addEstateItem"><label for="name">Nom de la catégorie</label>
               <input id="name" name="name" type="text" [(ngModel)]="object.name" required #name="ngModel"
                 ng-minlength="25" maxlength="255">
             </div>  
@@ -11,8 +11,7 @@
           <div class="addEstateLine" >
             <mat-form-field >
                 <label>Choisir Module</label>
-                <mat-select  id="moduleId" name="moduleId" [(ngModel)]="object.moduleId">
-                  <mat-option>None</mat-option>
+                <mat-select  id="moduleId" name="moduleId" [(ngModel)]="object.moduleId" #moduleId="ngModel">
                   <mat-option *ngFor="let module of modules" [value]="module.moduleId" matInput>{{module.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
@@ -21,7 +20,7 @@
           <div class="addEstateLine">          
             <mat-form-field >
                 <label>Disponibilité</label>
-                <mat-select   id="isAvailable" name="isAvailable" [(ngModel)]="object.isAvailable">
+                <mat-select   id="isAvailable" name="isAvailable" [(ngModel)]="object.isAvailable" #isAvailable="ngModel">
                   <mat-option value=true>Disponible</mat-option>
                   <mat-option value=false>Non disponible</mat-option>
                 </mat-select>
