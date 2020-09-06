@@ -18,6 +18,7 @@ import { AddDiwanComponent } from './ui/add-diwan/add-diwan.component';
 import { DiwanManageComponent } from './ui/diwan-manage/diwan-manage.component';
 import { ModuleManageComponent } from './ui/module-manage/module-manage.component';
 import { AddModuleComponent } from './ui/add-module/add-module.component';
+import { AddOeuvreComponent } from './ui/add-oeuvre/add-oeuvre.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'add-diwan', component:AddDiwanComponent},
   { path: 'edit-module/:id', component:AddModuleComponent},
   { path: 'add-module', component:AddModuleComponent},
+  { path: 'edit-oeuvre/:id', component:AddOeuvreComponent},
+  { path: 'add-oeuvre', component:AddOeuvreComponent},
   { path: 'signup',  component:SignupComponent},
 
   

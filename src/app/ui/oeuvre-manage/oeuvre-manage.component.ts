@@ -30,6 +30,25 @@ export class OeuvreManageComponent implements OnInit {
     )
   }
   
-  
+  goDetails(object: Oeuvre) {
+    this.router.navigate(["/edit-oeuvre", object.oeuvreId]);
+  }
+
+  editItem(object: Oeuvre) {
+    this.router.navigate(["/edit-oeuvre", object.oeuvreId]);
+  }
+
+  deleteFrom(object: Oeuvre){
+    this.api.deleteItem('Oeuvre', object.oeuvreId).subscribe(
+      (t) => {
+        this.router.navigate(['/']);
+       
+      },
+      (error) => {        
+       console.log(error);
+     }
+
+    )       
+  }
 
 }

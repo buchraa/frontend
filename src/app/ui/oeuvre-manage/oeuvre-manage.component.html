@@ -1,1 +1,29 @@
-<p>oeuvre-manage works!</p>
+
+<section id="pageAdmin">
+   
+    <div>        
+        <div id="admin-content">
+            <div id="admin-items">
+                <h3 style="margin-top: 50px;">Admin</h3>
+                <div>
+                    <a [routerLink]="['/add-oeuvre']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+                </div>
+              
+                <div *ngFor="let oeuvre of oeuvres" class="adminItem">                   
+                    <p class="estateTitle">{{ oeuvre.titreOeuvre }}</p>       
+                    <p class="estateTitle">{{ oeuvre.presentattion }}</p>
+                                       
+                    <input class="estateId" type="hidden" [value]="oeuvre.oeuvreId">
+                    <div class="estateOptions">
+                        <div (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
+                        <div (click)="goDetails(oeuvre)" ><span class="material-icons">visibility</span></div>
+                        <div (click)="deleteFrom(oeuvre)"><span class="material-icons">clear</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    
+</section>

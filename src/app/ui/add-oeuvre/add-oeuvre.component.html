@@ -1,0 +1,186 @@
+<section>
+    <div id="add-estate">
+      <div class="add-estate-form">
+        <form class="col s12">         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="titreOeuvre">Titre Oeuvre</label>
+              <input id="titreOeuvre" name="titreOeuvre" type="text" [(ngModel)]="object.titreOeuvre" required #titreOeuvre="ngModel"
+              ng-minlength="25" maxlength="255">
+            </div>   <div class="addEstateItem"><label for="titre">Titre</label>
+                <input id="titre" name="titre" type="text" [(ngModel)]="object.titre" required #titre="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div> 
+          </div>
+        
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="urlOeuvre">URL</label>
+              <input id="urlOeuvre" name="urlOeuvre" type="text" [(ngModel)]="object.urlOeuvre" required #urlOeuvre="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+            <div class="addEstateItem"><label for="rime">rime</label>
+                <input id="rime" name="rime" type="text" [(ngModel)]="object.rime" required #rime="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div> 
+          </div>
+         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="presentation">presentation</label>
+              <textarea id="presentation" name="presentation" type="text" [(ngModel)]="object.presentation" required #presentation="ngModel"
+                ng-minlength="25" maxlength="255"></textarea>
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="premierVers">premier Vers</label>
+              <input id="premierVers" name="premierVers" type="text" [(ngModel)]="object.premierVers" required #premierVers="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+            <div class="addEstateItem"><label for="periodeDatation">periode datation</label>
+                <input id="periodeDatation" name="periodeDatation" type="text" [(ngModel)]="object.periodeDatation" required #periodeDatation="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div>  
+             
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="periode">Période</label>
+                <input id="periode" name="periode" type="text" [(ngModel)]="object.periode" required #periode="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div> 
+              <div class="addEstateItem"><label for="nbVers">Nombre vers</label>
+                <input id="nbVers" name="nbVers" type="number" [(ngModel)]="object.nbVers" required #nbVers="ngModel">
+              </div>  
+          </div>
+        
+          <div class="addEstateLine">           
+            <div class="addEstateItem"><label for="modesLecture">mode lecture</label>
+                <input id="modesLecture" name="modesLecture" type="text" [(ngModel)]="object.modesLecture" required #modesLecture="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div> 
+              <div class="addEstateItem"><label for="metriqueNom"> Nom metrique</label>
+                <input id="metriqueNom" name="metriqueNom" type="text" [(ngModel)]="object.metriqueNom" required #metriqueNom="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div> 
+          </div>
+          
+          <div class="addEstateLine">
+            
+            <div class="addEstateItem"><label for="genre">genre</label>
+                <input id="genre" name="genre" type="text" [(ngModel)]="object.genre" required #genre="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div> 
+              <div class="addEstateItem"><label for="edition">edition</label>
+                <input id="edition" name="edition" type="text" [(ngModel)]="object.edition" required #edition="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div>  
+          </div>
+         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="acrostiche">acrostiche</label>
+              <input id="acrostiche" name="acrostiche" type="text" [(ngModel)]="object.acrostiche" required #acrostiche="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+            <div class="addEstateItem"><label for="diwanPage">diwan Page</label>
+                <input id="diwanPage" name="diwanPage" type="text" [(ngModel)]="object.diwanPage" required #diwanPage="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div>
+          </div>
+         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="achatOnline">rime du chapitre</label>
+              <textarea id="achatOnline" name="achatOnline" type="text" [(ngModel)]="object.achatOnline" required #achatOnline="ngModel"
+                ng-minlength="25" maxlength="255"></textarea>
+            </div>  
+            <div class="addEstateItem"><label for="remarques">remarques</label>
+                <textarea id="remarques" name="remarques" type="text" [(ngModel)]="object.remarques" required #remarques="ngModel"
+                  ng-minlength="25" maxlength="255"></textarea>
+              </div>  
+          </div>
+        
+          <div class="addEstateLine">
+           
+            <div class="addEstateItem"><label for="titrePopulaire">titre Populaire</label>
+                <input id="titrePopulaire" name="titrePopulaire" type="text" [(ngModel)]="object.titrePopulaire" required #titrePopulaire="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div>  
+            <div class="addEstateItem"><label for="authenticite_degre">authenticite degre</label>
+                <input id="authenticite_degre" name="authenticite_degre" type="text" [(ngModel)]="object.authenticite_degre" required #authenticite_degre="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="periodeRques">periodeRques</label>
+              <input id="periodeRques" name="periodeRques" type="text" [(ngModel)]="object.periodeRques" required #periodeRques="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+            <div class="addEstateItem"><label for="periodeLieu">periode Lieu</label>
+                <input id="periodeLieu" name="periodeLieu" type="text" [(ngModel)]="object.periodeLieu" required #periodeLieu="ngModel"
+                  ng-minlength="25" maxlength="255">
+              </div>  
+          </div>
+        
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="formeRques">Remarques sur la forme</label>
+              <textarea id="formeRques" name="formeRques" type="text" [(ngModel)]="object.formeRques" required #formeRques="ngModel"
+                ng-minlength="25" maxlength="255"></textarea>
+            </div>  
+            <div class="addEstateItem"><label for="avantages">avantages</label>
+                <textarea id="avantages" name="avantages" type="text" [(ngModel)]="object.avantages" required #avantages="ngModel"
+                  ng-minlength="25" maxlength="255"></textarea>
+              </div>  
+          </div>
+         
+          <div class="addEstateLine" >
+            <mat-form-field >
+                <label>Choisir theme principal</label>
+                <mat-select  id="themeId" name="themeId" [(ngModel)]="object.themeId" #themeId="ngModel">
+                  <mat-option *ngFor="let theme of themes" [value]="theme.themeId" matInput>{{theme.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field >
+                <label>Choisir categorie</label>
+                <mat-select  id="categoryId" name="categoryId" [(ngModel)]="object.categoryId" #categoryId="ngModel">
+                  <mat-option *ngFor="let category of categories" [value]="category.categoryId" matInput>{{category.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+        
+          <div class="addEstateLine" >
+            <mat-form-field >
+                <label>Choisir diwan</label>
+                <mat-select  id="diwanId" name="diwanId" [(ngModel)]="object.diwanId" #diwanId="ngModel">
+                  <mat-option *ngFor="let diwan of diwans" [value]="diwan.diwanId" matInput>{{diwan.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field >
+                <label>Choisir auteurs</label>
+                <mat-select  id="refAuthors" name="refAuthors" [(ngModel)]="object.refAuthors" #refAuthors="ngModel" multiple="true">
+                  <mat-option *ngFor="let author of authors" [value]="author.authorId" matInput>{{author.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>   
+        
+          <div class="addEstateLine">          
+            <mat-form-field >
+                <label>Disponible en pdf</label>
+                <mat-select   id="pdfOeuvre" name="pdfOeuvre" [(ngModel)]="object.pdfOeuvre" #pdfOeuvre="ngModel">
+                  <mat-option value=true>Disponible</mat-option>
+                  <mat-option value=false>Non disponible</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field >
+                <label>Disponibilité</label>
+                <mat-select   id="dispo_oeuvre" name="dispo_oeuvre" [(ngModel)]="object.dispo_oeuvre" #dispo_oeuvre="ngModel">
+                  <mat-option value=true>Disponible</mat-option>
+                  <mat-option value=false>Non disponible</mat-option>
+                </mat-select>
+            </mat-form-field>
+           
+          </div>
+         
+          <a class="SAVEMYESTATECTA" (click)="uploadSubmit()" alt="Enregistrer"
+            periodeDatation="Enregistrer">Valider</a>
+  
+        </form>
+      </div>
+    </div>
+  </section>
+

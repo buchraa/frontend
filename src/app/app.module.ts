@@ -29,6 +29,7 @@ import { AddDiwanComponent } from './ui/add-diwan/add-diwan.component';
 import { DiwanManageComponent } from './ui/diwan-manage/diwan-manage.component';
 import { AddModuleComponent } from './ui/add-module/add-module.component';
 import { ModuleManageComponent } from './ui/module-manage/module-manage.component';
+import { AddOeuvreComponent } from './ui/add-oeuvre/add-oeuvre.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ModuleManageComponent } from './ui/module-manage/module-manage.componen
     DiwanManageComponent,
     AddModuleComponent,
     ModuleManageComponent,
+    AddOeuvreComponent,
   ],
   imports: [
     BrowserModule,
