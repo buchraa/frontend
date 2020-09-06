@@ -1,0 +1,65 @@
+<section>
+    <div id="add-estate">
+      <div class="add-estate-form">
+        <form class="col s12">         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="typeVers">Type</label>
+              <input id="typeVers" name="typeVers" type="text" [(ngModel)]="object.typeVers" required #typeVers="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="numVers">Numéro</label>
+              <input id="numVers" name="numVers" type="number" [(ngModel)]="object.numVers" required #num="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="refVersNote">Référence</label>
+              <input id="refVersNote" name="refVersNote" type="number" [(ngModel)]="object.refVersNote" required #refVersNote="ngModel">
+              
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="texteVersAR1">texteVersAR1</label>
+              <input id="texteVersAR1" name="texteVersAR1" type="text" [(ngModel)]="object.texteVersAR1" required #texteVersAR1="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="texteVersAR2">texteVersAR2</label>
+              <input id="texteVersAR2" name="texteVersAR2" type="text" [(ngModel)]="object.texteVersAR2" required #texteVersAR2="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="texteVersAR3">texteVersAR3</label>
+              <input id="texteVersAR3" name="texteVersAR3" type="text" [(ngModel)]="object.texteVersAR3" required #texteVersAR3="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="texteVersAR4">texteVersAR4</label>
+              <input id="texteVersAR4" name="texteVersAR4" type="text" [(ngModel)]="object.texteVersAR4" required #texteVersAR4="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine" >
+            <mat-form-field >
+                <label>Choisir Chapitre</label>
+                <mat-select  id="chapitreId" name="chapitreId" [(ngModel)]="object.chapitreId" #chapitreId="ngModel">
+                  <mat-option *ngFor="let chapter of chapters" [value]="chapter.chapitreId" matInput>{{chapter.title}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+          
+         
+        
+         
+          <a class="SAVEMYESTATECTA" (click)="uploadSubmit()" alt="Enregistrer"
+            typeVers="Enregistrer">Valider</a>
+  
+        </form>
+      </div>
+    </div>
+  </section>

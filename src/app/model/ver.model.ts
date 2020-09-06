@@ -4,7 +4,7 @@ import { VersTraduction } from "./verTraduction.model";
 export class Vers {
     
 versId: number;
-chapitre: Chapter;
+chapitreId: number;
 typeVers: string;
 numVers: number;
 refVersNote : number;

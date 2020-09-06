@@ -19,11 +19,14 @@ import { DiwanManageComponent } from './ui/diwan-manage/diwan-manage.component';
 import { ModuleManageComponent } from './ui/module-manage/module-manage.component';
 import { AddModuleComponent } from './ui/add-module/add-module.component';
 import { AddOeuvreComponent } from './ui/add-oeuvre/add-oeuvre.component';
+import { AddVerComponent } from './ui/add-ver/add-ver.component';
+import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 
 
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
+  { path: 'ver-manage', component:VersManageComponent},
   { path: 'chapter-manage', component:ChapterManagerComponent},
   { path: 'author-manage', component:AuthorManagerComponent},
   { path: 'add-author', component:AddAuthorComponent},
@@ -41,6 +44,8 @@ const routes: Routes = [
   { path: 'add-module', component:AddModuleComponent},
   { path: 'edit-oeuvre/:id', component:AddOeuvreComponent},
   { path: 'add-oeuvre', component:AddOeuvreComponent},
+  { path: 'edit-ver/:id', component:AddVerComponent},
+  { path: 'add-ver', component:AddVerComponent},
   { path: 'signup',  component:SignupComponent},
 
   
