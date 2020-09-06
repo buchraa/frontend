@@ -1,0 +1,30 @@
+<section>
+    <div id="add-estate">
+      <div class="add-estate-form">
+        <form class="col s12">         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="name">Titre</label>
+              <input id="name" name="name" type="text" [(ngModel)]="object.name" required #name="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+         
+         
+          <div class="addEstateLine">          
+            <mat-form-field >
+                <label>Disponibilité</label>
+                <mat-select   id="isAvailable" name="isAvailable" [(ngModel)]="object.isAvailable" #isAvailable="ngModel">
+                  <mat-option value=true>Disponible</mat-option>
+                  <mat-option value=false>Non disponible</mat-option>
+                </mat-select>
+            </mat-form-field>
+           
+          </div>
+         
+          <a class="SAVEMYESTATECTA" (click)="uploadSubmit()" alt="Enregistrer"
+            title="Enregistrer">Valider</a>
+  
+        </form>
+      </div>
+    </div>
+  </section>

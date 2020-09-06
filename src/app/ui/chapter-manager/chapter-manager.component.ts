@@ -30,18 +30,18 @@ export class ChapterManagerComponent implements OnInit {
     )
   }
   
-  goDetails() {
-    this.router.navigate(["/"]);
+  goDetails(object: Chapter) {
+    this.router.navigate(["/edit-chapter", object.chapitreId]);
   }
 
-  editItem() {
-    this.router.navigate(["/"]);
+  editItem(object: Chapter) {
+    this.router.navigate(["/edit-chapter", object.chapitreId]);
   }
 
   deleteFrom(object: Chapter){
-    this.api.deleteItem('Chapter', object.chapterId).subscribe(
+    this.api.deleteItem('Chapter', object.chapitreId).subscribe(
       (t) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/chapter-manage']);
        
       },
       (error) => {        

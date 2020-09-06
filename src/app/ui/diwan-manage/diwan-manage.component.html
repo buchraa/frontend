@@ -1,0 +1,26 @@
+<section id="pageAdmin">
+   
+    <div>        
+        <div id="admin-content">
+            <div id="admin-items">
+                <h3 style="margin-top: 50px;">Admin</h3>
+                <div>
+                    <a [routerLink]="['/add-diwan']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+                </div>
+                <div *ngFor="let diwan of diwans" class="adminItem">
+                   
+                    <p class="estateTitle">{{ diwan.name }}</p>                   
+                    <input class="estateId" type="hidden" [value]="diwan.diwanId">
+                    <div class="estateOptions">
+                        <div (click)="editItem(diwan)" ><span class="material-icons">create</span></div>
+                        <div (click)="goDetails(diwan)" ><span class="material-icons">visibility</span></div>
+                        <div (click)="deleteFrom(diwan)"><span class="material-icons">clear</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    
+</section>

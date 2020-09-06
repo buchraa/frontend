@@ -24,6 +24,11 @@ import { LoginComponent } from './ui/login/login.component';
 import { SignupComponent } from './ui/signup/signup.component';
 import { OeuvreManageComponent } from './ui/oeuvre-manage/oeuvre-manage.component';
 import { ChapterManagerComponent } from './ui/chapter-manager/chapter-manager.component';
+import { AddChapterComponent } from './ui/add-chapter/add-chapter.component';
+import { AddDiwanComponent } from './ui/add-diwan/add-diwan.component';
+import { DiwanManageComponent } from './ui/diwan-manage/diwan-manage.component';
+import { AddModuleComponent } from './ui/add-module/add-module.component';
+import { ModuleManageComponent } from './ui/module-manage/module-manage.component';
 
 
 @NgModule({
@@ -39,6 +44,11 @@ import { ChapterManagerComponent } from './ui/chapter-manager/chapter-manager.co
     SignupComponent,
     OeuvreManageComponent,
     ChapterManagerComponent,
+    AddChapterComponent,
+    AddDiwanComponent,
+    DiwanManageComponent,
+    AddModuleComponent,
+    ModuleManageComponent,
   ],
   imports: [
     BrowserModule,

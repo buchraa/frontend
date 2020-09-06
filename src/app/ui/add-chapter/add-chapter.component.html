@@ -1,0 +1,68 @@
+<section>
+    <div id="add-estate">
+      <div class="add-estate-form">
+        <form class="col s12">         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="title">Titre du chapitre</label>
+              <input id="title" name="title" type="text" [(ngModel)]="object.title" required #title="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="num">Nombre</label>
+              <input id="num" name="num" type="number" [(ngModel)]="object.num" required #num="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="chapterSection">Section</label>
+              <input id="chapterSection" name="chapterSection" type="number" [(ngModel)]="object.chapterSection" required #chapterSection="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="theme">Theme du chapitre</label>
+              <input id="theme" name="theme" type="text" [(ngModel)]="object.theme" required #theme="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="chapterType">Type de chapitre</label>
+              <input id="chapterType" name="chapterType" type="text" [(ngModel)]="object.chapterType" required #chapterType="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="plageVers">plage Vers</label>
+              <input id="plageVers" name="plageVers" type="text" [(ngModel)]="object.plageVers" required #plageVers="ngModel"
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine" >
+            <mat-form-field >
+                <label>Choisir Oeuvre</label>
+                <mat-select  id="oeuvreId" name="oeuvreId" [(ngModel)]="object.oeuvreId" #oeuvreId="ngModel">
+                  <mat-option *ngFor="let oeuvre of oeuvres" [value]="oeuvre.oeuvreId" matInput>{{oeuvre.titre}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+          
+         
+          <div class="addEstateLine">          
+            <mat-form-field >
+                <label>Disponibilité</label>
+                <mat-select   id="isAvailable" name="isAvailable" [(ngModel)]="object.isAvailable" #isAvailable="ngModel">
+                  <mat-option value=true>Disponible</mat-option>
+                  <mat-option value=false>Non disponible</mat-option>
+                </mat-select>
+            </mat-form-field>
+           
+          </div>
+         
+          <a class="SAVEMYESTATECTA" (click)="uploadSubmit()" alt="Enregistrer"
+            title="Enregistrer">Valider</a>
+  
+        </form>
+      </div>
+    </div>
+  </section>

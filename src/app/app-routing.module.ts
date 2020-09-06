@@ -13,6 +13,11 @@ import { SignupComponent } from './ui/signup/signup.component';
 import { OeuvreManageComponent } from './ui/oeuvre-manage/oeuvre-manage.component';
 import { AddCategoryComponent } from './ui/add-category/add-category.component';
 import { ChapterManagerComponent } from './ui/chapter-manager/chapter-manager.component';
+import { AddChapterComponent } from './ui/add-chapter/add-chapter.component';
+import { AddDiwanComponent } from './ui/add-diwan/add-diwan.component';
+import { DiwanManageComponent } from './ui/diwan-manage/diwan-manage.component';
+import { ModuleManageComponent } from './ui/module-manage/module-manage.component';
+import { AddModuleComponent } from './ui/add-module/add-module.component';
 
 
 const routes: Routes = [
@@ -23,8 +28,16 @@ const routes: Routes = [
   { path: 'add-author', component:AddAuthorComponent},
   { path: 'add-category', component:AddCategoryComponent},
   { path: 'category-manage', component:CategoryManagerComponent},
+  { path: 'diwan-manage', component:DiwanManageComponent},
+  { path: 'module-manage', component:ModuleManageComponent},
   { path: 'edit-category/:id', component:AddCategoryComponent},
+  { path: 'edit-chapter/:id', component:AddChapterComponent},
+  { path: 'add-chapter', component:AddChapterComponent},
   { path: 'edit-author/:id', component:AuthorComponent},
+  { path: 'edit-diwan/:id', component:AddDiwanComponent},
+  { path: 'add-diwan', component:AddDiwanComponent},
+  { path: 'edit-module/:id', component:AddModuleComponent},
+  { path: 'add-module', component:AddModuleComponent},
   { path: 'signup',  component:SignupComponent},
 
   
