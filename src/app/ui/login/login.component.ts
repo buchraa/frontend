@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         {
             this.auth.setToken(t.token);
         }
-       window.location.assign('/author-manage');
+       window.location.assign('/');
       },
       (error) => {
         this.loading = false;

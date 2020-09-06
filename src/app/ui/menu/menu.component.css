@@ -1,0 +1,191 @@
+header {
+    width: 100%;
+    background-color: #1C233F;
+    height: 50px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 2000;
+    margin-bottom:0px;
+  }
+  
+  header h1 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    left: 50%;
+    margin-left: -100px;
+    top: 0;
+  }
+  header a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  #logo-Atypik-mobile {
+    display: none;
+  }
+  #main-nav {
+    width: 40%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #main-nav a {
+    display: block;
+    margin: 0;
+    padding: 2px;
+    background-color: rgba(232, 167, 32, 0);
+    width: 20%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 2px;
+    color: #fff;
+    position: relative;
+  
+  }
+  #main-nav a:hover {
+    color: #fff;
+    position: relative;
+  }
+  #main-nav a:after {
+   content:"";
+   position: absolute;
+   display:block;
+   bottom:-5px;
+   left:0;
+   height:1px;
+   width:0%;
+   background-color:goldenrod;
+   -webkit-transition:width ease 1s;
+   -o-transition:width ease 1s;
+   transition:width ease 1s;
+  }
+  #main-nav a:hover:after {
+    width:100%;
+    -webkit-transition:width ease 1s;
+    -o-transition:width ease 1s;
+    transition:width ease 1s;
+  
+  
+  }
+  
+  #profile-item {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../../assets/user-icon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+  }
+  #profile-item:hover {
+    background-image: url(../../../assets/user-icon-hover.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+  }
+  .profile-links-visible {
+    position: absolute;
+    height: 300px;
+    width: 150px;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+    padding-top: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    -webkit-transition: right 1s ease 0s;
+    -o-transition: right 1s ease 0s;
+    transition: right 1s ease 0s;
+    -webkit-transition: opacity 1s ease 0s;
+    -o-transition: opacity 1s ease 0s;
+    transition: opacity 1s ease 0s;
+  }
+  .profile-links-visible a {
+    text-align: center;
+    display: block;
+    width: 100%;
+    color: #000;
+  }
+  .profile-links-visible a:hover {
+    text-decoration: underline;
+  }
+  .profile-links-visible a:last-child button {
+    text-align: center;
+    display: block;
+    width: 100%;
+    color: #CB4840;
+    text-decoration:none;
+    border:none;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+    padding:10px;
+    background-color:#CB4840;
+    color:#fff;
+    cursor: pointer;
+  }
+  .hiddenbody{
+    overflow: hidden !important;
+  
+  }
+  
+  .profile-links-visible a:last-child:hover button {
+  text-decoration: none;
+  color:#000;
+  }
+  .profile-links-visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    right: 0;
+    top: 50px;
+    border:1px solid #007470;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  .profile-links-hidden {
+    opacity: 0;
+    right: -150px;
+    top: 50px;
+    display: none !important;
+  }

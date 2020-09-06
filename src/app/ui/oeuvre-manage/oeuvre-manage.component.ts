@@ -41,7 +41,7 @@ export class OeuvreManageComponent implements OnInit {
   deleteFrom(object: Oeuvre){
     this.api.deleteItem('Oeuvre', object.oeuvreId).subscribe(
       (t) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/oeuvre-manage']);
        
       },
       (error) => {        

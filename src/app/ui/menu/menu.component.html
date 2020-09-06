@@ -1,0 +1,28 @@
+<header>
+
+ 
+    <nav  id="main-nav">
+      <!--
+  Non-connecté-->
+      <ng-container *ngIf="!isConnected">
+        <a [routerLink]="['/signup']" alt="S'inscrire" title="S'inscrire">Sign-up</a>
+        <a [routerLink]="['/login']" alt="Se connecter" title="Se connecter">Login</a>
+      </ng-container>
+  
+      <!--Si connecté -->
+    <div [hidden]="!isConnected" id="profile-item"></div>
+    </nav>
+    
+  
+    <nav id="profile-links"  class="profile-links-hidden">
+        <a [routerLink]="['/author-manage']" alt="Notifications" title="Notifications">Auteurs</a> 
+      <a [routerLink]="['/category-manage']" alt="Profil" title="Profil">Categories</a>
+      <a [routerLink]="['/chapter-manage']" alt="Mes réservations" title="Mes réservations">Chapitres</a>
+      <a [routerLink]="['/diwan-manage']" alt="Messagerie" title="Messagerie">Diwans</a>
+      <a [routerLink]="['/module-manage']" alt="Mes réservations" title="Mes réservations">Modules</a>
+      <a [routerLink]="['/oeuvre-manage']" alt="Profil" title="Profil">Oeuvre</a>
+      <a [routerLink]="['/ver-manage']" alt="Messagerie" title="Messagerie">Vers</a>      
+      <a [routerLink]="['/']" alt="Notifications" title="Notifications">Themes</a>     
+     <a><button (click)="logout()" alt="Se déconnecter" title="Déconnection">Log-out</button></a>
+    </nav>
+  </header>

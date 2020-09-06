@@ -28,6 +28,7 @@ export class SignupComponent implements OnInit {
       (t) => {
        this.isSaved = true;
        this.loading = false;
+       this.router.navigate(['/']);
            },
       (error) => {
        this.loading = false;
