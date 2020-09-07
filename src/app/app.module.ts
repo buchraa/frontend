@@ -33,6 +33,7 @@ import { AddOeuvreComponent } from './ui/add-oeuvre/add-oeuvre.component';
 import { AddVerComponent } from './ui/add-ver/add-ver.component';
 import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { MenuComponent } from './ui/menu/menu.component';
+import { HomePageComponent } from './ui/home-page/home-page.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { MenuComponent } from './ui/menu/menu.component';
     AddVerComponent,
     VersManageComponent,
     MenuComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,11 @@
            
           </div>
           <div class="addEstateLine">
+            <div class="addEstateItem">
+              <label class="active" for="imageUrl">Image </label>
+                  <input id="imageUrl" name="imageUrl" type="text" [(ngModel)]="object.imageUrl"  #imageUrl="ngModel"
+                  ng-minlength="25" maxlength="255"/>
+                </div>   
             <div class="addEstateDescription">
               <label for="biography">Biographie</label> <textarea class="materialize-textarea"id="biography" name="biography" [(ngModel)]="object.biography" #biography="ngModel">
               Entrez votre Biographie

@@ -21,9 +21,11 @@ import { AddModuleComponent } from './ui/add-module/add-module.component';
 import { AddOeuvreComponent } from './ui/add-oeuvre/add-oeuvre.component';
 import { AddVerComponent } from './ui/add-ver/add-ver.component';
 import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
+import { HomePageComponent } from './ui/home-page/home-page.component';
 
 
 const routes: Routes = [
+  { path: '', component:HomePageComponent},
   { path: 'login', component:LoginComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
