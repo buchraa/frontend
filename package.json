@@ -29,7 +29,7 @@
     "jquery": "^2.2.4",
     "materialize-css": "^0.100.1",
     "popper.js": "^1.16.0",
-    "rxjs": "~6.5.5",
+    "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
