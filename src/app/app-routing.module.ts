@@ -22,11 +22,13 @@ import { AddOeuvreComponent } from './ui/add-oeuvre/add-oeuvre.component';
 import { AddVerComponent } from './ui/add-ver/add-ver.component';
 import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
+import { DashboardComponent } from './ui/dashboard/dashboard.component';
+import { ModulesComponent } from './ui/modules/modules.component';
 
 
 const routes: Routes = [
   { path: '', component:HomePageComponent},
-  { path: 'login', component:LoginComponent},
+  { path: 'login', component:LoginComponent}, 
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
   { path: 'chapter-manage', component:ChapterManagerComponent},
@@ -49,6 +51,12 @@ const routes: Routes = [
   { path: 'edit-ver/:id', component:AddVerComponent},
   { path: 'add-ver', component:AddVerComponent},
   { path: 'signup',  component:SignupComponent},
+  { path: 'Accueil', component:HomePageComponent},
+  { path: 'Recherche', component:HomePageComponent},
+  { path: 'Modules', component:ModulesComponent},
+  { path: 'Paramètres', component:OeuvreManageComponent},
+  { path: 'Plus', component:HomePageComponent},
+  { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
 
   
 ];

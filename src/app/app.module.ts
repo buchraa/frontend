@@ -34,6 +34,14 @@ import { AddVerComponent } from './ui/add-ver/add-ver.component';
 import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { MenuComponent } from './ui/menu/menu.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { AdminNavComponent } from './ui/admin-nav/admin-nav.component';
+import { MainMenuComponent } from './ui/main-menu/main-menu.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+import { DashboardComponent } from './ui/dashboard/dashboard.component';
+import { ModulesComponent } from './ui/modules/modules.component';
 
 
 @NgModule({
@@ -59,6 +67,10 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
     VersManageComponent,
     MenuComponent,
     HomePageComponent,
+    AdminNavComponent,
+    MainMenuComponent,
+    DashboardComponent,
+    ModulesComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +84,10 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
     ReactiveFormsModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule, 
+    MatSelectModule,
+    MatMenuModule,
+    MatTabsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
    
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,

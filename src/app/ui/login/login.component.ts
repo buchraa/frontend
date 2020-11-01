@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         {
             this.auth.setToken(t.token);
         }
-       window.location.assign('/');
+       window.location.assign('/admin');
       },
       (error) => {
         this.loading = false;

@@ -16,7 +16,6 @@ export class AuthorManagerComponent implements OnInit {
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
-
     this.api.getList('Authors').subscribe(
       (t) => {
         this.authors = t;
