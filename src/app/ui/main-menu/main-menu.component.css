@@ -1,3 +1,8 @@
+@media only screen and (max-width: 900px) {
+nav {
+    position: fixed;
+    bottom: 0;
+}}
 nav a {
     color: #fff;
     font-size: x-small;

@@ -54,7 +54,7 @@ const routes: Routes = [
   { path: 'Accueil', component:HomePageComponent},
   { path: 'Recherche', component:HomePageComponent},
   { path: 'Modules', component:ModulesComponent},
-  { path: 'Paramètres', component:OeuvreManageComponent},
+  { path: 'Paramètres', component:HomePageComponent},
   { path: 'Plus', component:HomePageComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
 
