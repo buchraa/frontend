@@ -1,5 +1,12 @@
 nav a {
-    color: black;
+    color: #fff;
     font-size: x-small;
     padding: 0 10px !important;
+}
+nav.mat-tab-nav-bar.mat-tab-header.mat-primary {
+    background: none !important ;
+}
+
+.mat-tab-nav-bar, .mat-tab-header {
+    border-bottom: none !important;
 }

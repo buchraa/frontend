@@ -22,3 +22,12 @@
       margin: 2em 2em;
       text-align: center;
   }
+
+  .title {
+    color: #fff;
+    font-size: medium;
+    padding: 0 10px !important;
+}
+img {
+    border: 5px solid  #558303;
+}
