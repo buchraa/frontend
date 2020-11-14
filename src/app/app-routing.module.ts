@@ -24,11 +24,12 @@ import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
+import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component'
 
 
 const routes: Routes = [
   { path: '', component:HomePageComponent},
-  { path: 'login', component:LoginComponent}, 
+  { path: 'login', component:LoginComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
   { path: 'chapter-manage', component:ChapterManagerComponent},
@@ -57,8 +58,9 @@ const routes: Routes = [
   { path: 'Paramètres', component:HomePageComponent},
   { path: 'Plus', component:HomePageComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
+  { path: 'oeuvre-mouridisme', component:OeuvreMouridismeComponent},
 
-  
+
 ];
 
 @NgModule({

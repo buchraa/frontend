@@ -42,6 +42,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
+import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { ModulesComponent } from './ui/modules/modules.component';
     MainMenuComponent,
     DashboardComponent,
     ModulesComponent,
+    OeuvreMouridismeComponent,
   ],
   imports: [
     BrowserModule,
