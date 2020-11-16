@@ -25,6 +25,7 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component'
+import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component'
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
   { path: 'Plus', component:HomePageComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'oeuvre-mouridisme', component:OeuvreMouridismeComponent},
+   { path: 'recherche-mouridisme', component:RechercheMouridismeComponent}
 
 
 ];
