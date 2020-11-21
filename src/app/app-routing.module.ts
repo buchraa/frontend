@@ -24,8 +24,10 @@ import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
-import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component'
-import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component'
+import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
+import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
+import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
+
 
 
 const routes: Routes = [
@@ -59,8 +61,9 @@ const routes: Routes = [
   { path: 'Paramètres', component:HomePageComponent},
   { path: 'Plus', component:HomePageComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
-  { path: 'oeuvre-mouridisme', component:OeuvreMouridismeComponent},
-   { path: 'recherche-mouridisme', component:RechercheMouridismeComponent}
+  { path: 'Modules/oeuvre-mouridisme', component:OeuvreMouridismeComponent},
+  { path: 'Modules/recherche-mouridisme', component:RechercheMouridismeComponent},
+  { path: 'Modules/mediatheque-mouridisme', component:MediathequeMouridismeComponent}
 
 
 ];

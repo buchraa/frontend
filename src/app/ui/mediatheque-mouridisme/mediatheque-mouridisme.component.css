@@ -1,0 +1,41 @@
+#module_grid{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+
+  }
+  #module_grid div {
+      margin: 1em 1em;
+      text-align: center;
+  }
+
+  .title {
+    color: #fff;
+    font-size: medium;
+    padding: 0 10px !important;
+}
+img {
+    border: 5px solid  #558303;
+}
+
+#pageTitle{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

@@ -44,6 +44,7 @@ import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
 import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
+import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherch
     ModulesComponent,
     OeuvreMouridismeComponent,
     RechercheMouridismeComponent,
+    MediathequeMouridismeComponent,
   ],
   imports: [
     BrowserModule,
