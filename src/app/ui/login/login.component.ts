@@ -32,8 +32,14 @@ export class LoginComponent implements OnInit {
         if(this.auth.handleToken(t.token))
         {
             this.auth.setToken(t.token);
-        }
-       window.location.assign('/admin');
+            this.auth.setRole(t.roles);
+        }  
+        if(t.roles.includes('ROLE_ADMIN')){
+          window.location.assign('/admin');
+
+        }      
+        else {window.location.assign('/');}
+
       },
       (error) => {
         this.loading = false;

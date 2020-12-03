@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -9,10 +10,13 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
   public isConnected:boolean;
+  admin: boolean;
 
   constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
+    //this.admin= this.auth.getToken().includes('ROLE_ADMIN');
     this.isConnected = this.auth.hasToken();
     const profileItem = document.getElementById('profile-item');
     const profileMenu = document.getElementById('profile-links');

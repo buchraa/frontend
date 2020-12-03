@@ -24,6 +24,8 @@ import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
+import { ViewModuleComponent } from './ui/view-module/view-module.component';
+import { ViewCategoryComponent } from './ui/view-category/view-category.component';
 
 
 const routes: Routes = [
@@ -56,7 +58,10 @@ const routes: Routes = [
   { path: 'Modules', component:ModulesComponent},
   { path: 'Paramètres', component:HomePageComponent},
   { path: 'Plus', component:HomePageComponent},
+  { path: 'view-category/:id', component:ViewCategoryComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
+  { path: 'view-module/:id', component:ViewModuleComponent},
+
 
   
 ];

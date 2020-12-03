@@ -9,6 +9,7 @@ import { JwtResponse } from '../model/jwtResponse.model';
 
 const API_URL = environment.apiUrl;
 const TOKEN_COOKIE_NAME = 'BIBLIOTECH.AUTH.TOKEN';
+const ROLE = 'USER_ROLE';
 
 @Injectable({
     providedIn: 'root'
@@ -29,8 +30,16 @@ public postToken(credential: Credentials): Observable<any> {
         localStorage.setItem(TOKEN_COOKIE_NAME, token);
     }
 
+    public setRole(role:any) {
+        localStorage.setItem(ROLE, role);
+    }  
+
     public getToken(): string {
         return localStorage.getItem(`${TOKEN_COOKIE_NAME}`);
+    }
+
+    public getRole(): string {
+        return localStorage.getItem(`${ROLE}`);
     }
 
     public hasToken(): boolean {

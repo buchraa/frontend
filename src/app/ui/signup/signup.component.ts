@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   loading: boolean = false;
   errors = [];
   isSaved = false;
-  roles = ["ROLE_USER", "ROLE_TRANSLATOR", "ROLE_ADMIN"];
+  role = ["ROLE_USER", "ROLE_TRANSLATOR", "ROLE_ADMIN"];
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
   
   updateEnv(service: any, event) {
     if (event.target.checked) {
-      this.newUser.roles.push(service);
+      this.newUser.role.push(service);
     }
   }
 

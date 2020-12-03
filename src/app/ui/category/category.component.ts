@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ApiService} from "../../services/api.service";
 
 import { Category } from '../../model/category.model';
@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
-  
+  @Input() category: string;
   objectId: number;
   newObjectId: number;
   object: Category;

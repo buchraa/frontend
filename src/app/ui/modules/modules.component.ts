@@ -10,6 +10,8 @@ import { Module } from 'src/app/model/module.model';
 })
 export class ModulesComponent implements OnInit {
   modules = [];
+ 
+
 
   constructor(private router: Router, private api: ApiService) { }
 
@@ -30,7 +32,7 @@ export class ModulesComponent implements OnInit {
   }
   
   goDetails(object: Module) {
-    this.router.navigate(["/edit-module", object.moduleId]);
+    this.router.navigate(["/view-module", object.moduleId]);
   }
 
 }

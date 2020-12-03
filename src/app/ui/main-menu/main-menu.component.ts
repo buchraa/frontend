@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-main-menu',
@@ -14,10 +16,11 @@ export class MainMenuComponent implements OnInit {
   modules = [];
   admin: boolean;
 
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(private router: Router, private api: ApiService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.admin=true;
+
+    this.admin= this.auth.getRole().includes('ROLE_ADMIN') ? true:false;
 
     this.api.getList('Modules').subscribe(
       (t) => {

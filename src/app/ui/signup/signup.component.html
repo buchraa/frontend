@@ -20,11 +20,11 @@
             <input type="text" id="email" placeholder="ex : saitama@heroassociation.gov" name="email" [(ngModel)]="newUser.email" required>
 
             <mat-form-field >
-                <label>Roles</label>
-                <mat-select   id="roles" name="roles" [(ngModel)]="newUser.roles" multiple="true">
-                  <mat-option value="ROLE_USER">USER</mat-option>
-                  <mat-option value="ROLE_TRANSLATOR" >TRAANSLATOR</mat-option>
-                  <mat-option value="ROLE_ADMIN">ADMIN</mat-option>
+                <label>Role</label>
+                <mat-select   id="role" name="role" [(ngModel)]="newUser.role" multiple="true">
+                  <mat-option value="user">USER</mat-option>
+                  <mat-option value="trad" >TRANSLATOR</mat-option>
+                  <mat-option value="admin">ADMIN</mat-option>
                 </mat-select>
             </mat-form-field>
             
