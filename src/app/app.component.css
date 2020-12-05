@@ -1,5 +1,5 @@
 #backClicked {
-    color: #000 !important;
+    color: #fff !important;
     font-weight: 900;
     font-size: xx-large;
     position: absolute;
@@ -14,6 +14,13 @@
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image:url('src/assets/images/bnd.jpg');
+    background-image:url('src/assets/images/Bgrnd_1080_1920.png');
 }
+
+@media only screen and (max-width: 767px) {
+    .image {
+     
+      background-image: url('src/assets/images/Bgrnd_828_1792.png');
+    }
+  }
 
