@@ -190,3 +190,7 @@ header {
     top: 50px;
     display: none !important;
   }
+
+  nav {
+    background-color: green;
+  }

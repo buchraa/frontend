@@ -1,4 +1,4 @@
-#module_grid{    
+#module_grid{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -16,29 +16,26 @@
         -ms-flex-direction: row;
             flex-direction: row;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+
+
   }
   #module_grid div {
-      margin: 2em 1em;
+      margin: 1em 1em;
       text-align: center;
-      width: 8em; 
   }
 
   .title {
-    height: 3em;
     color: #fff;
     font-size: medium;
-    
+    padding: 0 10px !important;
 }
 img {
     border: 5px solid  #558303;
 }
 
-@media only screen and (min-width: 481px) {
-    #module_grid div {
-        margin: 2em 2em;
-        text-align: center;
-        width: 8em; 
-    }
-
+#pageTitle{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 
 const baseUrl = environment. apiUrl;
+const assetUrl = "../src/assets/images";
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,10 @@ saveOrUpdateItem(url: string, item): Observable<any> {
     return this.http.delete(`${baseUrl}/${url}/${Id}`);
   }
 
+  getImage(url: string){
+    if(url!=undefined){
+      return `${assetUrl}/${url}`+".jpg"
+    }
+  }
 
 }

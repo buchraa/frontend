@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./view-category.component.css']
 })
 export class ViewCategoryComponent implements OnInit {
-
+  panelOpenState = false;
   object:Category; 
   ObjetId: string;
   routingSubscription: any; 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Location} from '@angular/common';
-import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,17 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  admin: boolean;
 
-  constructor(private location: Location) { }
+
+  constructor(public location: Location, public router: Router) { }
 
   title = 'biblioTech-front';
+  url = this.router.url;
+  viewBack = this.router.url.includes("Accueil");
 
-  backClicked() {
-    this.location.back();
+
+  public backClicked() {
+     this.location.back();  
   }
 
   

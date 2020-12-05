@@ -1,4 +1,7 @@
 @media only screen and (max-width: 900px) {
+    #backClicked {
+        display: none;
+    }    
 nav {
     position: fixed;
     bottom: 0;
@@ -12,6 +15,8 @@ nav.mat-tab-nav-bar.mat-tab-header.mat-primary {
     background: none !important ;
 }
 
-.mat-tab-nav-bar, .mat-tab-header {
+.mat-tab-nav-bar, .mat-tab-header, .mat-tab-link-container {
+    background-color: transparent !important;
     border-bottom: none !important;
 }
+

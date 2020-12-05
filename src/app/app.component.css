@@ -3,5 +3,17 @@
     font-weight: 900;
     font-size: xx-large;
     position: absolute;
-    top: 2em;
+    top: 0.2em;
 }
+
+.image {
+    margin: 0 auto;
+    max-width: 1500px;
+    height: 100%;
+    background-position:center center; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image:url('src/assets/images/bnd.jpg');
+}
+

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
 import { AuthService } from 'src/app/services/auth.service';
+import {Location} from '@angular/common';
+
 
 
 @Component({
@@ -16,7 +18,7 @@ export class MainMenuComponent implements OnInit {
   modules = [];
   admin: boolean;
 
-  constructor(private router: Router, private api: ApiService, private auth: AuthService) { }
+  constructor(private router: Router, private api: ApiService, private auth: AuthService, private location: Location) { }
 
   ngOnInit(): void {
 
@@ -35,5 +37,9 @@ export class MainMenuComponent implements OnInit {
 
     )
   }
+  backClicked() {
+    this.location.back();
+  }
+
 
 }

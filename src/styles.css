@@ -3,12 +3,13 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body {  background-position:center center; 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff;}
+/*body {  background-position:center center; 
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-image:url('../src/assets/images/bnd.jpg');}
+  background-image:url('../src/assets/images/bnd.jpg');}*/
+  
 
 .mat-select-panel {
   /*background: none !important;*/
@@ -66,6 +67,7 @@ body {  background-position:center center;
 
   #admin-content #admin-items .adminItem {
     margin: 5px auto;
+    background-color: green;
   }
   
   #admin-content #admin-items .adminItem {
@@ -124,7 +126,7 @@ body {  background-position:center center;
   
   
   #admin-content #admin-items .adminItem .estateOptions {
-    background-color: #fff;
+    background-color: green;
     height: 45px;
     width: auto;
     -webkit-box-sizing: border-box;
@@ -381,7 +383,7 @@ body {  background-position:center center;
   }
   
   .mat-tab-list {
-    background: black !important;
+    background: transparent !important;
   }
   /*app-main-menu {
     position: absolute;

@@ -26,11 +26,16 @@ import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { ViewModuleComponent } from './ui/view-module/view-module.component';
 import { ViewCategoryComponent } from './ui/view-category/view-category.component';
+import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
+import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
+import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 
 const routes: Routes = [
   { path: '', component:HomePageComponent},
-  { path: 'login', component:LoginComponent}, 
+  { path: 'login', component:LoginComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
   { path: 'chapter-manage', component:ChapterManagerComponent},
@@ -61,9 +66,13 @@ const routes: Routes = [
   { path: 'view-category/:id', component:ViewCategoryComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'view-module/:id', component:ViewModuleComponent},
+  { path: 'Modules/oeuvre-mouridisme', component:OeuvreMouridismeComponent},
+  { path: 'Modules/recherche-mouridisme', component:RechercheMouridismeComponent},
+  { path: 'Modules/mediatheque-mouridisme', component:MediathequeMouridismeComponent},
+  { path: '404', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent }
 
 
-  
 ];
 
 @NgModule({

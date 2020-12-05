@@ -10,6 +10,7 @@ import { AuthorManagerComponent } from './ui/author-manager/author-manager.compo
 import { AddAuthorComponent } from './ui/add-author/add-author.component';
 
 import { MatCardModule } from "@angular/material/card";
+import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSelectModule } from "@angular/material/select";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
@@ -43,6 +44,10 @@ import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { ViewModuleComponent } from './ui/view-module/view-module.component';
 import { ViewCategoryComponent } from './ui/view-category/view-category.component';
+import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
+import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
+import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -73,6 +78,10 @@ import { ViewCategoryComponent } from './ui/view-category/view-category.componen
     ModulesComponent,
     ViewModuleComponent,
     ViewCategoryComponent,
+    OeuvreMouridismeComponent,
+    RechercheMouridismeComponent,
+    MediathequeMouridismeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +98,7 @@ import { ViewCategoryComponent } from './ui/view-category/view-category.componen
     MatSelectModule,
     MatMenuModule,
     MatTabsModule,
+    MatExpansionModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
    
   ],
