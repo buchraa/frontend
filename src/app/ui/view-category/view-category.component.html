@@ -19,6 +19,11 @@
                 {{oeuvre.titre}} 
             </mat-panel-description>
           </mat-expansion-panel-header>
+          <div id="meta"><a><span class="material-icons">volume_up</span></a>
+          <a><span class="material-icons">play_arrow</span></a>
+          <a><span class="material-icons">picture_as_pdf</span></a>
+          <a [href]="oeuvre.urlOeuvre"><span class="material-icons">public</span></a>
+          <a><span class="material-icons">description</span></a></div>
           <p> {{oeuvre.premierVers}}</p>
         </mat-expansion-panel>       
       </mat-accordion>

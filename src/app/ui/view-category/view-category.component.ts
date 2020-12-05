@@ -46,8 +46,7 @@ export class ViewCategoryComponent implements OnInit {
             if (params["id"]) {           
        
               this.ObjetId = params["id"]
-              this.object.moduleId = params["id"]
-              
+              this.object.moduleId = params["id"]            
 
            
               this.api.getById('Categorie', params["id"]).subscribe(

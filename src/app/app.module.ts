@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
+
 import { AuthorManagerComponent } from './ui/author-manager/author-manager.component';
 import { AddAuthorComponent } from './ui/add-author/add-author.component';
-
 import { MatCardModule } from "@angular/material/card";
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSelectModule } from "@angular/material/select";
@@ -88,6 +89,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    PdfViewerModule,
     HttpClientModule,
     MatFormFieldModule,
     MatIconModule,
