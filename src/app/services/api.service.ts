@@ -46,10 +46,41 @@ saveOrUpdateItem(url: string, item): Observable<any> {
     return this.http.delete(`${baseUrl}/${url}/${Id}`);
   }
 
-  getImage(url: string){
-    if(url!=undefined){
-      return `${assetUrl}/${url}`+".jpg"
+  getImageFromName(url: string){
+    if(url != undefined) {
+      return "../../../assets/images/" + url + ".jpg"
     }
+    else 
+    "../../../assets/images/Rechercher.jpg"
+    }
+
+  getImage(url: string){
+   switch(url)
+   {
+     case "Ecrits de Cheikh A. Bamba":
+      return "../../../assets/images/ecrits.jpg";
+      break;
+
+      case "Oeuvres du Mouridisme":
+        return "../../../assets/images/oeuvres.jpg";
+        break;
+      case "Ecrits de Cheikh A. Bamba":
+        return "../../../assets/images/erits.jpg";
+        break; 
+      case "Recherche sur le Mouridisme":
+        return "../../../assets/images/Rechercher.jpg";
+        break;   
+      case "Médiathèque du Mouridisme":
+        return "../../../assets/images/media.jpg";
+        break;  
+      default:
+        return "../../../assets/images/Rechercher.jpg";
+
+
+
+
+
+   }
   }
 
 }

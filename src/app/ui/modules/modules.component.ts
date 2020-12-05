@@ -13,7 +13,7 @@ export class ModulesComponent implements OnInit {
  
 
 
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(private router: Router, public api: ApiService) { }
 
   ngOnInit(): void {
 

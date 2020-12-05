@@ -19,7 +19,7 @@ export class ViewModuleComponent implements OnInit {
   ObjetId: string;
   routingSubscription: any; 
 
-  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
   ngOnInit(): void {
     this.api.getList('Categories').subscribe(

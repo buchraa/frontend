@@ -8,8 +8,8 @@
 
 .image {
     margin: 0 auto;
-    max-width: 1500px;
-    height: 100%;
+    max-width: 1000px;
+    min-height: 150vh;
     background-position:center center; 
     background-size: cover;
     background-attachment: fixed;
