@@ -7,4 +7,3 @@ ngApp.get('/*', function (request, response) {
 });
 ngApp.listen(process.env.PORT || 8080);
 
-Manuscrits
