@@ -1,6 +1,6 @@
 <div id="pageTitle">
     <div>
-      <img [src]="api.getImageFromName(object.name)" class="circle module"  width="100" height="100"/>
+      <img [src]="api.getImageFromName(object.name)" style="background-image:url('../../../assets/images/correspondances.jpg'); background-size: cover; overflow: hidden;" class="circle module"  width="100" height="100"/>
     </div>
     <div>
       <h1 *ngIf="object.traductions">{{object.traductions?.name}}</h1>
