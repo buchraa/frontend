@@ -76,13 +76,13 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         break;  
       
       case "Poèmes (Qasidas)":
-        return "/assets/images/poèmes (qasidas).jpg";
+        return "/assets/images/qasidas.jpg";
         break;
       case  "Correspondances":
-        return "/assets/images/correspondances.jpg";
+        return "/assets/images/manuscrits.jpg";
         break;
       case "Ouvrages didactiques": 
-        return "/assets/images/ouvrages didactiques.jpg";
+        return "/assets/images/ouvrages.jpg";
         break;
       case "Manuscrits":
         return "/assets/images/manuscrits.jpg";
@@ -111,13 +111,13 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         break;
         
       case "Thèses":
-        return "/assets/images/thèses.jpg";
+        return "/assets/images/theses.png";
         break;
       case "Articles":
         return "/assets/images/articles.jpg";
         break;
       case "Outils":
-        return "/assets/images/outils.jpg";
+        return "/assets/images/outils.png";
         break;
 
       case "Photos":
