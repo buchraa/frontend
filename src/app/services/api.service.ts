@@ -89,10 +89,10 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         break;
 
       case "Biographies":
-        return "/assets/images/biographies.jpg";
+        return "/assets/images/biographie.jpg";
         break;
       case "Poésie" :
-        return "/assets/images/poésie.jpg";
+        return "/assets/images/qasidas.jpg";
         break; 
       case "Rècits oraux":
         return "/assets/images/récits.jpg";
@@ -101,7 +101,7 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         return "/assets/images/sermons.jpg";
         break;
       case "Conférences":
-        return "/assets/images/conférences.jpg";
+        return "/assets/images/conferences.jpg";
         break;
       case "Musicographie":
         return "/assets/images/musicographie.jpg";
@@ -117,7 +117,7 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         return "/assets/images/articles.jpg";
         break;
       case "Outils":
-        return "/assets/images/outils.png";
+        return "/assets/images/outil.png";
         break;
 
       case "Photos":
@@ -131,7 +131,7 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         return "/assets/images/web.jpg";
         break; 
       case "Wolofal" :
-        return "/assets/images/wolofal.jpg";
+        return "/assets/images/wolafal.jpg";
         break;   
       default:
         return "/assets/images/ecrits.jpg";
