@@ -16,7 +16,7 @@ export class ViewCategoryComponent implements OnInit {
   allOeuvres=[];
   oeuvres=[];
 
-  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
   ngOnInit(): void {
 
