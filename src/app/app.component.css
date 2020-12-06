@@ -24,4 +24,13 @@
     }
   }
 
- 
+  img {
+    background-image: url('src/assets/images/correspondances.jpg') !important;
+    background-size: cover;
+    overflow: hidden !important;
+  }
+
+  img:before{
+   content: " ";
+   font-size: 18em;
+  }
