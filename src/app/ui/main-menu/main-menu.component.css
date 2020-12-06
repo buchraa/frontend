@@ -8,8 +8,9 @@ nav {
 }}
 nav a {
     color: #fff;
-    font-size: x-small;
-    padding: 0 10px !important;
+    font-size: 0.6em;
+    padding: 0 2px !important;
+    font-weight: 900;
 }
 nav.mat-tab-nav-bar.mat-tab-header.mat-primary {
     background: none !important ;

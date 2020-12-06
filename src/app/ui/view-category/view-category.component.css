@@ -47,3 +47,14 @@
     justify-content: center;
     filter: drop-shadow(5px 5px 5px #222222);
   }
+
+  img {
+    background-image: url('../../../assets/images/correspondances.jpg');
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  img:before{
+   content: " ";
+   font-size: 18em;
+  }

@@ -1,9 +1,5 @@
 h1 {
-    margin-top: 200px;
-    padding: 0;
-    position: absolute;
-    height: 80px;
-    left: 50%;
-    margin-left: -100px;
-    top: 0;
+    text-align: center;
+    position: relative;
+    margin: 15vh auto !important;
   }
