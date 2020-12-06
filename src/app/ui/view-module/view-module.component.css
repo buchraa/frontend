@@ -87,7 +87,7 @@ img {
 }
 
 img {
-    background-image: url('../../../assets/images/correspondances.jpg');
+    background-image: url('src/assets/images/correspondances.jpg');
     background-size: cover;
     overflow: hidden;
   }
