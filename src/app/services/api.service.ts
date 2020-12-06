@@ -48,10 +48,10 @@ saveOrUpdateItem(url: string, item): Observable<any> {
 
   getImageFromName(url: string){
     if(url != undefined) {
-      return "../../../assets/images/" + url + ".jpg"
+      return "../../../assets/images/" + url.toLowerCase() + ".jpg"
     }
     else 
-    "../../../assets/images/Rechercher.jpg"
+    "../../../assets/images/rechercher.jpg"
     }
 
   getImage(url: string){
@@ -68,13 +68,13 @@ saveOrUpdateItem(url: string, item): Observable<any> {
         return "../../../assets/images/erits.jpg";
         break; 
       case "Recherche sur le Mouridisme":
-        return "../../../assets/images/Rechercher.jpg";
+        return "../../../assets/images/rechercher.jpg";
         break;   
       case "Médiathèque du Mouridisme":
         return "../../../assets/images/media.jpg";
         break;  
       default:
-        return "../../../assets/images/Rechercher.jpg";
+        return "../../../assets/images/rechercher.jpg";
 
 
 
