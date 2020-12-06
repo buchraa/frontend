@@ -383,8 +383,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
   }
   
   .mat-tab-list {
-    background: transparent !important;
-  }
+    background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */  }
   /*app-main-menu {
     position: absolute;
     bottom: 0;

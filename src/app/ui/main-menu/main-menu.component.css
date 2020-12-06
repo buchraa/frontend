@@ -8,16 +8,16 @@ nav {
 }}
 nav a {
     color: #fff;
-    font-size: 0.6em;
+    font-size: 1.05em;
     padding: 0 2px !important;
-    font-weight: 900;
+    font-weight: bold;
 }
 nav.mat-tab-nav-bar.mat-tab-header.mat-primary {
     background: none !important ;
 }
 
 .mat-tab-nav-bar, .mat-tab-header, .mat-tab-link-container {
-    background-color: transparent !important;
+    background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
     border-bottom: none !important;
 }
 

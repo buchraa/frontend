@@ -7,7 +7,7 @@
 }
 
 .image {
-    margin: 0 auto;
+    margin: 0 auto !important;
     max-width: 1000px;
     min-height: 120vh;
     background-position:center center; 
@@ -19,6 +19,13 @@
 
 @media only screen and (max-width: 767px) {
     .image {     
+      margin: 0 auto !important;
+      max-width: 1000px;
+      min-height: 120vh;
+      background-position:center center; 
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       background-image: url('src/assets/images/Bgrnd_828_1792.png');
     }
   }
