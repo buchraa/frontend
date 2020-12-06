@@ -9,7 +9,7 @@
 .image {
     margin: 0 auto;
     max-width: 1000px;
-    min-height: 150vh;
+    min-height: 120vh;
     background-position:center center; 
     background-size: cover;
     background-attachment: fixed;

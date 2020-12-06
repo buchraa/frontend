@@ -22,7 +22,6 @@ export class MainMenuComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.admin= this.auth.getRole().includes('ROLE_ADMIN') ? true:false;
 
     this.api.getList('Modules').subscribe(
       (t) => {

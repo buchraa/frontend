@@ -1,5 +1,5 @@
 <div class="image">
-    <a *ngIf="this.router.url != '/Accueil'" (click)=" backClicked()"><span id="backClicked" class="material-icons">keyboard_backspace
+    <a *ngIf="this.router.url != '/Accueil' && this.router.url != '/admin'" (click)=" backClicked()"><span id="backClicked" class="material-icons">keyboard_backspace
         </span></a>
     <app-main-menu></app-main-menu>
 

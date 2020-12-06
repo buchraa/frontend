@@ -16,7 +16,6 @@ export class ModulesComponent implements OnInit {
   constructor(private router: Router, public api: ApiService) { }
 
   ngOnInit(): void {
-
     this.api.getList('Modules').subscribe(
       (t) => {
         this.modules = t;
