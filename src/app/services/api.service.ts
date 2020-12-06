@@ -54,6 +54,9 @@ saveOrUpdateItem(url: string, item): Observable<any> {
     "/assets/images/rechercher.jpg"
     }
 
+
+    
+//load image
   getImage(url: string){
    switch(url)
    {
@@ -64,21 +67,74 @@ saveOrUpdateItem(url: string, item): Observable<any> {
       case "Oeuvres du Mouridisme":
         return "/assets/images/oeuvres.jpg";
         break;
-      case "Ecrits de Cheikh A. Bamba":
-        return "/assets/images/erits.jpg";
-        break; 
+      
       case "Recherche sur le Mouridisme":
         return "/assets/images/rechercher.jpg";
         break;   
       case "Médiathèque du Mouridisme":
         return "/assets/images/media.jpg";
         break;  
+      
+      case "Poèmes (Qasidas)":
+        return "/assets/images/poèmes (qasidas).jpg";
+        break;
+      case  "Correspondances":
+        return "/assets/images/correspondances.jpg";
+        break;
+      case "Ouvrages didactiques": 
+        return "/assets/images/ouvrages didactiques.jpg";
+        break;
+      case "Manuscrits":
+        return "/assets/images/manuscrits.jpg";
+        break;
+
+      case "Biographies":
+        return "/assets/images/biographies.jpg";
+        break;
+      case "Poésie" :
+        return "/assets/images/poésie.jpg";
+        break; 
+      case "Rècits oraux":
+        return "/assets/images/récits.jpg";
+        break;
+      case "Sermons":
+        return "/assets/images/sermons.jpg";
+        break;
+      case "Conférences":
+        return "/assets/images/conférences.jpg";
+        break;
+      case "Musicographie":
+        return "/assets/images/musicographie.jpg";
+        break;
+      case "Livres":
+        return "/assets/images/livres.jpg";
+        break;
+        
+      case "Thèses":
+        return "/assets/images/thèses.jpg";
+        break;
+      case "Articles":
+        return "/assets/images/articles.jpg";
+        break;
+      case "Outils":
+        return "/assets/images/outils.jpg";
+        break;
+
+      case "Photos":
+        return "/assets/images/photos.jpg";
+        break;
+
+      case "Audios":
+        return "/assets/images/audios.jpg";
+        break;
+      case "Web" :
+        return "/assets/images/web.jpg";
+        break; 
+      case "Wolofal" :
+        return "/assets/images/wolofal.jpg";
+        break;   
       default:
-        return "/assets/images/rechercher.jpg";
-
-
-
-
+        return "/assets/images/ecrits.jpg";
 
    }
   }
