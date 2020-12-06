@@ -48,33 +48,33 @@ saveOrUpdateItem(url: string, item): Observable<any> {
 
   getImageFromName(url: string){
     if(url != undefined) {
-      return "../../../assets/images/" + url.toLowerCase() + ".jpg"
+      return "/assets/images/" + url.toLowerCase() + ".jpg"
     }
     else 
-    "../../../assets/images/rechercher.jpg"
+    "/assets/images/rechercher.jpg"
     }
 
   getImage(url: string){
    switch(url)
    {
      case "Ecrits de Cheikh A. Bamba":
-      return "../../../assets/images/ecrits.jpg";
+      return "/assets/images/ecrits.jpg";
       break;
 
       case "Oeuvres du Mouridisme":
-        return "../../../assets/images/oeuvres.jpg";
+        return "/assets/images/oeuvres.jpg";
         break;
       case "Ecrits de Cheikh A. Bamba":
-        return "../../../assets/images/erits.jpg";
+        return "/assets/images/erits.jpg";
         break; 
       case "Recherche sur le Mouridisme":
-        return "../../../assets/images/rechercher.jpg";
+        return "/assets/images/rechercher.jpg";
         break;   
       case "Médiathèque du Mouridisme":
-        return "../../../assets/images/media.jpg";
+        return "/assets/images/media.jpg";
         break;  
       default:
-        return "../../../assets/images/rechercher.jpg";
+        return "/assets/images/rechercher.jpg";
 
 
 

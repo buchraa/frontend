@@ -391,7 +391,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
   }*/
 
   img {
-    background-image: url('/assets/images/correspondances.jpg');
+    background-image: url('/assets/images/correspondances.jpg') !important;
     background-size: cover;
     overflow: hidden;
   }

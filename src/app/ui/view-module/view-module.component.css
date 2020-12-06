@@ -86,9 +86,6 @@ img {
 
 }
 
-img:before{
-    content: " ";
-    font-size: 18em;
-   }
+
 
 
