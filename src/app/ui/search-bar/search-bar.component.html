@@ -1,0 +1,33 @@
+<!--<div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" [(ngModel)]="searchText" placeholder="search text goes here">
+       <button type="submit" class="searchButton">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+ </div>
+ <ul>
+  <li *ngFor="let o of allOeuvres | filter : searchText">
+    {{ o.titreOeuvre }}
+  </li>
+</ul>-->
+
+<mat-accordion>
+  <mat-expansion-panel hideToggle  *ngFor="let oeuvre of allOeuvres | filter : estate_category; let i">
+    <mat-expansion-panel-header [ngClass]="{'colored': i % 2 != 0}">
+      <mat-panel-title>
+         {{oeuvre.titreOeuvre}}
+      </mat-panel-title>
+      <mat-panel-description>
+          {{oeuvre.titre}} 
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div id="meta"><a><span class="material-icons">volume_up</span></a>
+    <a><span class="material-icons">play_arrow</span></a>
+    <a><span class="material-icons">picture_as_pdf</span></a>
+    <a [href]="oeuvre.urlOeuvre"><span class="material-icons">public</span></a>
+    <a><span class="material-icons">description</span></a></div>
+    <p> {{oeuvre.premierVers}}</p>
+  </mat-expansion-panel>       
+</mat-accordion>
+

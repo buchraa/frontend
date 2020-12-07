@@ -30,6 +30,8 @@ import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/medi
 import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
 import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SearchBarComponent } from './ui/search-bar/search-bar.component';
+import { SearchComponent } from './ui/search/search.component';
 
 
 
@@ -59,13 +61,14 @@ const routes: Routes = [
   { path: 'add-ver', component:AddVerComponent},
   { path: 'signup',  component:SignupComponent},
   { path: 'Accueil', component:HomePageComponent},
-  { path: 'Recherche', component:HomePageComponent},
   { path: 'Modules', component:ModulesComponent},
   { path: 'Paramètres', component:HomePageComponent},
   { path: 'Plus', component:HomePageComponent},
+  { path: 'search', component:SearchBarComponent},
   { path: 'view-category/:id', component:ViewCategoryComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'view-module/:id', component:ViewModuleComponent},
+  { path: 'Recherche', component:SearchComponent},
   { path: 'Modules/oeuvre-mouridisme', component:OeuvreMouridismeComponent},
   { path: 'Modules/recherche-mouridisme', component:RechercheMouridismeComponent},
   { path: 'Modules/mediatheque-mouridisme', component:MediathequeMouridismeComponent},

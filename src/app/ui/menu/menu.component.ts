@@ -26,9 +26,16 @@ export class MenuComponent implements OnInit {
       profileMenu.classList.toggle('profile-links-hidden');
   }
 
-  profileItem.onclick = toggleProfileMenu;
+  //profileItem.onclick = toggleProfileMenu;
   
   }
+
+  toggleProfileMenu() {
+    const profileItem = document.getElementById('profile-item');
+    const profileMenu = document.getElementById('profile-links')
+    profileMenu.classList.toggle('profile-links-visible');
+    profileMenu.classList.toggle('profile-links-hidden');
+}
 
   logout() {
     this.auth.deleteToken();

@@ -15,6 +15,7 @@ export class ViewCategoryComponent implements OnInit {
   routingSubscription: any; 
   allOeuvres=[];
   oeuvres=[];
+  searchText: string;
 
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
