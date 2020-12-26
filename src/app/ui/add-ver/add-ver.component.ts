@@ -11,6 +11,7 @@ import { Vers } from 'src/app/model/ver.model';
 export class AddVerComponent implements OnInit {
   object: Vers; 
   chapters: [];
+  oeuvres: [];
   routingSubscription: any; 
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
@@ -35,6 +36,18 @@ export class AddVerComponent implements OnInit {
       (t) => {
         this.chapters = t;
         console.log(this.chapters);       
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
+
+    this.api.getList('oeuvres').subscribe(
+      (t) => {
+        this.oeuvres = t;
+        console.log(this.oeuvres);       
       },
       (error) => {
         

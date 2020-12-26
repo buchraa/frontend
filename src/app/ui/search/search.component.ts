@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -11,7 +14,7 @@ export class SearchComponent implements OnInit {
   searchText: string;
 
 
-  constructor( public api: ApiService) { }
+  constructor( public api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -27,6 +30,9 @@ export class SearchComponent implements OnInit {
      }
 
     )
+  }
+  goDetails(object: Oeuvre) {
+    this.router.navigate(["/view-oeuvre", object.oeuvreId]);
   }
 
 }

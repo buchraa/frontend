@@ -25,6 +25,7 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { ViewModuleComponent } from './ui/view-module/view-module.component';
+import { ViewOeuvreComponent } from './ui/view-oeuvre/view-oeuvre.component';
 import { ViewCategoryComponent } from './ui/view-category/view-category.component';
 import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
 import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
@@ -68,6 +69,7 @@ const routes: Routes = [
   { path: 'view-category/:id', component:ViewCategoryComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'view-module/:id', component:ViewModuleComponent},
+  { path: 'view-oeuvre/:id', component:ViewOeuvreComponent},
   { path: 'Recherche', component:SearchComponent},
   { path: 'Modules/oeuvre-mouridisme', component:OeuvreMouridismeComponent},
   { path: 'Modules/recherche-mouridisme', component:RechercheMouridismeComponent},

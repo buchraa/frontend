@@ -92,14 +92,14 @@ export class AddOeuvreComponent implements OnInit {
 
   uploadSubmit()  {
   console.log(this.object);
-  /* this.api.saveOrUpdateItem('addOrUpdateOeuvre', this.object).subscribe(
+  this.api.saveOrUpdateItem('addOrUpdateOeuvre', this.object).subscribe(
       data => {        
         this.router.navigate(['/oeuvre-manage']);
       },
       error => {
         console.log(error);
 
-      });*/
+      });
   }
 
 }

@@ -49,7 +49,7 @@
 }
 .colored{
     background-color: #558303 !important;
-    color: #fff;
+    color: #fff !important;
 }
 .mat-expansion-panel p {
     margin-top: 2.5em;
@@ -90,5 +90,23 @@
        color: #fff;
        margin: 5px 10px;
    }
+
+   div.collection {
+    margin: 1em 1em;
+  }
+
+   .collection span {
+    position: absolute;
+    right: 10% !important;
+   }
+
  
- 
+
+ .simple {    
+    background-color: #FFF;
+    color: #000 !important;
+ }
+ div p {
+   margin: 0.5em 2em !important;
+ }
+

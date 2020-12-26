@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
+import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -20,7 +21,6 @@ export class ViewCategoryComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
   ngOnInit(): void {
-
     this.api.getList('oeuvres').subscribe(
       (t) => {
         this.allOeuvres = t;     
@@ -38,7 +38,6 @@ export class ViewCategoryComponent implements OnInit {
      }
 
     )
-
 
     this.object = new Category();     
     this.routingSubscription = 
@@ -58,6 +57,18 @@ export class ViewCategoryComponent implements OnInit {
             }
         });
     
+  }
+  
+  goDetails(object: Oeuvre) {
+    this.router.navigate(["/view-oeuvre", object.oeuvreId]);
+  }
+
+  getStatus(i: number) {
+    if(i % 2 == 1)
+    {
+      return true;
+    }
+    else return false 
   }
 
 }

@@ -52,6 +52,13 @@
                   <mat-option *ngFor="let chapter of chapters" [value]="chapter.chapitreId" matInput>{{chapter.title}}</mat-option>
                 </mat-select>
               </mat-form-field>
+
+              <mat-form-field >
+                <label>Choisir Oeuvre</label>
+                <mat-select  id="oeuvreId" name="oeuvreId" [(ngModel)]="object.oeuvreId" #oeuvreId="ngModel">
+                  <mat-option *ngFor="let oeuvre of oeuvres" [value]="oeuvre.oeuvreId" matInput>{{oeuvre.titreOeuvre}}</mat-option>
+                </mat-select>
+              </mat-form-field>
           </div>
           
          

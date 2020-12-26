@@ -4,6 +4,7 @@ import { VersTraduction } from "./verTraduction.model";
 export class Vers {
     
 versId: number;
+oeuvreId: number;
 chapitreId: number;
 typeVers: string;
 numVers: number;

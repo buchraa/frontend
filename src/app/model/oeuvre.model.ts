@@ -35,4 +35,5 @@ export class Oeuvre {
     diwanId: number;
     themeId: number;
     refAuthors: Number[];
+    category: any;
 }

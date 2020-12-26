@@ -4,11 +4,11 @@
     width: 100%;
     position: relative;
     display: flex;
-    right: 0%;
 
   }
   input{
     background-color: #fff !important;  
+
   }
   
   .searchTerm {
@@ -28,7 +28,7 @@
   
   .searchButton {
     width: 40px;
-    height: 43px;
+    height: 45px;
     border: 1px solid#a8b9bb;
     background: #a8b9bb;
     text-align: center;
@@ -41,15 +41,8 @@
   /*Resize the wrap to see the search bar change!*/
   .wrap{
     width: 70vw;
-    margin: 0em 5em;
-    padding-top: 15vh;
-    text-align: center;
-    }
-    .wrap span {
-        font-size: 40px;
-    } 
-
-    
+    padding: 20px 20px
+     }
 .mat-expansion-panel {
     margin-top: 1.5em;
     background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
@@ -98,25 +91,31 @@
        margin: 5px 10px;
    }
 
-   mat-accordion {
-       padding: 1em 1em !important;
-   }
-  
-   div.collection {
-    margin: 1em 1em;
-  }
-
-   .collection span {
-    position: absolute;
-    right: 10% !important;
+   .collection-item span {
+       position: absolute;
+       right: 10% !important;
    }
 
-   div p {
-    margin: 0.5em 2em !important;
-  }
+   .collection .collection-item.active {
+    background-color: #558303 !important;
+   }
+ .panel {
+     margin: 2em 2em;
+     padding: 1em 0.5em;
+     background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
 
- .simple {    
-    background-color: #FFF;
-    color: #000 !important;
  }
 
+ li::before {
+  margin-right: 1em;   
+  content: counter(li);   
+  color: #000;
+  display: inline-block; width: 2em;
+  text-align: center;
+  background-color: #fff;
+  border-style: dotted;
+  border: 1.5mm ridge #000;
+}
+ div.collection {
+   margin: 1em 1em;
+ }

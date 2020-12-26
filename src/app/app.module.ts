@@ -45,13 +45,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { ViewModuleComponent } from './ui/view-module/view-module.component';
-import { ViewCategoryComponent } from './ui/view-category/view-category.component';
 import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridisme.component';
 import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
 import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchBarComponent } from './ui/search-bar/search-bar.component';
 import { SearchComponent } from './ui/search/search.component';
+import { ViewOeuvreComponent } from './ui/view-oeuvre/view-oeuvre.component';
+import { ViewCategoryComponent } from './ui/view-category/view-category.component';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { SearchComponent } from './ui/search/search.component';
     NotFoundComponent,
     SearchBarComponent,
     FilterPipe,
-    SearchComponent
+    SearchComponent,
+    ViewOeuvreComponent
   ],
   imports: [
     BrowserModule,
