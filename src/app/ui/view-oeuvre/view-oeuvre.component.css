@@ -91,10 +91,11 @@
        margin: 5px 10px;
    }
 
-   .collection-item span {
-       position: absolute;
-       right: 10% !important;
+   .collection span {
+    position: absolute;
+    right: 2% !important;
    }
+
 
    .collection .collection-item.active {
     background-color: #558303 !important;
@@ -107,7 +108,7 @@
  }
 
  li::before {
-  margin-right: 1em;   
+  margin: 0.5em 1em;   
   content: counter(li);   
   color: #000;
   display: inline-block; 
@@ -117,6 +118,7 @@
   background-image: url('/assets/images/bordure.jpg');
   background-position:center center; 
   background-repeat: no-repeat;
+  /*font-size: 18px;*/
 }
 
 li {counter-increment: li;}
@@ -128,3 +130,5 @@ li {counter-increment: li;}
   content: counter(li);  
 
 }
+
+

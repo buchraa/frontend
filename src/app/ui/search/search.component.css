@@ -112,11 +112,17 @@
    }
 
    div p {
-    margin: 0.5em 2em !important;
+    margin: 0.5em 0.5em !important;
   }
 
  .simple {    
     background-color: #FFF;
     color: #000 !important;
  }
+ .collection span {
+  position: absolute;
+  right: 2% !important;
+ }
+
+
 
