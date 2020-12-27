@@ -31,6 +31,10 @@ get(url: string, uuId: string): Observable<any> {
   return this.http.get(`${baseUrl}/${url}/${uuId}`);
 }
 
+getModule(uuId: string): Observable<any> {
+  return this.http.get(`${baseUrl}/Module/ByName/${uuId}`);
+}
+
 getList(url: string): Observable<any>  {
     return this.http.get(`${baseUrl}/${url}`);
 }
@@ -44,7 +48,7 @@ saveOrUpdateItem(url: string, item): Observable<any> {
 
  deleteItem(url: string, Id: number): Observable<any> {
     return this.http.delete(`${baseUrl}/${url}/${Id}`);
-  }
+}
 
   getImageFromName(url: string){
     if(url != undefined) {
@@ -60,7 +64,7 @@ saveOrUpdateItem(url: string, item): Observable<any> {
   getImage(url: string){
    switch(url)
    {
-     case "Ecrits de Cheikh A. Bamba":
+      case "Ecrits de Cheikh A. Bamba":
       return "/assets/images/ecrits.jpg";
       break;
 

@@ -63,6 +63,10 @@ export class ViewCategoryComponent implements OnInit {
     this.router.navigate(["/view-oeuvre", object.oeuvreId]);
   }
 
+  viewTraduc(object: Oeuvre) {
+    this.router.navigate(["/view-traduction", object.oeuvreId]);
+  }
+
   getStatus(i: number) {
     if(i % 2 == 1)
     {

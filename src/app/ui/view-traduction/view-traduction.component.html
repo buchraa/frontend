@@ -24,9 +24,11 @@
           <a><span class="material-icons">description</span></a></div>
 
           <div class="panel">
-              <ul >
-                  <li *ngFor="let ver of vers">{{ ver.texteVersAR1 }} </li>                       
-              </ul>
+              <ul *ngFor="let ver of vers">
+                      <ul >
+                        <li *ngFor="let traduction of ver.traductions">{{ getTraduc(traduction) }}</li>
+                      </ul>   
+                    </ul>
                  
 
           </div>

@@ -5,11 +5,11 @@ import { Module } from 'src/app/model/module.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-mediatheque-mouridisme',
-  templateUrl: './mediatheque-mouridisme.component.html',
-  styleUrls: ['./mediatheque-mouridisme.component.css']
+  selector: 'app-les-ecrits',
+  templateUrl: './les-ecrits.component.html',
+  styleUrls: ['./les-ecrits.component.css']
 })
-export class MediathequeMouridismeComponent implements OnInit {
+export class LesEcritsComponent implements OnInit {
   module: Module;
   allCategories = [];
   categories = [];
@@ -19,9 +19,8 @@ export class MediathequeMouridismeComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
-  
   ngOnInit(): void {
-    this.api.getModule('Médiathèque du Mouridisme').subscribe(
+    this.api.getModule('Ecrits de Cheikh A. Bamba').subscribe(
       (t) => {
         this.module = t;
         this.ObjetId = this.module.moduleId;
@@ -55,6 +54,5 @@ export class MediathequeMouridismeComponent implements OnInit {
   goDetails(object: Category) {
     this.router.navigate(["/view-category", object.categoryId]);
   }
-
 
 }

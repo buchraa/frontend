@@ -53,6 +53,8 @@ import { SearchBarComponent } from './ui/search-bar/search-bar.component';
 import { SearchComponent } from './ui/search/search.component';
 import { ViewOeuvreComponent } from './ui/view-oeuvre/view-oeuvre.component';
 import { ViewCategoryComponent } from './ui/view-category/view-category.component';
+import { ViewTraductionComponent } from './ui/view-traduction/view-traduction.component';
+import { LesEcritsComponent } from './ui/les-ecrits/les-ecrits.component';
 
 
 @NgModule({
@@ -90,7 +92,9 @@ import { ViewCategoryComponent } from './ui/view-category/view-category.componen
     SearchBarComponent,
     FilterPipe,
     SearchComponent,
-    ViewOeuvreComponent
+    ViewOeuvreComponent,
+    ViewTraductionComponent,
+    LesEcritsComponent
   ],
   imports: [
     BrowserModule,

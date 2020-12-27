@@ -5,11 +5,11 @@ import { VersTraduction } from 'src/app/model/verTraduction.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-view-oeuvre',
-  templateUrl: './view-oeuvre.component.html',
-  styleUrls: ['./view-oeuvre.component.css']
+  selector: 'app-view-traduction',
+  templateUrl: './view-traduction.component.html',
+  styleUrls: ['./view-traduction.component.css']
 })
-export class ViewOeuvreComponent implements OnInit {
+export class ViewTraductionComponent implements OnInit {
 
   viezText: boolean;
   object:Oeuvre; 

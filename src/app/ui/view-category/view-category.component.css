@@ -93,6 +93,8 @@
 
    div.collection {
     margin: 1em 1em;
+    border-radius: 0.7em;
+   border: none !important;
   }
 
    .collection span {

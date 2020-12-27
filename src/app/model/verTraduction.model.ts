@@ -2,7 +2,7 @@ import { Vers } from "./ver.model";
 
 export class VersTraduction {
     versTradId:  number;
-    name: string;
+    texte: string;
     codeLangue: string; 
     ver: Vers;
   }
