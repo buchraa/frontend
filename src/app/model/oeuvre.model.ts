@@ -29,6 +29,7 @@ export class Oeuvre {
     presentation: string;
     rime: string;
     titre: string;
+    themePrincipal: Theme;
     titreOeuvre: string;
     urlOeuvre: string;
     categoryId: number;
