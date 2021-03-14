@@ -13,7 +13,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
-  links = ['Accueil', 'Recherche', 'Modules', 'Paramètres', 'Plus'];
+  links = ['Accueil', 'Recherche', 'Modules' , 'Paramètres'/*, 'Plus'*/];
   activeLink = this.links[0];
   modules = [];
   admin: boolean;
