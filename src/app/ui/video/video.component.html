@@ -1,0 +1,63 @@
+<app-header [estate_category]="'Vidéos'"></app-header>
+
+<div class="containerVideo">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let video of videos; let i = index"  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{video.titreOeuvre}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{video.presentation}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        <video width="100%" controls>
+          <source [src]="video.urlOeuvre" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+      </p>
+    </mat-expansion-panel>    
+
+    <!--Test Component to delete -->
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         Titre video 1
+        </mat-panel-title>
+        <mat-panel-description>
+          Description video 1
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1mkkt97pYwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </p>
+    </mat-expansion-panel>  
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Titre vidéo 2
+        </mat-panel-title>
+        <mat-panel-description>
+         Description vidéo 2
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Gj0wVzY2gu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </p>
+    </mat-expansion-panel>  
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Titre vidéo 3
+        </mat-panel-title>
+        <mat-panel-description>
+          Description vidéo 3
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vxF-4kncdNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </p>
+    </mat-expansion-panel>  
+  </mat-accordion>
+</div>

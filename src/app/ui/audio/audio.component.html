@@ -1,0 +1,48 @@
+<app-header [estate_category]="'Audios'"></app-header>
+
+  
+  <mat-accordion>
+      <mat-expansion-panel *ngFor="let file of files; let i = index" hideToggle>
+      <mat-expansion-panel-header (click)="openFile(file, i)" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}">
+        <mat-panel-title [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}">
+          {{ file.name }}
+        </mat-panel-title>
+        <mat-panel-description [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}">
+          by {{ file.artist }}
+          <mat-icon color="primary" *ngIf="currentFile.index === i && !state?.error">volume_up</mat-icon>
+          <h6 *ngIf="currentFile.index === i && state?.error">ERROR</h6>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="media-footer">
+        <mat-toolbar color="primary">
+          <mat-toolbar-row>
+             {{ state?.readableCurrentTime }}
+             <mat-slider class="time-slider" min="0" [max]="state?.duration" step="1" [value]="state?.currentTime" (input)="onSliderChangeEnd($event)" [disabled]="state?.error || currentFile.index === undefined"></mat-slider>
+             {{ state?.readableDuration }}
+          </mat-toolbar-row>
+          <mat-toolbar-row class="media-action-bar">
+            <button mat-button [disabled]="isFirstPlaying()" (click)="previous()">
+              <mat-icon mat-list-icon>skip_previous</mat-icon>
+            </button>
+            <button mat-button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing">
+              <mat-icon mat-list-icon>play_circle_filled</mat-icon>
+            </button>
+            <button mat-button (click)="pause()" *ngIf="state?.playing">
+              <mat-icon mat-list-icon>pause</mat-icon>
+            </button>
+            <button  mat-button [disabled]="isLastPlaying()" (click)="next()">
+              <mat-icon mat-list-icon>skip_next</mat-icon>
+            </button>
+            <span class="spacer"></span>
+        <mat-icon>volume_up</mat-icon>
+        <mat-slider class="time-slider" min="0" max="1" step="0.01" [value]="state?.volume" (input)="onVolumeChange($event)"></mat-slider>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+    </mat-expansion-panel>
+    <mat-divider></mat-divider>
+  </mat-accordion>
+
+  <div class="container">
+    
+</div>

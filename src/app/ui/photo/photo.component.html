@@ -1,0 +1,197 @@
+
+<app-header [estate_category]="'Photos'"></app-header>
+
+<div class="containerphoto">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let photo of photos; let i = index"  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{photo.titreOeuvre}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{photo.presentation}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-card class="example-card">
+        <img mat-card-image src="../../../assets/images/correspondances.jpg" [alt]="photo.titreOeuvre">      
+      </mat-card>      
+    </mat-expansion-panel>  
+        <!--Test Component, to delete-->
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/ecrits.jpg" >
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/genealogies.jpg" alt="">
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/livres.jpg" alt="Photo of a Shiba Inu">
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+  </mat-accordion>
+
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let photo of photos; let i = index"  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{photo.titreOeuvre}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{photo.presentation}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-card class="example-card">
+        <img mat-card-image src="../../../assets/images/media.jpg" [alt]="photo.titreOeuvre">
+        
+        
+      </mat-card>
+      
+    </mat-expansion-panel>  
+    
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/outils.jpg" >
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/ouvrages.jpg" alt="">
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/correspondances.jpg" alt="Photo of a Shiba Inu">
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+  </mat-accordion>
+
+
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let photo of photos; let i = index"  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{photo.titreOeuvre}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{photo.presentation}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-card class="example-card">
+        <img mat-card-image src="../../../assets/images/correspondances.jpg" [alt]="photo.titreOeuvre">
+        
+        
+      </mat-card>
+      
+    </mat-expansion-panel>  
+    
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/correspondances.jpg" >
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/correspondances.jpg" alt="">
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            photo.titreOeuvre
+          </mat-panel-title>
+          <mat-panel-description>
+            photo.presentation
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="example-card">
+          <img mat-card-image src="../../../assets/images/correspondances.jpg" alt="Photo of a Shiba Inu">
+                  
+        </mat-card>        
+      </mat-expansion-panel> 
+  </mat-accordion>
+</div>
+

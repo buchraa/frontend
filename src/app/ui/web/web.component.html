@@ -1,0 +1,40 @@
+<app-header [estate_category]="'Web'"></app-header>
+
+<div class="containerFiles">
+<mat-list>
+  <mat-list-item *ngFor="let folder of webFiles; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}" >
+    <mat-icon mat-list-icon>public</mat-icon>
+    <div mat-line>{{folder.titreOeuvre}}</div>
+    <div mat-line> {{folder.presentation}} </div>
+  </mat-list-item> 
+  
+  <!--Test component, to delete -->
+  <mat-list-item class="colored">
+    <mat-icon mat-list-icon>public</mat-icon>
+    <div mat-line>titre</div>
+    <div mat-line> Description </div>
+  </mat-list-item>
+  <mat-list-item >
+    <mat-icon mat-list-icon>public</mat-icon>
+    <div mat-line>titre</div>
+    <div mat-line> Description </div>
+  </mat-list-item>
+  <mat-list-item class="colored">
+    <mat-icon mat-list-icon>public</mat-icon>
+    <div mat-line>titre</div>
+    <div mat-line> Description </div>
+  </mat-list-item>
+  <mat-list-item >
+    <mat-icon mat-list-icon>public</mat-icon>
+    <div mat-line>titre</div>
+    <div mat-line> Description </div>
+  </mat-list-item>
+  <mat-list-item class="colored">
+    <mat-icon mat-list-icon>public</mat-icon>
+    <div mat-line>titre</div>
+    <div mat-line> Description </div>
+  </mat-list-item>
+</mat-list>
+
+
+</div>

@@ -1,0 +1,16 @@
+mat-expansion-panel-header, mat-panel-title, mat-panel-description {
+    background-color: #fff  !important;
+    color: #000 !important;
+    min-height: 4em !important;
+    padding-top: 15px !important;
+}
+
+mat-panel-title, mat-panel-description {
+    color: #000 !important;
+}
+
+.colored{
+    background-color: #558303 !important;
+    color: #fff !important;
+  }
+  

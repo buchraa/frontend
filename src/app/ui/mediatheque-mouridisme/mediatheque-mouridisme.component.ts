@@ -18,7 +18,6 @@ export class MediathequeMouridismeComponent implements OnInit {
   ObjetId: number;
 
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
-
   
   ngOnInit(): void {
     this.api.getModule('Médiathèque du Mouridisme').subscribe(
@@ -54,6 +53,28 @@ export class MediathequeMouridismeComponent implements OnInit {
   }
   goDetails(object: Category) {
     this.router.navigate(["/view-category", object.categoryId]);
+  }
+
+  goToPage(object: Category) {
+    switch(object.name)
+    {
+      case "Vidéos":
+        this.router.navigate(["/mediatheque/video"]);
+      break;
+
+      case "Photos":
+        this.router.navigate(["/mediatheque/photo"]);
+        break;
+      
+      case "Audios":
+        this.router.navigate(["/mediatheque/audio"]);
+        break;   
+      case "Web":
+        this.router.navigate(["/mediatheque/web"]);
+        break;
+      default:
+        this.router.navigate(["/"]);  
+    }
   }
 
 
