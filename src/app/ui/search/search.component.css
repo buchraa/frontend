@@ -1,18 +1,17 @@
 
 
 .search {
-    width: 100%;
+    width: 70vw !important;
     position: relative;
     display: flex;
-    right: 0%;
-
+   
   }
   input{
     background-color: #fff !important;  
   }
   
   .searchTerm {
-    width: 100%;
+    width: 60vw !important;
     border: 3px solid #a8b9bb;
     border-right: none;
     padding: 5px;
@@ -69,7 +68,7 @@
   }
 
  #pageTitle span {
-     font-size: 40px;
+     font-size: 45px;
  } 
 
   #meta {
