@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-modules',
@@ -13,13 +14,14 @@ export class ModulesComponent implements OnInit {
  
 
 
-  constructor(private router: Router, public api: ApiService) { }
+  constructor(private router: Router, public api: ApiService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    
+    this.spinner.show();
     this.api.getList('Modules').subscribe(
       (t) => {
         this.modules = t;
+        this.spinner.hide();
         console.log(this.modules);
        
       },

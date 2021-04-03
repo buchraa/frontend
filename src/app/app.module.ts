@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //import { CommonModule } from '@angular/common';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
@@ -111,12 +111,15 @@ import { ModuleHeaderComponent } from './ui/module-header/module-header.componen
     HttpClientModule, 
     ReactiveFormsModule,  
     MaterialModule,
+    NgxSpinnerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
    
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,
     useClass: AuthTokenInterceptor, multi: true,
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

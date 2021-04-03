@@ -1,8 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
 import { Category } from 'src/app/model/category.model';
+
 
 @Component({
   selector: 'app-view-module',
@@ -19,9 +21,10 @@ export class ViewModuleComponent implements OnInit {
   ObjetId: string;
   routingSubscription: any; 
 
-  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.api.getList('Categories').subscribe(
       (t) => {
         this.allCategories = t;       
@@ -30,6 +33,7 @@ export class ViewModuleComponent implements OnInit {
                  this.categories.push(this.allCategories[i]);          
           }      
       }
+      this.spinner.hide();
       console.log(this.categories);
       },
       (error) => {
