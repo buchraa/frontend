@@ -14,7 +14,8 @@ const assetUrl = "../src/assets/images";
 })
 export class ApiService {
   
- 
+  images: any = ["/assets/images/ecrits.jpg","/assets/images/oeuvres.jpg","/assets/images/rechercher.jpg","/assets/images/media.jpg","/assets/images/qasidas.jpg","/assets/images/ouvrages.jpg"]
+
   constructor(private http: HttpClient) { }
 
 httpOptions = {headers : new HttpHeaders({
@@ -33,6 +34,14 @@ get(url: string, uuId: string): Observable<any> {
 
 getModule(uuId: string): Observable<any> {
   return this.http.get(`${baseUrl}/Module/ByName/${uuId}`);
+}
+
+getObjectByName(object: string, name: string): Observable<any> {
+  return this.http.get(`${baseUrl}/${object}/ByName/${name}`);
+}
+
+getCategory(uuId: string): Observable<any> {
+  return this.http.get(`${baseUrl}/Categorie/ByName/${uuId}`);
 }
 
 getList(url: string): Observable<any>  {
@@ -58,7 +67,9 @@ saveOrUpdateItem(url: string, item): Observable<any> {
     "/assets/images/rechercher.jpg"
     }
 
-
+getRandImage(){
+return this.images[Math.floor(Math.random() * Math.floor(this.images.length))];
+}
     
 //load image
   getImage(url: string){

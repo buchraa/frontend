@@ -3,11 +3,11 @@
   
   <mat-accordion>
       <mat-expansion-panel *ngFor="let file of files; let i = index" hideToggle>
-      <mat-expansion-panel-header (click)="openFile(file, i)" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}">
-        <mat-panel-title [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}">
+      <mat-expansion-panel-header (click)="openFile(file, i)">
+        <mat-panel-title>
           {{ file.name }}
         </mat-panel-title>
-        <mat-panel-description [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0}">
+        <mat-panel-description>
           by {{ file.artist }}
           <mat-icon color="primary" *ngIf="currentFile.index === i && !state?.error">volume_up</mat-icon>
           <h6 *ngIf="currentFile.index === i && state?.error">ERROR</h6>

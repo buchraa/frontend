@@ -35,6 +35,10 @@ import { SearchBarComponent } from './ui/search-bar/search-bar.component';
 import { SearchComponent } from './ui/search/search.component';
 import { ViewTraductionComponent } from './ui/view-traduction/view-traduction.component';
 import { LesEcritsComponent } from './ui/les-ecrits/les-ecrits.component';
+import { AudioComponent } from './ui/audio/audio.component';
+import { VideoComponent } from './ui/video/video.component';
+import { PhotoComponent } from './ui/photo/photo.component';
+import { WebComponent } from './ui/web/web.component';
 
 
 
@@ -78,6 +82,10 @@ const routes: Routes = [
   { path: 'Modules/oeuvre-mouridisme', component:OeuvreMouridismeComponent},
   { path: 'Modules/recherche-mouridisme', component:RechercheMouridismeComponent},
   { path: 'Modules/mediatheque-mouridisme', component:MediathequeMouridismeComponent},
+  { path: 'mediatheque/audio', component:AudioComponent},
+  { path: 'mediatheque/video', component:VideoComponent},
+  { path: 'mediatheque/photo', component:PhotoComponent},
+  { path: 'mediatheque/web', component:WebComponent},
   { path: '404', component: NotFoundComponent },
   { path: '**', component: NotFoundComponent }
 

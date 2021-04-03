@@ -25,7 +25,7 @@ export class WebComponent implements OnInit {
      this.api.getObjectByName('Categorie','Web').subscribe(
       (t) => {
         this.categorie = t; 
-        this.categoryId = 37 //this.categorie.categoryId;       
+        this.categoryId = this.categorie.categoryId;       
         console.log(this.categoryId);
        
       },

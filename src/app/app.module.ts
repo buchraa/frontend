@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+//import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,13 +11,7 @@ import { FilterPipe} from './filter.pipe';
 
 import { AuthorManagerComponent } from './ui/author-manager/author-manager.component';
 import { AddAuthorComponent } from './ui/add-author/add-author.component';
-import { MatCardModule } from "@angular/material/card";
-import {MatExpansionModule} from '@angular/material/expansion';
-import { MatSelectModule } from "@angular/material/select";
-import { MatIconModule } from "@angular/material/icon";
-import { MatInputModule } from "@angular/material/input";
-import { MatRadioModule } from "@angular/material/radio";
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { AddCategoryComponent } from './ui/add-category/add-category.component';
 import { CategoryManagerComponent } from './ui/category-manager/category-manager.component';
 import { CategoryComponent } from './ui/category/category.component';
@@ -40,8 +34,7 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTabsModule} from '@angular/material/tabs';
+
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { ModulesComponent } from './ui/modules/modules.component';
 import { ViewModuleComponent } from './ui/view-module/view-module.component';
@@ -55,6 +48,13 @@ import { ViewOeuvreComponent } from './ui/view-oeuvre/view-oeuvre.component';
 import { ViewCategoryComponent } from './ui/view-category/view-category.component';
 import { ViewTraductionComponent } from './ui/view-traduction/view-traduction.component';
 import { LesEcritsComponent } from './ui/les-ecrits/les-ecrits.component';
+import { AudioComponent } from './ui/audio/audio.component';
+import { VideoComponent } from './ui/video/video.component';
+import { MaterialModule } from './material.module';
+import { PhotoComponent } from './ui/photo/photo.component';
+import { WebComponent } from './ui/web/web.component';
+import { HeaderComponent } from './ui/header/header.component';
+import { ModuleHeaderComponent } from './ui/module-header/module-header.component';
 
 
 @NgModule({
@@ -94,25 +94,23 @@ import { LesEcritsComponent } from './ui/les-ecrits/les-ecrits.component';
     SearchComponent,
     ViewOeuvreComponent,
     ViewTraductionComponent,
-    LesEcritsComponent
+    LesEcritsComponent,
+    AudioComponent,
+    VideoComponent,
+    PhotoComponent,
+    WebComponent,
+    HeaderComponent,
+    ModuleHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    CommonModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatExpansionModule,
+    //CommonModule,
+    HttpClientModule, 
+    ReactiveFormsModule,  
+    MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
    
   ],
