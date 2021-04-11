@@ -9,4 +9,6 @@
  <div *ngFor="let oeuvre of allOeuvres | filter : searchText; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
   <p  (click)="goDetails(oeuvre)" > {{ oeuvre.titreOeuvre }} <span> {{ oeuvre.titre }} </span> </p>
 </div>
-  
+
+<app-loader></app-loader>
+ 

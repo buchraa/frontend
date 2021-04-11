@@ -41,18 +41,30 @@ export class ModulesComponent implements OnInit {
     switch(object.name)
     {
       case "Ecrits de Cheikh A. Bamba":
-        this.router.navigate(["/Modules/ecrit-mouridisme"]);
+        this.router.navigate(["/Modules/ecrit-mouridisme"])
+        .then(() => {
+          window.location.reload();
+        });
       break;
 
       case "Oeuvres du Mouridisme":
-        this.router.navigate(["/Modules/oeuvre-mouridisme"]);
+        this.router.navigate(["/Modules/oeuvre-mouridisme"])
+        .then(() => {
+          window.location.reload();
+        });
         break;
       
       case "Recherche sur le Mouridisme":
-        this.router.navigate(["/Modules/recherche-mouridisme"]);
+        this.router.navigate(["/Modules/recherche-mouridisme"])
+        .then(() => {
+          window.location.reload();
+        });
         break;   
       case "Médiathèque du Mouridisme":
-        this.router.navigate(["/Modules/mediatheque-mouridisme"]);
+        this.router.navigate(["/Modules/mediatheque-mouridisme"])
+        .then(() => {
+          window.location.reload();
+        });
         break;
       default:
         this.router.navigate(["/"]);  

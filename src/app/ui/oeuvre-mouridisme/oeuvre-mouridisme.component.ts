@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
 import { Module } from 'src/app/model/module.model';
 import { ApiService } from 'src/app/services/api.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-oeuvre-mouridisme',
@@ -17,16 +18,17 @@ export class OeuvreMouridismeComponent implements OnInit {
   object:Module; 
   ObjetId: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService, private spinner: NgxSpinnerService) { }
 
   
   ngOnInit(): void {
+    this.spinner.show();
     this.api.getModule('Oeuvres du Mouridisme').subscribe(
       (t) => {
         this.module = t;
         this.ObjetId = this.module.moduleId;
         console.log(this.module.moduleId);
-       
+        this.spinner.hide();
       },
       (error) => {
         

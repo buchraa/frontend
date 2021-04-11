@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,11 +14,10 @@ export class SearchComponent implements OnInit {
   allOeuvres=[];
   searchText: string;
 
-
   constructor( public api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-
+    
     this.api.getList('oeuvres').subscribe(
       (t) => {
         this.allOeuvres = t;     

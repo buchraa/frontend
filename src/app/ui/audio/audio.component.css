@@ -1,16 +1,8 @@
-/*mat-expansion-panel-header, mat-panel-title, mat-panel-description {
-    background-color: #fff  !important;
-    color: #000 !important;
-    min-height: 4em !important;
-    padding-top: 15px !important;
+.mat-expansion-panel-header{
+    min-height: 60px !important;
 }
 
-mat-panel-title, mat-panel-description {
-    color: #000 !important;
+.mat-expansion-panel-header-description {
+    flex-grow: 0;
+    margin-right: 5px !important;
 }
-
-.colored{
-    background-color: #558303 !important;
-    color: #fff !important;
-  }
-  */

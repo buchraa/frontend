@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
 import { Module } from 'src/app/model/module.model';
 import { ApiService } from 'src/app/services/api.service';
+import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Component({
   selector: 'app-mediatheque-mouridisme',
@@ -17,7 +19,7 @@ export class MediathequeMouridismeComponent implements OnInit {
   object:Module; 
   ObjetId: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService, private spinner: NgxSpinnerService) { }
   
   ngOnInit(): void {
     this.api.getModule('Médiathèque du Mouridisme').subscribe(
@@ -42,6 +44,7 @@ export class MediathequeMouridismeComponent implements OnInit {
                  this.categories.push(this.allCategories[i]);          
           }      
       }
+     
       console.log(this.categories);
       },
       (error) => {
@@ -51,6 +54,8 @@ export class MediathequeMouridismeComponent implements OnInit {
 
     )
   }
+
+  
   goDetails(object: Category) {
     this.router.navigate(["/view-category", object.categoryId]);
   }
@@ -59,18 +64,30 @@ export class MediathequeMouridismeComponent implements OnInit {
     switch(object.name)
     {
       case "Vidéos":
-        this.router.navigate(["/mediatheque/video"]);
+        this.router.navigate(["/mediatheque/video"])
+        .then(() => {
+          window.location.reload();
+        });
       break;
 
       case "Photos":
-        this.router.navigate(["/mediatheque/photo"]);
+        this.router.navigate(["/mediatheque/photo"])
+        .then(() => {
+          window.location.reload();
+        });
         break;
       
       case "Audios":
-        this.router.navigate(["/mediatheque/audio"]);
+        this.router.navigate(["/mediatheque/audio"])
+        .then(() => {
+          window.location.reload();
+        });
         break;   
       case "Web":
-        this.router.navigate(["/mediatheque/web"]);
+        this.router.navigate(["/mediatheque/web"])
+        .then(() => {
+          window.location.reload();
+        });
         break;
       default:
         this.router.navigate(["/"]);  

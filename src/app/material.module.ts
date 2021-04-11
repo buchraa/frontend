@@ -12,6 +12,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
 
 const modules = [
@@ -30,6 +31,7 @@ const modules = [
   MatMenuModule,
   MatTabsModule,
   MatExpansionModule,
+  MatProgressSpinnerModule,
   CommonModule,
 ];
 

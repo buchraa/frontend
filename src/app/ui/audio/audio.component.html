@@ -8,7 +8,7 @@
           {{ file.name }}
         </mat-panel-title>
         <mat-panel-description>
-          by {{ file.artist }}
+           {{ file.artist }}
           <mat-icon color="primary" *ngIf="currentFile.index === i && !state?.error">volume_up</mat-icon>
           <h6 *ngIf="currentFile.index === i && state?.error">ERROR</h6>
         </mat-panel-description>

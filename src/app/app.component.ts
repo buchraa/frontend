@@ -19,7 +19,7 @@ export class AppComponent {
 
 
   public backClicked() {
-     this.location.back();  
+    window.location.replace(document.referrer)
   }
 
   

@@ -1,13 +1,13 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//import { CommonModule } from '@angular/common';
-import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FilterPipe} from './filter.pipe';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 import { AuthorManagerComponent } from './ui/author-manager/author-manager.component';
 import { AddAuthorComponent } from './ui/add-author/add-author.component';
@@ -42,7 +42,6 @@ import { OeuvreMouridismeComponent } from './ui/oeuvre-mouridisme/oeuvre-mouridi
 import { RechercheMouridismeComponent } from './ui/recherche-mouridisme/recherche-mouridisme.component';
 import { MediathequeMouridismeComponent } from './ui/mediatheque-mouridisme/mediatheque-mouridisme.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { SearchBarComponent } from './ui/search-bar/search-bar.component';
 import { SearchComponent } from './ui/search/search.component';
 import { ViewOeuvreComponent } from './ui/view-oeuvre/view-oeuvre.component';
 import { ViewCategoryComponent } from './ui/view-category/view-category.component';
@@ -55,6 +54,8 @@ import { PhotoComponent } from './ui/photo/photo.component';
 import { WebComponent } from './ui/web/web.component';
 import { HeaderComponent } from './ui/header/header.component';
 import { ModuleHeaderComponent } from './ui/module-header/module-header.component';
+import { LoaderComponent } from './ui/loader/loader.component';
+import { LoaderInterceptor } from './loader.interceptor';
 
 
 @NgModule({
@@ -89,7 +90,6 @@ import { ModuleHeaderComponent } from './ui/module-header/module-header.componen
     RechercheMouridismeComponent,
     MediathequeMouridismeComponent,
     NotFoundComponent,
-    SearchBarComponent,
     FilterPipe,
     SearchComponent,
     ViewOeuvreComponent,
@@ -100,14 +100,14 @@ import { ModuleHeaderComponent } from './ui/module-header/module-header.componen
     PhotoComponent,
     WebComponent,
     HeaderComponent,
-    ModuleHeaderComponent
+    ModuleHeaderComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    //CommonModule,
     HttpClientModule, 
     ReactiveFormsModule,  
     MaterialModule,
@@ -115,8 +115,10 @@ import { ModuleHeaderComponent } from './ui/module-header/module-header.componen
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
    
   ],
-  providers: [ {provide: HTTP_INTERCEPTORS,
-    useClass: AuthTokenInterceptor, multi: true,
+  providers: [
+    
+    {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true,
   }],
   bootstrap: [AppComponent],
 

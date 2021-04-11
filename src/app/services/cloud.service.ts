@@ -8,19 +8,24 @@ export class CloudService {
   files: any = [
     // tslint:disable-next-line: max-line-length
     {
-      url:"https://s3-us-west-2.amazonaws.com/anchor-audio-bank/staging/2020-02-19/d658d0c51440a105d3b5708ec5cbfea1.m4a",
-      name: "How to improve yourself",
-      artist: "Shibaji Debnath"
+      url:"/assets/audios/Hamdii-Wachoukrii-Cherif-ly.mp3",
+      name: "Hamdii-Wachoukrii",
+      artist: "Cherif-ly"
     },
     {
-      url:"https://s3-us-west-2.amazonaws.com/anchor-audio-bank/staging/2020-03-05/6295d331c4f0a5a77c54c391ee76aabf.m4a",
-      name:"You will be successfull. If you ask yourself 'Why'",
-      artist: "Shibaji Debnath",
+      url:"/assets/audios/Khassida-Faridj-Cherif-ly.mp3",
+      name:"Faridj",
+      artist: "Cherif-ly",
     },
     {
-      url:"https://s3-us-west-2.amazonaws.com/anchor-audio-bank/staging/2020-02-03/648e6a1cf78f0005ab9b127bd81e6bfc.m4a",
-      name: "Build your career as you think. Question youself 'How'",
-      artist: "Shibaji Debnath"
+      url:"/assets/audios/KHASSIDA-SAFAROU-BAMSACHIN-JUNATUN-Serigne-Abdou-Lahad-Touré.mp3",
+      name: "SAFAROU-BAMSACHIN-JUNATUN",
+      artist: "Serigne-Abdou-Lahad-Touré"
+    },
+    {
+      url:"/assets/audios/Yaxini-Kourel-1-Hizbut-Tarqqiyyah-Thies-Ramadan-2019-Jour-4.mp3",
+      name: "Yaxini",
+      artist: "Kourel-1-Hizbut-Tarqqiyyah-Thies"
     }
   ];
 
