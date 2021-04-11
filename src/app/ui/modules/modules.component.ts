@@ -21,7 +21,6 @@ export class ModulesComponent implements OnInit {
     this.api.getList('Modules').subscribe(
       (t) => {
         this.modules = t;
-        this.spinner.hide();
         console.log(this.modules);
        
       },
