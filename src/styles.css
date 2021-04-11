@@ -461,14 +461,13 @@ img {
 
   }
   #module_grid div {
-      margin: 1em 1em;
+      margin: 1em 2.5em;
       text-align: center;
   }
 
   .title {
     color: #fff;
     font-size: medium;
-    padding: 0 10px !important;
 }
 img {
     border: 5px solid  #558303;

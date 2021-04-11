@@ -22,7 +22,7 @@ export class MediathequeMouridismeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService, private spinner: NgxSpinnerService) { }
   
   ngOnInit(): void {
-    this.spinner.show();
+  
     this.api.getModule('Médiathèque du Mouridisme').subscribe(
       (t) => {
         this.module = t;
@@ -38,13 +38,19 @@ export class MediathequeMouridismeComponent implements OnInit {
     )
 
     this.api.getList('Categories').subscribe(
-      (t) => {
-        this.allCategories = t;       
-        for (var i = 0; i < this.allCategories.length; i++) {
-                  if(this.allCategories[i].module.moduleId == this.ObjetId){
-                 this.categories.push(this.allCategories[i]);          
+      (t) => {       
+        this.allCategories = t;         
+        setTimeout(() => {
+          for (var i = 0; i < this.allCategories.length; i++) {
+
+            if(this.allCategories[i].module.moduleId == this.ObjetId){
+              
+              this.categories.push(this.allCategories[i]);          
           }      
-      }
+          }
+        }, 2000);
+
+       
      
       console.log(this.categories);
       this.spinner.hide();
