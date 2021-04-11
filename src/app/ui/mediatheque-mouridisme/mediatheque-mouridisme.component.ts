@@ -22,6 +22,7 @@ export class MediathequeMouridismeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService, private spinner: NgxSpinnerService) { }
   
   ngOnInit(): void {
+    this.spinner.show();
     this.api.getModule('Médiathèque du Mouridisme').subscribe(
       (t) => {
         this.module = t;
@@ -46,6 +47,7 @@ export class MediathequeMouridismeComponent implements OnInit {
       }
      
       console.log(this.categories);
+      this.spinner.hide();
       },
       (error) => {
         
@@ -64,30 +66,18 @@ export class MediathequeMouridismeComponent implements OnInit {
     switch(object.name)
     {
       case "Vidéos":
-        this.router.navigate(["/mediatheque/video"])
-        .then(() => {
-          window.location.reload();
-        });
+        this.router.navigate(["/mediatheque/video"]);
       break;
 
       case "Photos":
-        this.router.navigate(["/mediatheque/photo"])
-        .then(() => {
-          window.location.reload();
-        });
+        this.router.navigate(["/mediatheque/photo"]);
         break;
       
       case "Audios":
-        this.router.navigate(["/mediatheque/audio"])
-        .then(() => {
-          window.location.reload();
-        });
+        this.router.navigate(["/mediatheque/audio"]);
         break;   
       case "Web":
-        this.router.navigate(["/mediatheque/web"])
-        .then(() => {
-          window.location.reload();
-        });
+        this.router.navigate(["/mediatheque/web"]);
         break;
       default:
         this.router.navigate(["/"]);  
