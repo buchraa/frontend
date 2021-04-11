@@ -39,7 +39,7 @@ export class LesEcritsComponent implements OnInit {
         this.allCategories = t; 
         setTimeout(() => {
           for (var i = 0; i < this.allCategories.length; i++) {
-            if(this.allCategories[i].module.moduleId = this.ObjetId){
+            if(this.allCategories[i].module.moduleId == this.ObjetId){
            this.categories.push(this.allCategories[i]);          
     }      
 }
