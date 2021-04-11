@@ -414,7 +414,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
     font-weight: 400;
   }
   #module_grid div {
-      margin: 2em 1em;
+      margin: 2em 0.2em;
       text-align: center;
       width: 8em; 
   }
@@ -461,8 +461,8 @@ img {
 
   }
   #module_grid div {
-      margin: 1em 2.5em;
-      text-align: center;
+      margin: 1em 2em;
+    
   }
 
   .title {
