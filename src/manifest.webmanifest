@@ -1,11 +1,16 @@
 {
-  "name": "biblioTech-front",
-  "short_name": "biblioTech-front",
+  "name": "Maktanatoul mouridiyah",
+  "short_name": "Maktanatoul mouridiyah",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "scope": ".",
+  "start_url": "/index.html",
+  "offline_enabled": true,
+  "description": "Maktanatoul mouridiyah",
+  "orientation": "any",
+  "related_applications": [],
+  "prefer_related_applications": false,  
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

@@ -38,22 +38,23 @@ export class MediathequeMouridismeComponent implements OnInit {
     )
 
     this.api.getList('Categories').subscribe(
-      (t) => {       
-        this.allCategories = t;   
-             
+      (t) => {
+
+       
+        this.allCategories = t; 
+        
         setTimeout(() => {
           for (var i = 0; i < this.allCategories.length; i++) {
 
             if(this.allCategories[i].module.moduleId == this.ObjetId){
-              
-              this.categories.push(this.allCategories[i]); 
-                     
-          }  
-            
-          }
-         
+              this.spinner.show();
+              this.categories.push(this.allCategories[i]);          
+    }      
+}
+  
         }, 2000);
-       
+        
+     
       console.log(this.categories);
       },
       (error) => {

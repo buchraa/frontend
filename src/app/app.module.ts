@@ -112,7 +112,7 @@ import { LoaderInterceptor } from './loader.interceptor';
     ReactiveFormsModule,  
     MaterialModule,
     NgxSpinnerModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: "registerImmediately" }),
    
   ],
   providers: [
