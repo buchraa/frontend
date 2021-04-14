@@ -22,7 +22,7 @@ export class Oeuvre {
     metriqueNom: string;
     modesLecture: string;
     nbVers: number;
-    pdfOeuvre: true;
+    isPdfOeuvre: true;
     periode: string;
     periodeDatation: string;
     premierVers: string;

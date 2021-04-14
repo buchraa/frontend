@@ -32,6 +32,10 @@ get(url: string, uuId: string): Observable<any> {
   return this.http.get(`${baseUrl}/${url}/${uuId}`);
 }
 
+getOeuvre(uuId: string): Observable<any> {
+  return this.http.get(`${baseUrl}/Oeuvre/ByTitre/${uuId}`);
+}
+
 getModule(uuId: string): Observable<any> {
   return this.http.get(`${baseUrl}/Module/ByName/${uuId}`);
 }

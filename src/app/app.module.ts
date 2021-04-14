@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FilterPipe} from './filter.pipe';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import * as $ from "jquery";
 
 
@@ -58,6 +58,7 @@ import { HeaderComponent } from './ui/header/header.component';
 import { ModuleHeaderComponent } from './ui/module-header/module-header.component';
 import { LoaderComponent } from './ui/loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
+import { DialogContentPdfComponent } from './ui/dialog-content-pdf/dialog-content-pdf.component';
 
 
 @NgModule({
@@ -103,11 +104,11 @@ import { LoaderInterceptor } from './loader.interceptor';
     WebComponent,
     HeaderComponent,
     ModuleHeaderComponent,
-    LoaderComponent
+    LoaderComponent,
+    DialogContentPdfComponent
   ],
   imports: [
     BrowserModule,
-    PdfViewerModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -115,6 +116,7 @@ import { LoaderInterceptor } from './loader.interceptor';
     ReactiveFormsModule,  
     MaterialModule,
     NgxSpinnerModule,
+    NgxExtendedPdfViewerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: "registerImmediately" }),
    
   ],
