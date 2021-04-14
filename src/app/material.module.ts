@@ -14,6 +14,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const modules = [
   MatButtonModule,
@@ -32,6 +33,7 @@ const modules = [
   MatTabsModule,
   MatExpansionModule,
   MatProgressSpinnerModule,
+  MatDialogModule,
   CommonModule,
 ];
 

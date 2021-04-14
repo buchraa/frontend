@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Location} from '@angular/common';
 import { Router } from '@angular/router';
-
+declare let $: any;
 
 @Component({
   selector: 'app-root',

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { VersTraduction } from 'src/app/model/verTraduction.model';
 import { ApiService } from 'src/app/services/api.service';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-view-traduction',
@@ -73,6 +74,8 @@ export class ViewTraductionComponent implements OnInit {
 
   }
 
+  
  
+  
 
 }

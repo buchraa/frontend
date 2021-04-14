@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-view-category',
@@ -18,7 +19,7 @@ export class ViewCategoryComponent implements OnInit {
   oeuvres=[];
   searchText: string;
 
-  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
+  constructor(public dialog: MatDialog, private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
   ngOnInit(): void {
     this.api.getList('oeuvres').subscribe(
@@ -75,4 +76,8 @@ export class ViewCategoryComponent implements OnInit {
     else return false 
   }
 
+
+
 }
+
+

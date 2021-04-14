@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FilterPipe} from './filter.pipe';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import * as $ from "jquery";
 
 
 import { AuthorManagerComponent } from './ui/author-manager/author-manager.component';
@@ -105,6 +107,7 @@ import { LoaderInterceptor } from './loader.interceptor';
   ],
   imports: [
     BrowserModule,
+    PdfViewerModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

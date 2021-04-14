@@ -91,15 +91,12 @@
        margin: 5px 10px;
    }
 
-   .collection span {
-    position: absolute;
-    right: 2% !important;
-   }
 
 
    .collection .collection-item.active {
     background-color: #558303 !important;
    }
+   
  .panel {
      margin: 1em 2em;
      padding: 1em 0.5em;
@@ -110,11 +107,16 @@
 
 
 li {counter-increment: li;}
- div.collection {
-   margin: 1em 0.5em;
-   border-radius: 0.7em;
-   border: none !important;
- }
+
+div.collection {
+  margin: 1em 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 0.7em;
+  padding: 0.1em 0.2em;
+
+}
 
  div.meta {
   margin: 0.5em 0.5em;

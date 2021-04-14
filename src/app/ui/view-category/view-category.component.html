@@ -10,7 +10,7 @@
 </div>
 
 <div *ngFor="let oeuvre of oeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
-  <p   (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }} <span (click)="goDetails(oeuvre)" > {{ oeuvre.titre }} </span> </p>
+  <p   (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre.slice(0, 27) }}</p> <span (click)="goDetails(oeuvre)" > {{ oeuvre.titre }} </span> 
 </div>
 
 <app-loader></app-loader>
