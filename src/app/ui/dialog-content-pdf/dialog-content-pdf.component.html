@@ -1,0 +1,14 @@
+
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">{{ titre }}</h1>
+    </header>
+    <section id="modal-body">
+       <ngx-extended-pdf-viewer [src]="this.pdfUrl" useBrowserLocale="true" textLayer="true" height="80vh"></ngx-extended-pdf-viewer>
+    </section>
+    <footer id="modal-footer">
+        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">Fermerr</button>
+    </footer>
+</div>
+
+

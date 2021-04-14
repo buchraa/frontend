@@ -12,22 +12,19 @@
     <p class="collection-item active">{{ object.titreOeuvre }}<span>{{ object.titre }}</span></p>
 </div>
 <div class="meta">
-  <p class="collection-item active">Thèmes: {{ object.themePrincipal?.name }} - Nombre de vers: {{ object.nbVers }} - Datation: {{ object.periode }}</p>
-  
+  <p class="collection-item active">Thèmes: {{ object.themePrincipal?.name }} - Nombre de vers: {{ object.nbVers }} - Datation: {{ object.periode }}</p>  
 </div>
 
    
           <div id="meta"><a><span class="material-icons">volume_up</span></a>
           <a><span class="material-icons">play_arrow</span></a>
-          <a><span class="material-icons">picture_as_pdf</span></a>
-          <a [href]="object.urlOeuvre"><span class="material-icons">public</span></a>
+          <a *ngIf="object.isPdfOeuvre" (click)="openModal()"><span class="material-icons">picture_as_pdf</span></a>
+          <a href="#"><span class="material-icons">public</span></a>
           <a><span class="material-icons">description</span></a></div>
 
           <div class="panel">
               <ul >
                   <li *ngFor="let ver of vers">{{ ver.texteVersAR1 }} </li>                       
-              </ul>
-                 
-
+              </ul>              
           </div>
-         
+       

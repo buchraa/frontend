@@ -3,6 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { VersTraduction } from 'src/app/model/verTraduction.model';
 import { ApiService } from 'src/app/services/api.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogContentPdfComponent } from '../dialog-content-pdf/dialog-content-pdf.component';
+
 
 @Component({
   selector: 'app-view-oeuvre',
@@ -18,8 +21,11 @@ export class ViewOeuvreComponent implements OnInit {
   allVers=[];
   vers=[];
   searchText: string;
-
-  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
+  pdfUrl = "/assets/images/anta_rabbii.pdf";
+  titreOeuvre = "Titre Oeuvre"
+  constructor(public matDialog: MatDialog, private router: Router, private route: ActivatedRoute, public api: ApiService) {
+    //pdfDefaultOptions.assetsFolder = 'bleeding-edge';
+   }
 
 
   ngOnInit(): void {
@@ -56,6 +62,9 @@ export class ViewOeuvreComponent implements OnInit {
               this.api.getById('Oeuvre', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                // get the pdfUrl and the Title
+                //this.pdfUrl = this.object.urlOeuvre;
+                //this.titreOeuvre = this.object.titreOeuvre;
                 console.log(this.object);                
               });
             }
@@ -73,6 +82,17 @@ export class ViewOeuvreComponent implements OnInit {
 
   }
 
- 
+  openModal() {
+    const dialogConfig = new MatDialogConfig();
+    // user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "100%";
+    dialogConfig.width = "100%";
+    //passing data to modal component
+    dialogConfig.data = { pdfUrl : this.pdfUrl, titre: this.titreOeuvre }
+    const modalDialog = this.matDialog.open(DialogContentPdfComponent, dialogConfig);
+    
+  }
 
 }
