@@ -22,3 +22,8 @@
 #modal-cancel-button {
     background-color: #4e4e4e;
 }
+
+.cdk-overlay-pane, .mat-dialog-container {
+    min-width: 100vw !important;
+}
+
