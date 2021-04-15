@@ -18,26 +18,11 @@ export class MainMenuComponent implements OnInit {
   modules = [];
   admin: boolean;
 
-  constructor(private router: Router, private api: ApiService, private auth: AuthService, private location: Location) { }
+  constructor() { }
 
   ngOnInit(): void {
 
 
-    this.api.getList('Modules').subscribe(
-      (t) => {
-        this.modules = t;
-        console.log(this.modules);
-       
-      },
-      (error) => {
-        
-       console.log(error);
-     }
-
-    )
-  }
-  backClicked() {
-    this.location.back();
   }
 
 
