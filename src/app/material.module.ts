@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, TemplateRef, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSliderModule } from '@angular/material/slider';
@@ -14,7 +14,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 const modules = [
   MatButtonModule,
@@ -34,7 +35,9 @@ const modules = [
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatDialogModule,
+  MatBottomSheetModule,
   CommonModule,
+  
 ];
 
 

@@ -1,0 +1,18 @@
+<mat-toolbar *ngIf="data.mobileType === 'android'" color="primary" class="android-prompt">
+    <button mat-button (click)="installPwa()">
+      Ajouter à l'écran d'accueil
+    </button>
+    <button mat-icon-button (click)="close()">
+      <mat-icon>Fermer</mat-icon>
+    </button>
+</mat-toolbar>
+  
+  <div *ngIf="data.mobileType === 'ios'" class="ios-prompt">
+    <button class="close-ios-inv" mat-button color="primary" (click)="close()"><mat-icon>close</mat-icon></button>
+    <div>Pour installer l'application sur votre mobile, appuyez sur le Menu et ensuite 'Ajouter à l'écran d'accueil'</div>
+    <div>
+        <mat-icon>ios_share</mat-icon>
+        <mat-icon>navigate_next</mat-icon> 
+        <mat-icon>add_box</mat-icon>
+    </div>
+  </div>

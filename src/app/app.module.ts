@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FilterPipe} from './filter.pipe';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { PwaService } from './services/pwa.service';
 import * as $ from "jquery";
 
 
@@ -59,6 +60,10 @@ import { ModuleHeaderComponent } from './ui/module-header/module-header.componen
 import { LoaderComponent } from './ui/loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
 import { DialogContentPdfComponent } from './ui/dialog-content-pdf/dialog-content-pdf.component';
+import { AddToScreenComponentComponent } from './ui/add-to-screen-component/add-to-screen-component.component';
+
+
+const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
 
 @NgModule({
@@ -105,7 +110,8 @@ import { DialogContentPdfComponent } from './ui/dialog-content-pdf/dialog-conten
     HeaderComponent,
     ModuleHeaderComponent,
     LoaderComponent,
-    DialogContentPdfComponent
+    DialogContentPdfComponent,
+    AddToScreenComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -120,11 +126,14 @@ import { DialogContentPdfComponent } from './ui/dialog-content-pdf/dialog-conten
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: "registerImmediately" }),
    
   ],
+
+
   providers: [
     
     {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-    {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true,
-  }],
+    {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
+    {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true}
+   ],
   bootstrap: [AppComponent],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
