@@ -30,9 +30,7 @@
   <script>
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/ngsw-worker.js', {
-        scope: '/' // <--- THIS BIT IS REQUIRED
-    }).then(function(registration) {
+    navigator.serviceWorker.register('/ngsw-worker.js').then(function(registration) {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
