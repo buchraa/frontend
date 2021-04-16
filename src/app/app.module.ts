@@ -123,12 +123,10 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     MaterialModule,
     NgxSpinnerModule,
     NgxExtendedPdfViewerModule,
-    ServiceWorkerModule.register('./ngsw-worker.js'),
-    //ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: "registerImmediately" }),   
+    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),   
   ],
 
   providers: [
-    {provide: SwRegistrationOptions, useFactory: () => ({ enabled: environment.production })},
     {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
     {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true}

@@ -14,7 +14,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
     navigator.serviceWorker.register('./ngsw-worker.js');
   }
 })
-  .catch(err => console.error(err));
+.catch(err => console.error(err));
 
   
  
