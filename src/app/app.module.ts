@@ -34,7 +34,7 @@ import { AddVerComponent } from './ui/add-ver/add-ver.component';
 import { VersManageComponent } from './ui/vers-manage/vers-manage.component';
 import { MenuComponent } from './ui/menu/menu.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule, SwRegistrationOptions } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 
@@ -123,12 +123,12 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     MaterialModule,
     NgxSpinnerModule,
     NgxExtendedPdfViewerModule,
-    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately'}),
-   
+    ServiceWorkerModule.register('ngsw-worker.js'),
+    //ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: "registerImmediately" }),   
   ],
-
-
-  providers: [    
+  
+  providers: [
+    {provide: SwRegistrationOptions, useFactory: () => ({ enabled: environment.production })},
     {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
     {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true}
