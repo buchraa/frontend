@@ -17,11 +17,18 @@ export class AppComponent {
   title = 'biblioTech-front';
   url = this.router.url;
   viewBack = this.router.url.includes("Accueil");
+  routes = ["/", "/Accueil", "/Admin"]
 
-
-  public backClicked() {
-    window.location.replace(document.referrer)
+  public backClicked(): void {
+    this.location.back()
+  }
+  
+  public getRoute(){
+    if(this.routes.indexOf(this.router.url) == -1 ) {
+      return true;
   }
 
+    return false
+  }
   
 }
