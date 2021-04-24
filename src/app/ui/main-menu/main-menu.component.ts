@@ -18,11 +18,16 @@ export class MainMenuComponent implements OnInit {
   modules = [];
   admin: boolean;
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
 
 
+  }
+
+  logout() {
+    this.auth.deleteToken();
+    window.location.reload();
   }
 
 

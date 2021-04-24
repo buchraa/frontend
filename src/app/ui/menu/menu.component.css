@@ -38,7 +38,7 @@ header {
   #logo-Atypik-mobile {
     display: none;
   }
-  #main-nav {
+  #guest-nav {
     
     width: 40%;
     height: 100%;
@@ -54,7 +54,7 @@ header {
             align-items: center;
     text-align: center;
   }
-  #main-nav a {
+  #guest-nav a {
     display: block;
     margin: 0;
     padding: 2px;
@@ -67,11 +67,11 @@ header {
     position: relative;
   
   }
-  #main-nav a:hover {
+  #guest-nav a:hover {
     color: #fff;
     position: relative;
   }
-  #main-nav a:after {
+  #guest-nav a:after {
    content:"";
    position: absolute;
    display:block;
@@ -84,7 +84,7 @@ header {
    -o-transition:width ease 1s;
    transition:width ease 1s;
   }
-  #main-nav a:hover:after {
+  #guest-nav a:hover:after {
     width:100%;
     -webkit-transition:width ease 1s;
     -o-transition:width ease 1s;

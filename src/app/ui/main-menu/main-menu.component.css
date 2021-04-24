@@ -21,3 +21,16 @@ nav.mat-tab-nav-bar.mat-tab-header.mat-primary {
     border-bottom: none !important;
 }
 
+#logout{
+    position: absolute !important;
+    right: 0% !important;
+    top: 2% !important;
+}
+
+@media only screen and (min-width: 1000px) {
+    #logout{
+    position: absolute !important;
+    right: 20vw !important;
+    top: 2% !important; }
+}
+

@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
+    console.log(this.auth.getRole())
   }
 
 }
