@@ -25,10 +25,6 @@ export class MainMenuComponent implements OnInit {
 
   }
 
-  logout() {
-    this.auth.deleteToken();
-    window.location.reload();
-  }
 
 
 }

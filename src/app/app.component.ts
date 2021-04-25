@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Location} from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 declare let $: any;
 
 @Component({
@@ -12,17 +13,18 @@ export class AppComponent {
 
   
 
-  constructor(public location: Location, public router: Router) { }
+  constructor(public location: Location, public router: Router, private authenticationService: AuthService) { }
 
   title = 'biblioTech-front';
   url = this.router.url;
   viewBack = this.router.url.includes("Accueil");
-  routes = ["/", "/Accueil", "/Admin"]
+  routes = ["/", "/Accueil", "/Admin"];
+  logged = this.authenticationService.hasToken();
 
   public backClicked(): void {
     this.location.back()
   }
-  
+
   public getRoute(){
     if(this.routes.indexOf(this.router.url) == -1 ) {
       return true;

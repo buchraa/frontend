@@ -3,10 +3,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 
 import { AuthService } from '../services/auth.service';
 @Injectable({providedIn: 'root'})
-export class ConnectedGuard implements CanActivate {
-
-
-    role="ROLE_USER";
+export class GuestConnectedGuard implements CanActivate {
 
     constructor(
         private router: Router,
@@ -14,10 +11,9 @@ export class ConnectedGuard implements CanActivate {
     ) { }
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        
-        if ((this.authenticationService.hasToken()) && (this.authenticationService.getRole() != this.role) ) {
+        if (this.authenticationService.hasToken()) {
           return true;
         }
-        this.router.navigate(['/login']);
+        this.router.navigate(['/guest-login']);
     }
 }

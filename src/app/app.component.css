@@ -17,8 +17,12 @@
     background-image:url('src/assets/images/Bgrnd_1080_1920.png');
 }
 
+
+
 @media only screen and (max-width: 767px) {
-  
+  #guest-nav{
+    width: 100% !important;
+  }
     .image {     
       margin: 0 auto !important;
       max-width: 1000px;
@@ -31,4 +35,60 @@
     }
   }
 
+  nav #guest-nav {
+    background-color: rgba(0, 0, 255, 0) !important
+  }
+
+  #guest-nav {    
+    width: 40%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #guest-nav a {
+    display: block;
+    margin: 0;
+    padding: 2px;
+    background-color: rgba(232, 167, 32, 0);
+    width: 20%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 2px;
+    color: #fff;
+    position: relative;
+  
+  }
+  #guest-nav a:hover {
+    color: #fff;
+    position: relative;
+  }
+  #guest-nav a:after {
+   content:"";
+   position: absolute;
+   display:block;
+   bottom:-5px;
+   left:0;
+   height:1px;
+   width:0%;
+   background-color:goldenrod;
+   -webkit-transition:width ease 1s;
+   -o-transition:width ease 1s;
+   transition:width ease 1s;
+  }
+  #guest-nav a:hover:after {
+    width:100%;
+    -webkit-transition:width ease 1s;
+    -o-transition:width ease 1s;
+    transition:width ease 1s; 
+  
+  }
  

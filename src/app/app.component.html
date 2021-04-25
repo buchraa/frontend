@@ -1,7 +1,15 @@
 <div class="image">
     <a *ngIf="getRoute()" (click)=" backClicked()"><span id="backClicked" class="material-icons">keyboard_backspace
         </span></a>
+    <ng-container *ngIf="logged">    
     <app-main-menu></app-main-menu>
+    </ng-container>
+    <nav  id="guest-nav">
+    <ng-container *ngIf="!logged">
+        <a [routerLink]="['/guest-register']" alt="S'inscrire" title="S'inscrire">Sign-up</a>
+        <a [routerLink]="['/guest-login']" alt="Se connecter" title="Se connecter">Login</a>
+    </ng-container>
+    </nav>
     <app-loader></app-loader>  
     <router-outlet></router-outlet>
 </div>

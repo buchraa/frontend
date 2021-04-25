@@ -577,3 +577,7 @@ mat-accordion {
   min-height: 100vw;
   max-height: inherit;
 }
+
+nav#guest-nav {
+  background-color: rgba(0, 0, 255, 0) !important
+}

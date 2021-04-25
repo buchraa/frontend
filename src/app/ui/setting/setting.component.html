@@ -1,0 +1,21 @@
+
+<mat-list>
+    <div mat-subheader>Mon compte</div>
+    <mat-list-item>
+      <mat-icon mat-list-icon>note</mat-icon>
+      <div mat-line>
+          <a>Modifier mes informations</a>
+      </div>
+      <div mat-line></div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <div mat-subheader>Paramètres</div>
+    <mat-list-item >
+        <mat-icon mat-list-icon>power_settings_new</mat-icon>
+        <div mat-line>
+            <a (click)="logout()" alt="Se déconnecter" title="Déconnection">Log-out</a> 
+        </div>
+      <div mat-line></div>
+    </mat-list-item>    
+  </mat-list>

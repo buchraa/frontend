@@ -38,12 +38,18 @@ import { AudioComponent } from './ui/audio/audio.component';
 import { VideoComponent } from './ui/video/video.component';
 import { PhotoComponent } from './ui/photo/photo.component';
 import { WebComponent } from './ui/web/web.component';
+import { GuestLoginComponent } from './ui/guest-login/guest-login.component';
+import { GuestRegisterComponent } from './ui/guest-register/guest-register.component';
+import { GuestConnectedGuard } from './guard/guestConnected.guard';
+import { SettingComponent } from './ui/setting/setting.component';
 
 
 
 const routes: Routes = [
   { path: '', component:HomePageComponent},
   { path: 'login', component:LoginComponent},
+  { path: 'guest-login', component:GuestLoginComponent},
+  { path: 'guest-register', component:GuestRegisterComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
   { path: 'chapter-manage', component:ChapterManagerComponent},
@@ -67,15 +73,15 @@ const routes: Routes = [
   { path: 'add-ver', component:AddVerComponent},
   { path: 'signup',  component:SignupComponent},
   { path: 'Accueil', component:HomePageComponent},
-  { path: 'Modules', component:ModulesComponent},
-  { path: 'Paramètres', component:HomePageComponent},
-  { path: 'Plus', component:HomePageComponent},
+  { path: 'Modules', canActivate:[GuestConnectedGuard], component:ModulesComponent},
+  { path: 'Paramètres', canActivate:[GuestConnectedGuard], component:SettingComponent},
+  { path: 'Plus', canActivate:[GuestConnectedGuard], component:HomePageComponent},
   { path: 'view-category/:id', component:ViewCategoryComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'view-module/:id', component:ViewModuleComponent},
   { path: 'view-oeuvre/:id', component:ViewOeuvreComponent},
   { path: 'view-traduction/:id', component:ViewTraductionComponent},
-  { path: 'Recherche', component:SearchComponent},
+  { path: 'Recherche', canActivate:[GuestConnectedGuard], component:SearchComponent},
   { path: 'Modules/ecrit-mouridisme', component:LesEcritsComponent},
   { path: 'Modules/oeuvre-mouridisme', component:OeuvreMouridismeComponent},
   { path: 'Modules/recherche-mouridisme', component:RechercheMouridismeComponent},

@@ -61,6 +61,9 @@ import { LoaderComponent } from './ui/loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
 import { DialogContentPdfComponent } from './ui/dialog-content-pdf/dialog-content-pdf.component';
 import { AddToScreenComponentComponent } from './ui/add-to-screen-component/add-to-screen-component.component';
+import { GuestRegisterComponent } from './ui/guest-register/guest-register.component';
+import { GuestLoginComponent } from './ui/guest-login/guest-login.component';
+import { SettingComponent } from './ui/setting/setting.component';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -111,7 +114,10 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     ModuleHeaderComponent,
     LoaderComponent,
     DialogContentPdfComponent,
-    AddToScreenComponentComponent
+    AddToScreenComponentComponent,
+    GuestRegisterComponent,
+    GuestLoginComponent,
+    SettingComponent,
   ],
   imports: [
     BrowserModule,

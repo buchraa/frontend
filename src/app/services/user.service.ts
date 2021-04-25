@@ -27,7 +27,7 @@ export class UserService {
     }
 
     public getUserCurrent(): Observable<User> {
-      return this.http.get<User>(API_URL + '/user/current');
+      return this.http.get<User>(API_URL + '/api/auth/user/current');
     }
 
     public postUser(user:User): Observable<User> {
