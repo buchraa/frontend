@@ -42,6 +42,7 @@ import { GuestLoginComponent } from './ui/guest-login/guest-login.component';
 import { GuestRegisterComponent } from './ui/guest-register/guest-register.component';
 import { GuestConnectedGuard } from './guard/guestConnected.guard';
 import { SettingComponent } from './ui/setting/setting.component';
+import { EditUserComponent } from './ui/edit-user/edit-user.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'guest-login', component:GuestLoginComponent},
   { path: 'guest-register', component:GuestRegisterComponent},
+  { path: 'compte', component:EditUserComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
   { path: 'chapter-manage', component:ChapterManagerComponent},

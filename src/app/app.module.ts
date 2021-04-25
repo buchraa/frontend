@@ -64,6 +64,7 @@ import { AddToScreenComponentComponent } from './ui/add-to-screen-component/add-
 import { GuestRegisterComponent } from './ui/guest-register/guest-register.component';
 import { GuestLoginComponent } from './ui/guest-login/guest-login.component';
 import { SettingComponent } from './ui/setting/setting.component';
+import { EditUserComponent } from './ui/edit-user/edit-user.component';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -118,6 +119,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     GuestRegisterComponent,
     GuestLoginComponent,
     SettingComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

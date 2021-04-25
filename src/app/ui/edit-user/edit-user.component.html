@@ -1,0 +1,27 @@
+<section id="signupSection">
+    <div class="container">
+      <div id="FormErrors">
+          <ng-container *ngIf="this.errors !== undefined" >
+              <p *ngFor="let message of this.errors">{{message}}</p>
+          </ng-container>
+      </div>
+
+        <div class="container-title">
+            <h2>S&rsquo;inscrire</h2>
+            <a [routerLink]="['/login']" alt="Se connecter" title="Connexion">ou se connecter</a>
+        </div>
+        <form id="signupForm">
+            <label for="username"><b>Identifiant</b></label>
+            <input type="text" id="username" placeholder="ex : toto28" name="username"  [(ngModel)]="user.username" required>
+            <label for="first"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Enter Password" id="first" name="first" [(ngModel)]="user.password" required>            
+            <label for="email"><b>Email</b></label>
+            <input type="text" id="email" placeholder="ex : saitama@heroassociation.gov" name="email" [(ngModel)]="user.email" required>               
+               
+            <button type="submit" (click)="signUp()">Inscription</button>
+           
+        </form>
+        
+    </div>
+
+</section>

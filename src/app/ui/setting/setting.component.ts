@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
@@ -12,9 +13,10 @@ export class SettingComponent implements OnInit {
  user: User;
 
 
-  constructor(public auth: AuthService, public userServie: UserService) { }
+  constructor(private router: Router, public auth: AuthService, public userServie: UserService) { }
 
   ngOnInit(): void {
+    this.user = new User();
     this.userServie.getUserCurrent().subscribe(
       t => {
         this.user = t;
