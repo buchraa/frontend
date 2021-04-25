@@ -5,3 +5,9 @@ mat-list {
 a, a:hover, a:active {
     color: #000;
 }
+
+@media only screen and (max-width: 767px){
+    mat-list div {
+        font-size: 12px !important;
+    } 
+}
