@@ -12,10 +12,10 @@
         </div>
         <form id="loginForm">
             <label for="username"><strong>Identifiant</strong></label>
-            <input type="text" id="username" placeholder="ex : toto28" name="email" [(ngModel)]="credentials.username" required>
+            <input type="text" id="username" placeholder="ex : serigne28" name="username" [(ngModel)]="credentials.username" required>
 
             <label for="psw"><strong>Mot de passe</strong></label>
-            <input type="password" placeholder="Enter Password" id="psw" name="psw" [(ngModel)]="credentials.password" required>
+            <input type="password" placeholder="Entrer mot de passe" id="psw" name="psw" [(ngModel)]="credentials.password" required>
 
             <button type="submit" (click)="login()">Connexion</button>
             <button type="submit" (click)="register()">Créer un compte</button>
