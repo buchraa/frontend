@@ -132,7 +132,7 @@ export class AudioService {
   }
 
   stop() {
-    this.stop$.next();
+    this.audioObj.pause();
   }
 
   seekTo(seconds) {

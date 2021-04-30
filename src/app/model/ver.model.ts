@@ -9,6 +9,7 @@ chapitreId: number;
 typeVers: string;
 numVers: number;
 refVersNote : number;
+audioVers: string;
 texteVersAR1: string;
 texteVersAR2: string;
 texteVersAR3: string;

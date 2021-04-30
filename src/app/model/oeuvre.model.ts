@@ -8,6 +8,8 @@ export class Oeuvre {
     oeuvreId: number;
     authenticite_degre: string;
     avantages: string;
+    videoOeuvre: string;
+    audioOeuvre: string;
     formeRques: string;
     periodeLieu: string;
     periodeRques: string;

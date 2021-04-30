@@ -17,10 +17,17 @@
           </div>
           <div class="addEstateLine">
             <div class="addEstateItem"><label for="refVersNote">Référence</label>
-              <input id="refVersNote" name="refVersNote" type="number" [(ngModel)]="object.refVersNote" required #refVersNote="ngModel">
-              
+              <input id="refVersNote" name="refVersNote" type="number" [(ngModel)]="object.refVersNote" required #refVersNote="ngModel">              
             </div>  
           </div>
+
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="audioVers">URL Audio</label>
+              <input id="audioVers" name="audioVers" type="text" [(ngModel)]="object.audioVers" required #audioVers="ngModel"
+              ng-minlength="25" maxlength="255">              
+            </div>  
+          </div>
+
           <div class="addEstateLine">
             <div class="addEstateItem"><label for="texteVersAR1">texteVersAR1</label>
               <input id="texteVersAR1" name="texteVersAR1" type="text" [(ngModel)]="object.texteVersAR1" required #texteVersAR1="ngModel"

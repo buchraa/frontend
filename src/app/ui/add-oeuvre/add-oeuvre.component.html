@@ -12,9 +12,22 @@
                   ng-minlength="25" maxlength="255">
               </div> 
           </div>
+
+           <!-- media url  -->
+
+           <div class="addEstateLine">
+            <div class="addEstateItem"><label for="videoOeuvre">URL Vidéo</label>
+              <input id="videoOeuvre" name="videoOeuvre" type="text" [(ngModel)]="object.videoOeuvre" required #videoOeuvre="ngModel"
+                ng-minlength="25" maxlength="512">
+            </div>  
+             <div class="addEstateItem"><label for="audioOeuvre">URL Audio</label>
+              <input id="audioOeuvre" name="audioOeuvre" type="text" [(ngModel)]="object.audioOeuvre" required #audioOeuvre="ngModel"
+                ng-minlength="25" maxlength="512">
+            </div>  
+          </div>
         
           <div class="addEstateLine">
-            <div class="addEstateItem"><label for="urlOeuvre">URL</label>
+            <div class="addEstateItem"><label for="urlOeuvre">URL PDF</label>
               <input id="urlOeuvre" name="urlOeuvre" type="text" [(ngModel)]="object.urlOeuvre" required #urlOeuvre="ngModel"
                 ng-minlength="25" maxlength="255">
             </div>  
@@ -23,6 +36,8 @@
                   ng-minlength="25" maxlength="255">
               </div> 
           </div>
+
+                
          
           <div class="addEstateLine">
             <div class="addEstateItem"><label for="presentation">presentation</label>

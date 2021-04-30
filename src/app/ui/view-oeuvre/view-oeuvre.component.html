@@ -16,11 +16,43 @@
 </div>
 
    
-          <div id="meta"><a><span class="material-icons">volume_up</span></a>
-          <a><span class="material-icons">play_arrow</span></a>
+          <div id="meta">
+          
+          <a *ngIf="!state?.playing" (click)="openFile(file)"><span class="material-icons">play_arrow</span></a>
+          <a *ngIf="state?.playing" (click)="stop()"><span class="material-icons">stop</span></a>
           <a *ngIf="object.isPdfOeuvre" (click)="openModal()"><span class="material-icons">picture_as_pdf</span></a>
           <a href="#"><span class="material-icons">public</span></a>
-          <a><span class="material-icons">description</span></a></div>
+          <!--<a><span class="material-icons">volume_up</span></a>
+          <a><span class="material-icons">description</span></a>-->
+        </div>
+
+        <!--
+            READ AUDIO
+        -->
+
+          <div class="media-footer" *ngIf="played">
+            <mat-toolbar color="primary">
+              <mat-toolbar-row>
+                 {{ state?.readableCurrentTime }}
+                 <mat-slider class="time-slider" min="0" [max]="state?.duration" step="1" [value]="state?.currentTime" (input)="onSliderChangeEnd($event)" [disabled]="state?.error || currentFile.index === undefined"></mat-slider>
+                 {{ state?.readableDuration }}
+              </mat-toolbar-row>
+              <mat-toolbar-row class="media-action-bar">
+               
+                <button mat-button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing">
+                  <mat-icon mat-list-icon>play_circle_filled</mat-icon>
+                </button>
+                <button mat-button (click)="pause()" >
+                  <mat-icon mat-list-icon>pause</mat-icon>
+                </button>
+                <span class="spacer"></span>
+            <mat-icon>volume_up</mat-icon>
+            <mat-slider class="time-slider" min="0" max="1" step="0.01" [value]="state?.volume" (input)="onVolumeChange($event)"></mat-slider>
+              </mat-toolbar-row>
+            </mat-toolbar>
+          </div>
+        <mat-divider></mat-divider>
+ 
 
           <div class="panel">
               <ul >
