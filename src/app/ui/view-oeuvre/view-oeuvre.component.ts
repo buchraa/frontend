@@ -114,17 +114,6 @@ export class ViewOeuvreComponent implements OnInit {
     
   }
 
-toggle(){
-
-}
-
-  playSound(){
-    var audio = new Audio("/assets/audios/Hamdii-Wachoukrii-Cherif-ly.mp3");
-    audio.play();
-  }
-
-
-
   playStream(url) {
     this.audioService.playStream(url).subscribe(events => {
       // listening for fun here
@@ -132,9 +121,13 @@ toggle(){
 }
 
 openFile(file) {  
-  this.played = !this.played;
  this.playStream(file);
 }
+
+
+readVers(file) {  
+  this.playStream(file);
+ }
 
 pause() {
   this.audioService.pause();
@@ -156,6 +149,14 @@ onSliderChangeEnd(change) {
 
 onVolumeChange(change) {
   this.audioService.setVolume(change.value);
+}
+
+playVideo(){
+  this.played = !this.played;
+}
+
+closeModal() {
+  this.played = false;
 }
 
 }

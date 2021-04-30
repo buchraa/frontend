@@ -146,3 +146,20 @@ li {
 
 }
 
+p {
+  text-align: center !important;
+  max-width: 95vw !important;
+}
+iframe {
+  max-width: 96vw !important;
+  margin: 1vh 2vw !important;
+  text-align: center !important;
+
+}
+
+
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+}
+

@@ -21,16 +21,14 @@
           <a *ngIf="!state?.playing" (click)="openFile(file)"><span class="material-icons">play_arrow</span></a>
           <a *ngIf="state?.playing" (click)="stop()"><span class="material-icons">stop</span></a>
           <a *ngIf="object.isPdfOeuvre" (click)="openModal()"><span class="material-icons">picture_as_pdf</span></a>
-          <a href="#"><span class="material-icons">public</span></a>
+          <a  (click)="playVideo()"><span class="material-icons">public</span></a>
           <!--<a><span class="material-icons">volume_up</span></a>
           <a><span class="material-icons">description</span></a>-->
         </div>
 
-        <!--
-            READ AUDIO
-        -->
+        <!--  READ AUDIO -->
 
-          <div class="media-footer" *ngIf="played">
+          <div class="media-footer" *ngIf="state?.playing">
             <mat-toolbar color="primary">
               <mat-toolbar-row>
                  {{ state?.readableCurrentTime }}
@@ -52,11 +50,23 @@
             </mat-toolbar>
           </div>
         <mat-divider></mat-divider>
- 
 
+        <!-- READ VIDEO -->
+ 
+        <p *ngIf="played">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/vxF-4kncdNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+          <span id="modal-footer">
+            <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">Fermer</button>
+          </span>
+        </p>
+
+
+
+        <!-- list vers -->
           <div class="panel">
               <ul >
-                  <li *ngFor="let ver of vers">{{ ver.texteVersAR1 }} </li>                       
+                  <li *ngFor="let ver of vers">{{ ver.texteVersAR1 }}</li>                       
               </ul>              
           </div>
        
