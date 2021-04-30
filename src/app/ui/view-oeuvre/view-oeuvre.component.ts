@@ -28,7 +28,7 @@ export class ViewOeuvreComponent implements OnInit {
   audio: string;
   pdfUrl = "/assets/images/anta_rabbii.pdf";
   titreOeuvre = "Titre Oeuvre"
-
+  videoSrc: string;
   file= "/assets/audios/Hamdii-Wachoukrii-Cherif-ly.mp3";
   state: StreamState;
   currentFile: any = {};
@@ -80,7 +80,9 @@ export class ViewOeuvreComponent implements OnInit {
                 response => {
                 this.object = response;
                 //get the audioUrl
-                //this.audio = this.object.audioOeuvre;
+                //this.file = this.object.audioOeuvre;
+                //video src
+                //this.videoSrc = this.object.videoOeuvre;
                 // get the pdfUrl and the Title
                 //this.pdfUrl = this.object.urlOeuvre;
                 //this.titreOeuvre = this.object.titreOeuvre;
@@ -138,7 +140,6 @@ play() {
 }
 
 stop() {
-  this.played = !this.played;
   this.audioService.stop();
 }
 
