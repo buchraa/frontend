@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SettingComponent implements OnInit {
  user: User;
-
+ isAdmin = this.auth.isAdmin();
 
   constructor(private router: Router, public auth: AuthService, public userServie: UserService) { }
 
@@ -30,6 +30,9 @@ export class SettingComponent implements OnInit {
     )
   }
 
+  goDetails(){
+    this.router.navigate(["/administration"]); 
+  }
   
   logout() {
     this.auth.deleteToken();

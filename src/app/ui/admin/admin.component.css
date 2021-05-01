@@ -1,0 +1,26 @@
+.example-small-box, .adminDashboard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .example-small-box {
+    height: 100px;
+    width: 100px;
+    background-color: lightseagreen;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 1rem;
+  }
+
+  .mat-tab-group {
+    margin: 4rem 0.1rem !important;
+  }
+  
+  .mat-tab-labels, .mat-tab-label-container, .mat-tab-list, .mat-tab-header {
+    background-color: lightseagreen !important;  
+  }
+ 

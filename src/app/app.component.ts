@@ -22,6 +22,7 @@ export class AppComponent {
   logged = this.authenticationService.hasToken();
 
   public backClicked(): void {
+    console.log("ok")
     this.location.back()
   }
 

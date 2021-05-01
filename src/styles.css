@@ -591,13 +591,25 @@ label {
 #add-estate, .add-estate-form{ 
   width: 95%;
   margin: 2rem 2%;
-  border-radius: 5%;
+  /*border-radius: 5%;*/
 }
 
 .add-estate-form {
   border: none;
 }
 
+.mat-select-value {
+  color: #000 !important;
+  margin-top: -1rem !important;
+}
+
+.mat-form-field {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 3.125 !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+}
 pagination-controls {
   position:  absolute !important;
   bottom: -15% !important;
@@ -618,4 +630,8 @@ pagination-controls {
   position: relative;
   width: 45vw;
 }
+}
+
+.mat-tab-header {
+  background-color: lightseagreen !important;  
 }

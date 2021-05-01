@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const modules = [
   MatButtonModule,
@@ -35,6 +36,7 @@ const modules = [
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatDialogModule,
+  MatGridListModule,
   MatBottomSheetModule,
   CommonModule,
   

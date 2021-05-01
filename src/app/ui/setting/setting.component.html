@@ -6,8 +6,11 @@
       <div mat-line>
           <p>username: {{ user.username }}</p>
       </div>
-      <div mat-line>
-         
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>admin_panel_settings</mat-icon>
+      <div mat-line style="cursor: pointer;">
+          <a (click)="goDetails()">Administration</a>
       </div>
     </mat-list-item>
     <mat-divider></mat-divider>

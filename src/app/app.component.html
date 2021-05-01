@@ -1,5 +1,5 @@
 <div class="image">
-    <a *ngIf="getRoute()" (click)=" backClicked()"><span id="backClicked" class="material-icons">keyboard_backspace
+    <a *ngIf="getRoute()"><span id="backClicked" class="material-icons" (click)="backClicked()">keyboard_backspace
         </span></a>
     <ng-container *ngIf="logged">    
     <app-main-menu></app-main-menu>

@@ -79,7 +79,7 @@ export class MediathequeMouridismeComponent implements OnInit {
         this.router.navigate(["/mediatheque/audio"]);
         break;   
       case "Web":
-        this.router.navigate(["/mediatheque/web"]);
+        this.router.navigate(["/Accueil"]);
         break;
       default:
         this.router.navigate(["/"]);  

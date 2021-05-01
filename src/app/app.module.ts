@@ -66,6 +66,7 @@ import { GuestRegisterComponent } from './ui/guest-register/guest-register.compo
 import { GuestLoginComponent } from './ui/guest-login/guest-login.component';
 import { SettingComponent } from './ui/setting/setting.component';
 import { EditUserComponent } from './ui/edit-user/edit-user.component';
+import { AdminComponent } from './ui/admin/admin.component';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -121,6 +122,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     GuestLoginComponent,
     SettingComponent,
     EditUserComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

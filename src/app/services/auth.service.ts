@@ -65,7 +65,9 @@ public postToken(credential: Credentials): Observable<any> {
         return this.http.patch<JwtResponse>(API_URL + '/user/activate', token)
     }
 
-
+    public isAdmin() {
+        return this.getRole().includes("ROLE_ADMIN")
+    }
    
 
 }

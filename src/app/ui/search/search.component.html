@@ -7,7 +7,7 @@
     </div>
  </div>
  <div *ngFor="let oeuvre of allOeuvres | paginate: config | filter : searchText; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
-  <p  (click)="goDetails(oeuvre)" > {{ oeuvre.titreOeuvre }}  </p><span> {{ oeuvre.titre }} </span>
+  <p> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span>
 </div>
 <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
 
