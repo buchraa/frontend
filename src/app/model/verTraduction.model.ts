@@ -1,4 +1,4 @@
-import { Vers } from "./ver.model";
+import { Vers } from "./vers.model";
 
 export class VersTraduction {
     versTradId:  number;

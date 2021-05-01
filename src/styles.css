@@ -438,6 +438,13 @@ img {
         width: 8em; 
     }
 
+    #FormTitle {
+      color: #000;
+      position: relative;
+      left: 15%;
+      margin-top: 1rem;
+    }
+
 }
 
 #module_grid{
@@ -610,9 +617,12 @@ label {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
 }
+
+
+
 pagination-controls {
-  position:  absolute !important;
-  bottom: -15% !important;
+  position:  relative !important;
+  margin-bottom: -20% !important;
   margin-top: 2rem !important;
   text-align: center !important;
 }
@@ -634,4 +644,23 @@ pagination-controls {
 
 .mat-tab-header {
   background-color: lightseagreen !important;  
+}
+
+/*Titre formulaire*/
+#FormTitle {
+  color: #000;
+  position: relative;
+  left: 45%;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 481px) {
+ 
+  #FormTitle {
+    color: #000;
+    position: relative;
+    left: 30%;
+    margin-top: 1rem;
+  }
+
 }

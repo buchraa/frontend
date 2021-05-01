@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { Vers } from 'src/app/model/ver.model';
+import { Vers } from 'src/app/model/vers.model';
 
 @Component({
   selector: 'app-vers-manage',

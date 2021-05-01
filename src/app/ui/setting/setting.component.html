@@ -7,7 +7,7 @@
           <p>username: {{ user.username }}</p>
       </div>
     </mat-list-item>
-    <mat-list-item>
+    <mat-list-item *ngIf="isAdmin">
       <mat-icon mat-list-icon>admin_panel_settings</mat-icon>
       <div mat-line style="cursor: pointer;">
           <a (click)="goDetails()">Administration</a>

@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -14,8 +15,8 @@ export class SearchComponent implements OnInit {
   allOeuvres=[];
   searchText: string;
   config: any;
-
-  constructor( public api: ApiService, private router: Router) { }
+  isAdmin = this.auth.isAdmin();
+  constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
   ngOnInit(): void {
     
@@ -47,6 +48,11 @@ export class SearchComponent implements OnInit {
   goDetails(object: Oeuvre) {
     this.router.navigate(["/view-oeuvre", object.oeuvreId]);
   }
+
+  editItem(object: Oeuvre) {
+    this.router.navigate(["/edit-oeuvre", object.oeuvreId]);
+  }
+
 
 }
 
