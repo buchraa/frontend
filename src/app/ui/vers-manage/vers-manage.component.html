@@ -8,7 +8,7 @@
                     <a [routerLink]="['/add-ver']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
                 </div>
               
-                <div *ngFor="let ver of vers" class="adminItem">                   
+                <div *ngFor="let ver of vers | paginate: config" class="adminItem">                   
                     <p class="estateTitle">{{ ver.typeVers }}</p>       
                     <p class="estateTitle">{{ ver.texteVersAR1 }}</p>
                     <input class="estateId" type="hidden" [value]="ver.versId">
@@ -22,6 +22,7 @@
         </div>
     </div>
 
-  
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
+ 
     
 </section>

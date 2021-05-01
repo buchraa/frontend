@@ -8,7 +8,7 @@
                 <div>
                     <a [routerLink]="['/add-diwan']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
                 </div>
-                <div *ngFor="let diwan of diwans" class="adminItem">
+                <div *ngFor="let diwan of diwans | paginate: config" class="adminItem">
                    
                     <p class="estateTitle">{{ diwan.name }}</p>                   
                     <input class="estateId" type="hidden" [value]="diwan.diwanId">
@@ -22,6 +22,7 @@
         </div>
     </div>
 
-  
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
+
     
 </section>

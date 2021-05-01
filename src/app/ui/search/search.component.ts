@@ -13,6 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
   allOeuvres=[];
   searchText: string;
+  config: any;
 
   constructor( public api: ApiService, private router: Router) { }
 
@@ -30,7 +31,19 @@ export class SearchComponent implements OnInit {
      }
 
     )
+
+    this.config = {
+      itemsPerPage: 8,
+      currentPage: 1,
+      totalItems: this.allOeuvres.length
+    
+    };
   }
+
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
+
   goDetails(object: Oeuvre) {
     this.router.navigate(["/view-oeuvre", object.oeuvreId]);
   }

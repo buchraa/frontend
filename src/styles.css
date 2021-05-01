@@ -38,6 +38,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;    
+    text-align: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -52,6 +53,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
 
   #admin-content {
     position: relative;
+    margin: 1rem auto !important;
+    width: 96vw;
   }
   
   #admin-items {
@@ -599,6 +602,7 @@ pagination-controls {
   position:  absolute !important;
   bottom: -15% !important;
   margin-top: 2rem !important;
+  text-align: center !important;
 }
 
 .ngx-pagination a, .ngx-pagination button {
@@ -606,4 +610,12 @@ pagination-controls {
   display: block;
   padding: 0.1875rem 0.625rem;
   border-radius: 0;
+ 
+}
+
+@media only screen and (min-width: 1000px) {
+#admin-content {
+  position: relative;
+  width: 45vw;
+}
 }

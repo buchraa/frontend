@@ -29,7 +29,7 @@ export class CategoryManagerComponent implements OnInit {
     )
 
     this.config = {
-      itemsPerPage: 4,
+      itemsPerPage: 8,
       currentPage: 1,
       totalItems: this.categories.length
     

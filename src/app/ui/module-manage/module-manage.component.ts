@@ -11,7 +11,7 @@ import { Module } from 'src/app/model/module.model';
 })
 export class ModuleManageComponent implements OnInit {
   modules = [];
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -28,6 +28,17 @@ export class ModuleManageComponent implements OnInit {
      }
 
     )
+
+    this.config = {
+      itemsPerPage: 8,
+      currentPage: 1,
+      totalItems: this.modules.length
+    
+    }; 
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
   
   goDetails(object: Module) {

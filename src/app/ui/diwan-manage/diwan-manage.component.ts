@@ -10,7 +10,7 @@ import { Diwan } from 'src/app/model/diwan.model';
 })
 export class DiwanManageComponent implements OnInit {
   diwans = [];
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -27,7 +27,22 @@ export class DiwanManageComponent implements OnInit {
      }
 
     )
+
+     
+    this.config = {
+      itemsPerPage: 8,
+      currentPage: 1,
+      totalItems: this.diwans.length
+    
+    };
   }
+  
+
+  
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
+
   
   goDetails(object: Diwan) {
     this.router.navigate(["/edit-diwan", object.diwanId]);

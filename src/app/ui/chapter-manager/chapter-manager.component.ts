@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ChapterManagerComponent implements OnInit {
   chapters = [];
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -28,7 +28,21 @@ export class ChapterManagerComponent implements OnInit {
      }
 
     )
+
+    
+    this.config = {
+      itemsPerPage: 8,
+      currentPage: 1,
+      totalItems: this.chapters.length
+    
+    };
   }
+  
+
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
+
   
   goDetails(object: Chapter) {
     this.router.navigate(["/edit-chapter", object.chapitreId]);

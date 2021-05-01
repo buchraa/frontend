@@ -10,7 +10,7 @@ import { Vers } from 'src/app/model/ver.model';
 })
 export class VersManageComponent implements OnInit {
   vers = [];
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -27,6 +27,19 @@ export class VersManageComponent implements OnInit {
      }
 
     )
+
+     
+    this.config = {
+      itemsPerPage: 8,
+      currentPage: 1,
+      totalItems: this.vers.length
+    
+    }; 
+
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
   
   goDetails(object: Vers) {

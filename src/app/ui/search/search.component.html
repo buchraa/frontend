@@ -6,9 +6,10 @@
       </button>
     </div>
  </div>
- <div *ngFor="let oeuvre of allOeuvres | filter : searchText; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
+ <div *ngFor="let oeuvre of allOeuvres | paginate: config | filter : searchText; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
   <p  (click)="goDetails(oeuvre)" > {{ oeuvre.titreOeuvre }}  </p><span> {{ oeuvre.titre }} </span>
 </div>
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
 
 <app-loader></app-loader>
  

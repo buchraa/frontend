@@ -12,7 +12,7 @@ import { Author } from '../../model/author.model';
 export class AuthorManagerComponent implements OnInit {
   authors = [];
   object: Author;
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -28,6 +28,17 @@ export class AuthorManagerComponent implements OnInit {
      }
 
     )
+
+    this.config = {
+      itemsPerPage: 8,
+      currentPage: 1,
+      totalItems: this.authors.length
+    
+    };
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
   
   goDetails() {
