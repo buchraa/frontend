@@ -8,7 +8,7 @@
                     <a [routerLink]="['/add-oeuvre']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
                 </div>
               
-                <div *ngFor="let oeuvre of oeuvres" class="adminItem">                   
+                <div *ngFor="let oeuvre of oeuvres | paginate: config" class="adminItem">                   
                     <p class="estateTitle">{{ oeuvre.titreOeuvre }}</p>       
                     <p class="estateTitle">{{ oeuvre.presentattion }}</p>
                                        
@@ -22,7 +22,5 @@
             </div>
         </div>
     </div>
-
-  
-    
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
 </section>

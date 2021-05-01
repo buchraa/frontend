@@ -9,9 +9,9 @@ import { Oeuvre } from '../../model/oeuvre.model';
   styleUrls: ['./oeuvre-manage.component.css']
 })
 export class OeuvreManageComponent implements OnInit {
-  oeuvres = [];
+  oeuvres= [];
   object: Oeuvre;
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -28,6 +28,17 @@ export class OeuvreManageComponent implements OnInit {
      }
 
     )
+
+    this.config = {
+      itemsPerPage: 4,
+      currentPage: 1,
+      totalItems: this.oeuvres.length
+    
+    };
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
   
   goDetails(object: Oeuvre) {

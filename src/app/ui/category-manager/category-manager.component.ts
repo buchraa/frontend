@@ -10,7 +10,7 @@ import { Category } from '../../model/category.model';
 })
 export class CategoryManagerComponent implements OnInit {
   categories = [];
-
+  config: any;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -27,6 +27,17 @@ export class CategoryManagerComponent implements OnInit {
      }
 
     )
+
+    this.config = {
+      itemsPerPage: 4,
+      currentPage: 1,
+      totalItems: this.categories.length
+    
+    };
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
   
   goDetails() {

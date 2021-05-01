@@ -33,7 +33,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
             box-sizing: border-box;
     padding: 20px;
     height: auto;
-    min-height: 100vh;
+    /*min-height: 100vh;
     /*width: 100%;*/
     display: -webkit-box;
     display: -ms-flexbox;
@@ -593,4 +593,17 @@ label {
 
 .add-estate-form {
   border: none;
+}
+
+pagination-controls {
+  position:  absolute !important;
+  bottom: -15% !important;
+  margin-top: 2rem !important;
+}
+
+.ngx-pagination a, .ngx-pagination button {
+  color: #fff !important;
+  display: block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0;
 }

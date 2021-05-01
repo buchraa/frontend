@@ -8,7 +8,7 @@
                 <div>
                     <a [routerLink]="['/add-category']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
                 </div>
-                <div *ngFor="let category of categories" class="adminItem">
+                <div *ngFor="let category of categories | paginate: config" class="adminItem">
                    
                     <p class="estateTitle">{{ category.name }}</p>                   
                     <input class="estateId" type="hidden" [value]="category.categoryId">
@@ -22,7 +22,8 @@
         </div>
     </div>
 
-  
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
+
     
 </section>
 
