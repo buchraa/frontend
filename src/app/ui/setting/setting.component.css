@@ -11,3 +11,8 @@ a, a:hover, a:active {
         font-size: 12px !important;
     } 
 }
+
+#footer{
+    position: relative !important;
+    bottom: 10% !important; 
+}

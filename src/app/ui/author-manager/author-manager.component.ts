@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import { Router } from '@angular/router';
 import { Author } from '../../model/author.model';
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 
 @Component({
@@ -10,16 +11,16 @@ import { Author } from '../../model/author.model';
   styleUrls: ['./author-manager.component.css']
 })
 export class AuthorManagerComponent implements OnInit {
-  authors = [];
+  items = [];
   object: Author;
-  config: any;
+  pageOfItems: Array<any>;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
     this.api.getList('Authors').subscribe(
       (t) => {
-        this.authors = t;
-        console.log(this.authors);
+        this.items = t;
+        console.log(this.items);
        
       },
       (error) => {
@@ -27,20 +28,15 @@ export class AuthorManagerComponent implements OnInit {
        console.log(error);
      }
 
-    )
-
-    this.config = {
-      itemsPerPage: 8,
-      currentPage: 1,
-      totalItems: this.authors.length
-    
-    };
+    )   
   }
 
-  pageChanged(event){
-    this.config.currentPage = event;
-  }
   
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+  }
+
   goDetails() {
     this.router.navigate(["/"]);
   }

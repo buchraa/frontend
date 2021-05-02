@@ -11,7 +11,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { PwaService } from './services/pwa.service';
 import * as $ from "jquery";
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 import { AuthorManagerComponent } from './ui/author-manager/author-manager.component';
 import { AddAuthorComponent } from './ui/add-author/add-author.component';
@@ -135,6 +135,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     NgxSpinnerModule,
     NgxExtendedPdfViewerModule,
     NgxPaginationModule,
+    JwPaginationModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),   
   ],
 

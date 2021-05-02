@@ -1,1 +1,25 @@
-<app-menu></app-menu>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Auteurs">
+        <app-author-manager></app-author-manager>
+    </mat-tab>
+    <mat-tab label="Catégorie">
+        <app-category-manager></app-category-manager>
+    </mat-tab>
+    <mat-tab label="Chapitres">
+        <app-chapter-manager></app-chapter-manager>
+    </mat-tab>
+
+    <mat-tab label="Diwans">
+        <app-diwan-manage></app-diwan-manage>
+    </mat-tab>
+    <mat-tab label="Modules">
+       <app-module-manage></app-module-manage> 
+    </mat-tab>
+    <mat-tab label="Oeuvres">
+        <app-oeuvre-manage></app-oeuvre-manage>
+    </mat-tab>
+    <mat-tab label="Vers">
+        <app-vers-manage></app-vers-manage>
+    </mat-tab>
+</mat-tab-group>
+

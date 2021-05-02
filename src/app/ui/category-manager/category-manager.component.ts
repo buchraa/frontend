@@ -9,16 +9,16 @@ import { Category } from '../../model/category.model';
   styleUrls: ['./category-manager.component.css']
 })
 export class CategoryManagerComponent implements OnInit {
-  categories = [];
-  config: any;
+  items = [];
+  pageOfItems: Array<any>;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
     this.api.getList('Categories').subscribe(
       (t) => {
-        this.categories = t;
-        console.log(this.categories);
+        this.items = t;
+        console.log(this.items);
        
       },
       (error) => {
@@ -28,18 +28,13 @@ export class CategoryManagerComponent implements OnInit {
 
     )
 
-    this.config = {
-      itemsPerPage: 8,
-      currentPage: 1,
-      totalItems: this.categories.length
-    
-    };
   }
 
-  pageChanged(event){
-    this.config.currentPage = event;
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
-  
+
   goDetails() {
     this.router.navigate(["/"]);
   }

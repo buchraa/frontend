@@ -39,7 +39,7 @@ header {
     display: none;
   }
   #guest-nav {
-    background-color: #007470 !important;
+    /*background-color: #007470 !important;*/
     width: 40%;
     height: 100%;
     display: -webkit-box;
@@ -192,5 +192,5 @@ header {
   }
 
   nav {
-    background-color: green;
+    background-color: #007470;
   }

@@ -9,38 +9,32 @@ import { Oeuvre } from '../../model/oeuvre.model';
   styleUrls: ['./oeuvre-manage.component.css']
 })
 export class OeuvreManageComponent implements OnInit {
-  oeuvres= [];
+  items= [];
   object: Oeuvre;
-  config: any;
+  pageOfItems: Array<any>;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
     this.api.getList('oeuvres').subscribe(
       (t) => {
-        this.oeuvres = t;
-        console.log(this.oeuvres);
+        this.items = t;
+        console.log(this.items);
        
       },
       (error) => {
         
        console.log(error);
      }
-
-    )
-
-    this.config = {
-      itemsPerPage: 8,
-      currentPage: 1,
-      totalItems: this.oeuvres.length
-    
-    };
+    )    
   }
 
-  pageChanged(event){
-    this.config.currentPage = event;
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
-  
+
+   
   goDetails(object: Oeuvre) {
     this.router.navigate(["/edit-oeuvre", object.oeuvreId]);
   }

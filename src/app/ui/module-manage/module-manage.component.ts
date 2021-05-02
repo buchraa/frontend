@@ -10,37 +10,30 @@ import { Module } from 'src/app/model/module.model';
   styleUrls: ['./module-manage.component.css']
 })
 export class ModuleManageComponent implements OnInit {
-  modules = [];
-  config: any;
+  items = [];
+  pageOfItems: Array<any>;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
     this.api.getList('Modules').subscribe(
       (t) => {
-        this.modules = t;
-        console.log(this.modules);
+        this.items = t;
+        console.log(this.items);
        
       },
       (error) => {
         
        console.log(error);
      }
-
     )
-
-    this.config = {
-      itemsPerPage: 8,
-      currentPage: 1,
-      totalItems: this.modules.length
-    
-    }; 
   }
 
-  pageChanged(event){
-    this.config.currentPage = event;
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
-  
+
   goDetails(object: Module) {
     this.router.navigate(["/edit-module", object.moduleId]);
   }

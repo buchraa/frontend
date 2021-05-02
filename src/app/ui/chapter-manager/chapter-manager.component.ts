@@ -10,16 +10,16 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./chapter-manager.component.css']
 })
 export class ChapterManagerComponent implements OnInit {
-  chapters = [];
-  config: any;
+  items = [];
+  pageOfItems: Array<any>;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
     this.api.getList('Chapters').subscribe(
       (t) => {
-        this.chapters = t;
-        console.log(this.chapters);
+        this.items = t;
+        console.log(this.items);
        
       },
       (error) => {
@@ -29,20 +29,13 @@ export class ChapterManagerComponent implements OnInit {
 
     )
 
-    
-    this.config = {
-      itemsPerPage: 8,
-      currentPage: 1,
-      totalItems: this.chapters.length
-    
-    };
+   
   }
   
-
-  pageChanged(event){
-    this.config.currentPage = event;
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
-
   
   goDetails(object: Chapter) {
     this.router.navigate(["/edit-chapter", object.chapitreId]);

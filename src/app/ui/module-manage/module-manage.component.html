@@ -5,9 +5,9 @@
             <div id="admin-items">
                 <h3 style="margin-top: 50px;">Gestion Modules</h3>
                 <div>
-                    <a [routerLink]="['/add-module']"  class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+                    <a [routerLink]="['/add-module']"  class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
                 </div>
-                <div *ngFor="let module of modules | paginate: config" class="adminItem">
+                <div *ngFor="let module of pageOfItems" class="adminItem">
                    
                     <p class="estateTitle">{{ module.name }}</p>                   
                     <input class="estateId" type="hidden" [value]="module.moduleId">
@@ -20,7 +20,9 @@
             </div>
         </div>
     </div>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)" [pageSize]="8"></jw-pagination>
+    </div> 
     
 </section>
-<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>   
 

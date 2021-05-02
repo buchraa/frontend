@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,11 +9,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   roles= [];
+  authors = [];
+  config: any;
+  constructor(private auth: AuthService, private api: ApiService) { }
 
-  constructor(private auth: AuthService) { }
-
-  ngOnInit(): void {
-    console.log(this.auth.getRole())
-  }
+  ngOnInit(): void {}
 
 }

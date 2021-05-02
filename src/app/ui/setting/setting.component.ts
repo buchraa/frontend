@@ -31,7 +31,7 @@ export class SettingComponent implements OnInit {
   }
 
   goDetails(){
-    this.router.navigate(["/administration"]); 
+    this.router.navigate(["/admin"]); 
   }
   
   logout() {

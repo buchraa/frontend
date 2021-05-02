@@ -20,7 +20,7 @@ export class AppComponent {
   viewBack = this.router.url.includes("Accueil");
   routes = ["/", "/Accueil", "/Admin"];
   logged = this.authenticationService.hasToken();
-
+  //isAdmin = this.authenticationService.isAdmin();
   public backClicked(): void {
     console.log("ok")
     this.location.back()

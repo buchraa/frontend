@@ -9,16 +9,16 @@ import { Diwan } from 'src/app/model/diwan.model';
   styleUrls: ['./diwan-manage.component.css']
 })
 export class DiwanManageComponent implements OnInit {
-  diwans = [];
-  config: any;
+  items = [];
+  pageOfItems: Array<any>;
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
     this.api.getList('Diwans').subscribe(
       (t) => {
-        this.diwans = t;
-        console.log(this.diwans);
+        this.items = t;
+        console.log(this.items);
        
       },
       (error) => {
@@ -28,21 +28,13 @@ export class DiwanManageComponent implements OnInit {
 
     )
 
-     
-    this.config = {
-      itemsPerPage: 8,
-      currentPage: 1,
-      totalItems: this.diwans.length
-    
-    };
   }
   
-
   
-  pageChanged(event){
-    this.config.currentPage = event;
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
-
   
   goDetails(object: Diwan) {
     this.router.navigate(["/edit-diwan", object.diwanId]);

@@ -31,7 +31,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
     /*background-color: #fff;*/
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 20px;
+    padding: 40px;
     height: auto;
     /*min-height: 100vh;
     /*width: 100%;*/
@@ -70,7 +70,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
 
   #admin-content #admin-items .adminItem {
     margin: 5px auto;
-    background-color: green;
+    background-color: #007470;
   }
   
   #admin-content #admin-items .adminItem {
@@ -129,7 +129,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
   
   
   #admin-content #admin-items .adminItem .estateOptions {
-    background-color: green;
+    background-color: #007470;
     height: 45px;
     width: auto;
     -webkit-box-sizing: border-box;
@@ -619,11 +619,10 @@ label {
 }
 
 
-
 pagination-controls {
-  position:  relative !important;
-  margin-bottom: -20% !important;
-  margin-top: 2rem !important;
+  position:  absolute !important;
+  bottom: -2% !important;
+  padding-top: 2rem !important;
   text-align: center !important;
 }
 
@@ -640,10 +639,13 @@ pagination-controls {
   position: relative;
   width: 45vw;
 }
+.footerlist {
+width: 50vw !important;
+}
 }
 
 .mat-tab-header {
-  background-color: lightseagreen !important;  
+  background-color: #007470 !important;
 }
 
 /*Titre formulaire*/
@@ -663,4 +665,40 @@ pagination-controls {
     margin-top: 1rem;
   }
 
+  .card-footer {
+    position: absolute !important;
+    top: 5% !important;
+    margin: 4rem 1rem !important;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  .card-footer {
+    position: absolute !important;
+    top: 5% !important;
+    margin: 4rem 1rem !important;
+  }
+}
+
+.mat-tab-body.mat-tab-body-active, .mat-tab-body-content {
+  position: relative !important;
+  /*overflow-x: hidden !important;*/
+ overflow-y: hidden !important; 
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.pagination li.active {
+  background-color: #007470;
+}
+
+li a .first-item {
+  content: "Premier" !important; 
+}
+
+.card-footer {
+  position: absolute !important;
+  top: 5% !important;
+  margin: 4rem 1rem !important;
 }
