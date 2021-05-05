@@ -44,6 +44,8 @@ import { GuestConnectedGuard } from './guard/guestConnected.guard';
 import { SettingComponent } from './ui/setting/setting.component';
 import { EditUserComponent } from './ui/edit-user/edit-user.component';
 import { AdminComponent } from './ui/admin/admin.component';
+import { AddVersTradComponent } from './ui/add-vers-trad/add-vers-trad.component';
+import { VersTradManagerComponent } from './ui/vers-trad-manager/vers-trad-manager.component';
 
 
 
@@ -74,6 +76,8 @@ const routes: Routes = [
   { path: 'add-oeuvre', component:AddOeuvreComponent},
   { path: 'edit-ver/:id', component:AddVerComponent},
   { path: 'add-ver', component:AddVerComponent},
+  { path: 'add-verTrad', component:AddVersTradComponent},
+  { path: 'verTrad-manage', component:VersTradManagerComponent},
   { path: 'signup',  component:SignupComponent},
   { path: 'Accueil', component:HomePageComponent},
   { path: 'Modules', canActivate:[GuestConnectedGuard], component:ModulesComponent},

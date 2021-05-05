@@ -67,6 +67,8 @@ import { GuestLoginComponent } from './ui/guest-login/guest-login.component';
 import { SettingComponent } from './ui/setting/setting.component';
 import { EditUserComponent } from './ui/edit-user/edit-user.component';
 import { AdminComponent } from './ui/admin/admin.component';
+import { AddVersTradComponent } from './ui/add-vers-trad/add-vers-trad.component';
+import { VersTradManagerComponent } from './ui/vers-trad-manager/vers-trad-manager.component';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -123,6 +125,8 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     SettingComponent,
     EditUserComponent,
     AdminComponent,
+    AddVersTradComponent,
+    VersTradManagerComponent,
   ],
   imports: [
     BrowserModule,

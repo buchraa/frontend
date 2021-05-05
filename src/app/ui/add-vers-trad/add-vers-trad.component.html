@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<section>
+    <div id="add-estate">
+      <h1 id="FormTitle">Ajouter Catégorie</h1>
+      <div class="add-estate-form">
+        <form class="col s12">         
+          <div class="addEstateLine">
+            <div class="addEstateItem"><label for="texte">Texte</label>
+              <input id="texte" name="texte" type="text" [(ngModel)]="object.texte" required
+                ng-minlength="25" maxlength="255">
+            </div>  
+          </div>
+          <div class="addEstateLine" >
+            <mat-form-field >
+                <label>Choisir Vers</label>
+                <mat-select  id="versId" name="versId" [(ngModel)]="object.versId">
+                  <mat-option *ngFor="let ver of vers" [value]="ver.versId" matInput>{{ver.texteVersAR1}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+         <!--codeLangue-->
+          <div class="addEstateLine">          
+            <div class="addEstateItem"><label for="codeLangue">codeLangue</label>
+                <input id="codeLangue" name="codeLangue" type="text" [(ngModel)]="object.codeLangue" required
+                  ng-minlength="25" maxlength="255">
+              </div>  
+           
+          </div>
+         
+          <a class="SAVEMYESTATECTA" (click)="uploadSubmit()" alt="Enregistrer"
+            title="Enregistrer">Valider</a>
+  
+        </form>
+      </div>
+    </div>
+  </section>

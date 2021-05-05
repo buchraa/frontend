@@ -34,6 +34,7 @@ export class ViewTraductionComponent implements OnInit {
                  this.vers.push(this.allVers[i]);          
           }      
       }
+      this.api.sortByPremium(this.vers)
       console.log(this.vers);
       },
       (error) => {
@@ -74,7 +75,13 @@ export class ViewTraductionComponent implements OnInit {
 
   }
 
-  
+  sortByPremium(objectItem: any){
+    var items = objectItem;
+    console.log("Array",items);
+    items.sort(function (a, b) {
+    return a.numVers - b.numVers;
+    });
+  }
  
   
 

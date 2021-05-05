@@ -7,6 +7,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogContentPdfComponent } from '../dialog-content-pdf/dialog-content-pdf.component';
 import { AudioService } from "../../services/audio.service";
 import { StreamState } from "../../interfaces/stream-state";
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 
 
@@ -26,16 +28,16 @@ export class ViewOeuvreComponent implements OnInit {
   vers=[];
   searchText: string;
   audio: string;
-  pdfUrl = "/assets/images/anta_rabbii.pdf";
-  titreOeuvre = "Titre Oeuvre"
-  videoSrc: string;
-  file= "/assets/audios/Hamdii-Wachoukrii-Cherif-ly.mp3";
+  pdfUrl : string; 
+  titreOeuvre: string ;
+  file: string; 
   state: StreamState;
   currentFile: any = {};
   panelOpenState = false;
   played: Boolean = false;
+  videoSrc: string;
 
-  constructor(public matDialog: MatDialog, public audioService: AudioService, private router: Router, private route: ActivatedRoute, public api: ApiService) {
+  constructor(public matDialog: MatDialog, public audioService: AudioService, private router: Router, private route: ActivatedRoute, public api: ApiService, private _sanitizer: DomSanitizer) {
     //pdfDefaultOptions.assetsFolder = 'bleeding-edge';
    }
 
@@ -57,6 +59,7 @@ export class ViewOeuvreComponent implements OnInit {
           }      
       }
       console.log(this.vers);
+      this.api.sortByPremium(this.vers)
       },
       (error) => {
         
@@ -80,13 +83,13 @@ export class ViewOeuvreComponent implements OnInit {
                 response => {
                 this.object = response;
                 //get the audioUrl
-                //this.file = this.object.audioOeuvre;
-                //video src
-                //this.videoSrc = this.object.videoOeuvre;
+                this.file = this.object.audioOeuvre;
+                //get the videoSrc
+                this.videoSrc = this.object.mediaOeuvre;
                 // get the pdfUrl and the Title
-                //this.pdfUrl = this.object.urlOeuvre;
-                //this.titreOeuvre = this.object.titreOeuvre;
-                console.log(this.object);                
+                this.pdfUrl = this.object.urlOeuvre;
+                this.titreOeuvre = this.object.titreOeuvre;
+                console.log(this.object.mediaOeuvre);                
               });
             }
         });
@@ -158,6 +161,10 @@ playVideo(){
 
 closeModal() {
   this.played = false;
+}
+
+public getMediaPath(url) {
+   return (this._sanitizer.bypassSecurityTrustResourceUrl(url) as any);
 }
 
 }

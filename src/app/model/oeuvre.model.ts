@@ -8,7 +8,6 @@ export class Oeuvre {
     oeuvreId: number;
     authenticite_degre: string;
     avantages: string;
-    videoOeuvre: string;
     audioOeuvre: string;
     formeRques: string;
     periodeLieu: string;
@@ -34,6 +33,7 @@ export class Oeuvre {
     themePrincipal: Theme;
     titreOeuvre: string;
     urlOeuvre: string;
+    mediaOeuvre: string;
     categoryId: number;
     diwanId: number;
     themeId: number;

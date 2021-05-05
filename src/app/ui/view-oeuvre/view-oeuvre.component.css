@@ -135,4 +135,27 @@ iframe {
     position: relative;
     display: flex;
   }
+
+  li::before {
+   position: absolute;
+   right: 15%;
+  }
+  }
+
+  
+@media only screen and (min-width: 900px) {
+
+  li::before {
+   position: absolute;
+   right: 10%;
+  }
+  }
+
+    
+@media only screen and (min-width: 1400px) {
+
+  li::before {
+   position: absolute;
+   right: 25%;
+  }
   }

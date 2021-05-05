@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
 import { Category } from 'src/app/model/category.model';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -18,7 +19,7 @@ export class PhotoComponent implements OnInit {
   photos: any = [];
 
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService, private _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -61,4 +62,7 @@ export class PhotoComponent implements OnInit {
 
   }
 
+  public getMediaPath(url) {
+    return (this._sanitizer.bypassSecurityTrustResourceUrl(url) as any);
+ }
 }

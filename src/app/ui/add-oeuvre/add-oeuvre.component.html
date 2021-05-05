@@ -18,10 +18,12 @@
            <!-- media url  -->
 
            <div class="addEstateLine">
-            <div class="addEstateItem"><label for="videoOeuvre">URL Vidéo</label>
-              <input id="videoOeuvre" name="videoOeuvre" type="text" [(ngModel)]="object.videoOeuvre" required #videoOeuvre="ngModel"
+
+            <div class="addEstateItem"><label for="mediaOeuvre">URL Video</label>
+              <input id="mediaOeuvre" name="mediaOeuvre" type="text" [(ngModel)]="object.mediaOeuvre" required #mediaOeuvre="ngModel"
                 ng-minlength="25" maxlength="512">
-            </div>  
+            </div> 
+             
              <div class="addEstateItem"><label for="audioOeuvre">URL Audio</label>
               <input id="audioOeuvre" name="audioOeuvre" type="text" [(ngModel)]="object.audioOeuvre" required #audioOeuvre="ngModel"
                 ng-minlength="25" maxlength="512">
@@ -179,7 +181,7 @@
           <div class="addEstateLine">          
             <mat-form-field >
                 <label>Disponible en pdf</label>
-                <mat-select   id="isPdfOeuvre" name="isPdfOeuvre" [(ngModel)]="object.isPdfOeuvre" #pdfOeuvre="ngModel">
+                <mat-select   id="isPdfOeuvre" name="isPdfOeuvre" [(ngModel)]="object.isPdfOeuvre" #isPdfOeuvre="ngModel">
                   <mat-option value=true>Disponible</mat-option>
                   <mat-option value=false>Non disponible</mat-option>
                 </mat-select>

@@ -4,5 +4,5 @@ export class VersTraduction {
     versTradId:  number;
     texte: string;
     codeLangue: string; 
-    ver: Vers;
+    versId: number;
   }
