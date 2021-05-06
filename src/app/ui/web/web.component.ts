@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
+import { Oeuvre } from 'src/app/model/oeuvre.model';
 
 @Component({
   selector: 'app-web',
@@ -19,7 +20,7 @@ export class WebComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   ngOnInit(): void {
-
+   
      //get Category
 
      this.api.getObjectByName('Categorie','Web').subscribe(
