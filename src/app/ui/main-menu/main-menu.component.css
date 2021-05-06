@@ -5,12 +5,14 @@
 nav {
     position: fixed;
     bottom: 0;
+    z-index: 1 !important;
 }}
 nav a {
     color: #fff;
     font-size: 1.05em;
     padding: 0 2px !important;
     font-weight: bold;
+    z-index: 1 !important;
 }
 nav.mat-tab-nav-bar.mat-tab-header.mat-primary {
     background: none !important ;

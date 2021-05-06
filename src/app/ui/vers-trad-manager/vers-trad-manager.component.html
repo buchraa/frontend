@@ -5,7 +5,7 @@
             <div id="admin-items">
                 <h3 style="margin-top: 50px;">Gestion Traduction des Vers</h3>
                 <div>
-                    <a [routerLink]="['/add-verTrad']"  class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+                    <a [routerLink]="['/add-verTrad']"  class="btn-floating btn-large waves-effect waves-light plusIcon"><i class="material-icons">add</i></a>
                 </div>
               
                 <div *ngFor="let versTrad of pageOfItems" class="adminItem">                   
@@ -22,6 +22,6 @@
         </div>
     </div>
     <div class="card-footer pb-0 pt-3">
-        <jw-pagination [items]="items" (changePage)="onChangePage($event)" [pageSize]="8"></jw-pagination>
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)" [pageSize]="4"></jw-pagination>
     </div>
 </section>

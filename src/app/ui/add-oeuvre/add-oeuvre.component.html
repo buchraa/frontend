@@ -181,7 +181,8 @@
           <div class="addEstateLine">          
             <mat-form-field >
                 <label>Disponible en pdf</label>
-                <mat-select   id="isPdfOeuvre" name="isPdfOeuvre" [(ngModel)]="object.isPdfOeuvre" #isPdfOeuvre="ngModel">
+                <mat-select [value]="object.isPdfOeuvre" id="isPdfOeuvre" name="isPdfOeuvre" [(ngModel)]="object.isPdfOeuvre">
+                  <mat-option>--</mat-option>
                   <mat-option value=true>Disponible</mat-option>
                   <mat-option value=false>Non disponible</mat-option>
                 </mat-select>
@@ -189,7 +190,7 @@
             <mat-form-field >
                 <label>Disponibilité</label>
                 <mat-select   id="dispo_oeuvre" name="dispo_oeuvre" [(ngModel)]="object.dispo_oeuvre" #dispo_oeuvre="ngModel">
-                  <mat-option value=true>Disponible</mat-option>
+                  <mat-option value=true >Disponible</mat-option>
                   <mat-option value=false>Non disponible</mat-option>
                 </mat-select>
             </mat-form-field>

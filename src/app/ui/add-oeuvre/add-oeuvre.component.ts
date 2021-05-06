@@ -21,6 +21,8 @@ export class AddOeuvreComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit(): void {    
+    const elem = document.getElementById("isPdfOeuvre");
+    console.log(elem);
     this.object = new Oeuvre();     
     this.routingSubscription = 
         this.route.params.subscribe(params => {
@@ -30,7 +32,8 @@ export class AddOeuvreComponent implements OnInit {
               this.api.getById('Oeuvre', params["id"]).subscribe(
                 response => {
                 this.object = response;
-                console.log(this.object);                
+                console.log(this.object.isPdfOeuvre);    
+                this.object.isPdfOeuvre = response.isPdfOeuvre;            
               });
             }
         });
