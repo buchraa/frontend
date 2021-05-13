@@ -69,6 +69,12 @@ import { EditUserComponent } from './ui/edit-user/edit-user.component';
 import { AdminComponent } from './ui/admin/admin.component';
 import { AddVersTradComponent } from './ui/add-vers-trad/add-vers-trad.component';
 import { VersTradManagerComponent } from './ui/vers-trad-manager/vers-trad-manager.component';
+import { DiwanDetailComponent } from './ui/diwan-detail/diwan-detail.component';
+import { ModuleDetailComponent } from './ui/module-detail/module-detail.component';
+import { ChapterDetailComponent } from './ui/chapter-detail/chapter-detail.component';
+import { CategoryDetailComponent } from './ui/category-detail/category-detail.component';
+import { AuthorDetailComponent } from './ui/author-detail/author-detail.component';
+import { DialogContentDeleteComponent } from './ui/dialog-content-delete/dialog-content-delete.component';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -127,7 +133,13 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     AdminComponent,
     AddVersTradComponent,
     VersTradManagerComponent,
-  ],
+    DiwanDetailComponent,
+    ModuleDetailComponent,
+    ChapterDetailComponent,
+    CategoryDetailComponent,
+    AuthorDetailComponent,
+    DialogContentDeleteComponent,
+     ],
   imports: [
     BrowserModule,
     AppRoutingModule,

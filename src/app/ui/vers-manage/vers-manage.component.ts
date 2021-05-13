@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Vers } from 'src/app/model/vers.model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogContentDeleteComponent } from '../dialog-content-delete/dialog-content-delete.component';
 
 @Component({
   selector: 'app-vers-manage',
@@ -11,7 +13,7 @@ import { Vers } from 'src/app/model/vers.model';
 export class VersManageComponent implements OnInit {
   items= [];
   pageOfItems: Array<any>;
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(public matDialog: MatDialog, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
@@ -41,17 +43,21 @@ export class VersManageComponent implements OnInit {
     this.router.navigate(["/edit-ver", object.versId]);
   }
 
-  deleteFrom(object: Vers){
-    this.api.deleteItem('Vers', object.versId).subscribe(
-      (t) => {
-        this.router.navigate(['/ver-manage']);
-       
-      },
-      (error) => {        
-       console.log(error);
-     }
-
-    )       
+   
+  openModal(object: Vers) {
+    const dialogConfig = new MatDialogConfig();
+    // user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "250px";
+    dialogConfig.width = "350px";
+    
+    //passing data to modal component
+    dialogConfig.data = { itemId : object.versId, titre: 'Vers' }
+    const modalDialog = this.matDialog.open(DialogContentDeleteComponent, dialogConfig);
+    
   }
+       
+  
 
 }

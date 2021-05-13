@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+<section>
+<ul class="collection">
+    <li class="collection-item avatar">
+      <span class="title">Titre</span>
+      <p>{{object.name}} <br>
+      </p>
+    </li>
+    <li class="collection-item avatar" >
+      <span class="title">Traductions</span>
+      <p *ngFor="let trad of object.traductions">{{ trad.codeLangue }}<br>
+        {{ trad.name }}
+      </p>
+    </li>
+    
+  </ul>
+
+</section>

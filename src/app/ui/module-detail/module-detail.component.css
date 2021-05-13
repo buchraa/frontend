@@ -1,0 +1,20 @@
+img {
+    border: none !important;
+}
+
+div, .card-action a, .card-action a:active, .card-action a:hover, .card-action a:visited {
+    color: #000 !important;
+}
+
+.card.horizontal{
+    /*max-width: 400px !important;*/
+
+}
+.card-title p {
+    margin-top: 1rem !important;
+}
+section {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}

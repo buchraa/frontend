@@ -46,6 +46,11 @@ import { EditUserComponent } from './ui/edit-user/edit-user.component';
 import { AdminComponent } from './ui/admin/admin.component';
 import { AddVersTradComponent } from './ui/add-vers-trad/add-vers-trad.component';
 import { VersTradManagerComponent } from './ui/vers-trad-manager/vers-trad-manager.component';
+import { AuthorDetailComponent } from './ui/author-detail/author-detail.component';
+import { ModuleDetailComponent } from './ui/module-detail/module-detail.component';
+import { ChapterDetailComponent } from './ui/chapter-detail/chapter-detail.component';
+import { CategoryDetailComponent } from './ui/category-detail/category-detail.component';
+import { DiwanDetailComponent } from './ui/diwan-detail/diwan-detail.component';
 
 
 
@@ -67,6 +72,11 @@ const routes: Routes = [
   { path: 'edit-category/:id', component:AddCategoryComponent},
   { path: 'edit-chapter/:id', component:AddChapterComponent},
   { path: 'add-chapter', component:AddChapterComponent},
+  { path: 'author-detail/:id', component:AuthorDetailComponent},
+  { path: 'module-detail/:id', component:ModuleDetailComponent},
+  { path: 'chapter-detail/:id', component:ChapterDetailComponent},
+  { path: 'category-detail/:id', component:CategoryDetailComponent},
+  { path: 'diwan-detail/:id', component:DiwanDetailComponent},
   { path: 'edit-author/:id', component:AuthorComponent},
   { path: 'edit-diwan/:id', component:AddDiwanComponent},
   { path: 'add-diwan', component:AddDiwanComponent},

@@ -15,8 +15,8 @@
                     <input class="estateId" type="hidden" [value]="author.authorId">
                     <div class="estateOptions">
                         <div  (click)="editItem(author)"><span class="material-icons">create</span></div>
-                        <div (click)="goDetails()" ><span class="material-icons">visibility</span></div>
-                        <div (click)="deleteFrom(author)"><span class="material-icons">clear</span></div>                        
+                        <div (click)="goDetails(author)" ><span class="material-icons">visibility</span></div>
+                        <div (click)="openModal(author)"><span class="material-icons">clear</span></div>                        
                     </div>
                 </div>
             </div>

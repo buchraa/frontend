@@ -113,6 +113,7 @@ export class ViewOeuvreComponent implements OnInit {
     dialogConfig.id = "modal-component";
     dialogConfig.height = "100%";
     dialogConfig.width = "100%";
+    dialogConfig.maxWidth = "100vw";
     //passing data to modal component
     dialogConfig.data = { pdfUrl : this.pdfUrl, titre: this.titreOeuvre }
     const modalDialog = this.matDialog.open(DialogContentPdfComponent, dialogConfig);

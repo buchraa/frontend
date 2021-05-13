@@ -166,4 +166,14 @@ return this.images[Math.floor(Math.random() * Math.floor(this.images.length))];
     });
   }
 
+  getImgPath(url: string){
+    var http = new XMLHttpRequest();
+    http.open("get", url, false);
+        http.send();
+        if (http.status != 404)
+            return url
+        else    
+            return "/assets/images/biographie.jpg" ;    
+    }
+
 }

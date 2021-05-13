@@ -5,20 +5,21 @@ import { Author } from '../../model/author.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-author',
-  templateUrl: './author.component.html',
-  styleUrls: ['./author.component.css']
+  selector: 'app-author-detail',
+  templateUrl: './author-detail.component.html',
+  styleUrls: ['./author-detail.component.css']
 })
-export class AuthorComponent implements OnInit {
+export class AuthorDetailComponent implements OnInit {
 
 
   objectId: number;
   newObjectId: number;
   object: Author;
   routingSubscription: any; 
+  imageUrl="/assets/images/biographie.jpg";
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
   ngOnInit(): void {
     this.object = new Author();
@@ -30,22 +31,24 @@ export class AuthorComponent implements OnInit {
               this.api.getById('Author', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                this.imageUrl = this.getImgPath(this.object.imageUrl) ; 
                 console.log(this.object);                
               });
             }
         });
   }
 
-  uploadSubmit()  {
-   console.log(this.object);
-   this.api.saveOrUpdateItem('addOrUpdateAuthor', this.object).subscribe(
-      data => {        
-        this.router.navigate(['/author-manage']);
-      },
-      error => {
-        console.log(error);
-
-      });
-  }
+  getImgPath(url: string){
+    var http = new XMLHttpRequest();
+    http.open("get", url, false);
+      http.send();
+      if (http.status != 404)
+        {
+          return url
+        }
+           
+      else    
+            return "/assets/images/biographie.jpg" ;    
+    }
 
 }

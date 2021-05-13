@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { Diwan } from 'src/app/model/diwan.model';
 import { Module } from 'src/app/model/module.model';
+
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogContentDeleteComponent } from '../dialog-content-delete/dialog-content-delete.component';
 
 @Component({
   selector: 'app-module-manage',
@@ -12,7 +14,7 @@ import { Module } from 'src/app/model/module.model';
 export class ModuleManageComponent implements OnInit {
   items = [];
   pageOfItems: Array<any>;
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(public matDialog: MatDialog, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
@@ -35,26 +37,28 @@ export class ModuleManageComponent implements OnInit {
   }
 
   goDetails(object: Module) {
-    this.router.navigate(["/edit-module", object.moduleId]);
+    this.router.navigate(["/module-detail", object.moduleId]);
   }
 
   editItem(object: Module) {
     this.router.navigate(["/edit-module", object.moduleId]);
   }
 
-  deleteFrom(object: Module){
-    this.api.deleteItem('Module', object.moduleId).subscribe(
-      (t) => {
-        this.router.navigate(['/']);
-       
-      },
-      (error) => {        
-       console.log(error);
-     }
-
-    )       
+  
+  openModal(object: Module) {
+    const dialogConfig = new MatDialogConfig();
+    // user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "250px";
+    dialogConfig.width = "350px";
+    
+    //passing data to modal component
+    dialogConfig.data = { itemId : object.moduleId, titre: 'Module' }
+    const modalDialog = this.matDialog.open(DialogContentDeleteComponent, dialogConfig);
+    
   }
 
-
+  
 
 }

@@ -1,0 +1,19 @@
+<app-menu></app-menu>
+<section>
+<div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img [src]="api.getImage(object.name)">
+      </div>
+      <div class="card-stacked">
+        <div class="card-title">
+            <p>{{ object.name }}</p>
+        </div>
+        <div class="card-content">
+          <p *ngFor="let trad of object.traductions">{{ trad.codeLangue }} -- {{ trad.name }}</p>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</section>

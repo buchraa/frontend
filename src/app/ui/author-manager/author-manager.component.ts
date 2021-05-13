@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import { Router } from '@angular/router';
 import { Author } from '../../model/author.model';
-import { JwPaginationModule } from 'jw-angular-pagination';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogContentDeleteComponent } from '../dialog-content-delete/dialog-content-delete.component';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AuthorManagerComponent implements OnInit {
   items = [];
   object: Author;
   pageOfItems: Array<any>;
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(public matDialog: MatDialog, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
     this.api.getList('Authors').subscribe(
@@ -37,14 +38,27 @@ export class AuthorManagerComponent implements OnInit {
     this.pageOfItems = pageOfItems;
   }
 
-  goDetails() {
-    this.router.navigate(["/"]);
+  goDetails(object: Author) {
+    this.router.navigate(["/author-detail", object.authorId]);
   }
 
   editItem(object: Author) {
     this.router.navigate(["/edit-author", object.authorId]);
   }
 
+  openModal(object: Author) {
+    const dialogConfig = new MatDialogConfig();
+    // user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "250px";
+    dialogConfig.width = "350px";
+    
+    //passing data to modal component
+    dialogConfig.data = { itemId : object.authorId, titre: 'Author' }
+    const modalDialog = this.matDialog.open(DialogContentDeleteComponent, dialogConfig);
+    
+  }
 
   deleteFrom(object: Author){
     this.api.deleteItem('Author', object.authorId).subscribe(

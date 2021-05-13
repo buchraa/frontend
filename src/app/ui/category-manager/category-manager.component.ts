@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import { Router } from '@angular/router';
 import { Category } from '../../model/category.model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogContentDeleteComponent } from '../dialog-content-delete/dialog-content-delete.component';
 
 @Component({
   selector: 'app-category-manager',
@@ -11,7 +13,7 @@ import { Category } from '../../model/category.model';
 export class CategoryManagerComponent implements OnInit {
   items = [];
   pageOfItems: Array<any>;
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(public matDialog: MatDialog, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
@@ -35,25 +37,27 @@ export class CategoryManagerComponent implements OnInit {
     this.pageOfItems = pageOfItems;
   }
 
-  goDetails() {
-    this.router.navigate(["/"]);
+  goDetails(object: Category) {
+    this.router.navigate(["/category-detail", object.categoryId]);
   }
 
   editItem(object: Category) {
     this.router.navigate(["/edit-category", object.categoryId]);
   }
 
-  deleteFrom(object: Category){
-    this.api.deleteItem('Categorie', object.categoryId).subscribe(
-      (t) => {
-        this.router.navigate(['/']);
-       
-      },
-      (error) => {        
-       console.log(error);
-     }
-
-    )       
+  openModal(object: Category) {
+    const dialogConfig = new MatDialogConfig();
+    // user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "250px";
+    dialogConfig.width = "350px";
+    
+    //passing data to modal component
+    dialogConfig.data = { itemId : object.categoryId, titre: 'Categorie' }
+    const modalDialog = this.matDialog.open(DialogContentDeleteComponent, dialogConfig);
+    
   }
+
 
 }
