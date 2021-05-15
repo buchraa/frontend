@@ -1,10 +1,10 @@
 
 <div id="module_grid">
 <div  *ngFor="let module of modules">
-    <h2 class="title">{{module.traductions[0].name}}</h2>
+    <h2 class="title">{{module?.traductions[0].name}}</h2>
 
-    <a (click)="goToPage(module)"><img [src]="this.api.getImage(module.name)" class="circle module"  width="100" height="100"></a>
-    <h2 class="title">{{module.name}}</h2>
+    <a (click)="goToPage(module)"><img [src]="this.api.getImage(module?.name)" class="circle module"  width="100" height="100"></a>
+    <h2 class="title">{{module?.name}}</h2>
 </div>
 </div>
 

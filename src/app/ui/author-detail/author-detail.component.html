@@ -12,7 +12,7 @@
         <div class="card-content">
           <p>{{ object.biography }}</p>
         </div>
-        <div class="card-action">
+        <div *ngIf="object.link" class="card-action">
           <a href="{{ object.link }}">Detail</a>
         </div>
       </div>
