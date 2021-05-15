@@ -5,7 +5,7 @@
       <mat-expansion-panel *ngFor="let file of files; let i = index" hideToggle>
       <mat-expansion-panel-header (click)="openFile(file, i)">
         <mat-panel-title>
-          {{ file.name }}
+          {{ file.titreOeuvre }} <span>{{ file.titre }}</span>
         </mat-panel-title>
         <mat-panel-description>
            {{ file.artist }}

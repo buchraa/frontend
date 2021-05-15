@@ -4,6 +4,8 @@ import { CloudService } from "../../services/cloud.service";
 import { StreamState } from "../../interfaces/stream-state";
 import { ApiService } from 'src/app/services/api.service';
 import { Module } from 'src/app/model/module.model';
+import { Category } from 'src/app/model/category.model';
+import { Oeuvre } from 'src/app/model/oeuvre.model';
 
 
 
@@ -19,6 +21,10 @@ export class AudioComponent implements OnInit {
   module:Module; 
   ObjetId: number;
   panelOpenState = false;
+  categorie: Category;
+  categoryId: number;
+  allOeuvres = [];
+  webFiles = [];
 
   constructor(public api: ApiService, public audioService: AudioService,
     public cloudService: CloudService) {}
@@ -26,11 +32,46 @@ export class AudioComponent implements OnInit {
     
 
   ngOnInit(): void {
+     //get Category
+     this.api.getObjectByName('Categorie','Audios').subscribe(
+      (t) => {
+        this.categorie = t; 
+        this.categoryId = this.categorie.categoryId;       
+        console.log(this.categoryId);
+       
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
+
+       //get list of webFiles
+    this.api.getList('oeuvres').subscribe(
+      (t) => {
+        this.allOeuvres = t;     
+        console.log(this.allOeuvres)  
+        console.log(this.categoryId);
+        for (var i = 0; i < this.allOeuvres.length; i++) {
+                  if(this.allOeuvres[i].category.categoryId == this.categoryId){
+                 this.files.push(this.allOeuvres[i]);          
+          }      
+      }
+      console.log(this.files);
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
+
    
-    // get media files
+    /* get media files
     this.cloudService.getFiles().subscribe(files => {
       this.files = files;
-    });
+    });*/
 
     // listen to stream state
     this.audioService.getState().subscribe(state => {
@@ -49,10 +90,10 @@ export class AudioComponent implements OnInit {
     });    
 }
 
-openFile(file, index) {
+openFile(file: Oeuvre, index) {
   this.currentFile = { index, file };
   this.audioService.stop();
-  this.playStream(file.url);
+  this.playStream(file.urlOeuvre);
 }
 
 pause() {

@@ -113,8 +113,8 @@ return this.images[Math.floor(Math.random() * Math.floor(this.images.length))];
       case "Poésie" :
         return "/assets/images/qasidas.jpg";
         break; 
-      case "Rècits oraux":
-        return "/assets/images/récits.jpg";
+      case "Rècits oraux": 
+        return "/assets/images/ecrits.jpg";
         break;
       case "Sermons":
         return "/assets/images/sermons.jpg";
