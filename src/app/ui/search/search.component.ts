@@ -4,18 +4,21 @@ import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { FilterPipe} from 'src/app/filter.pipe';
 
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  providers: [ FilterPipe]
 })
 export class SearchComponent implements OnInit {
   allOeuvres=[];
   searchText: string;
   config: any;
   isAdmin = this.auth.isAdmin();
+  length: Boolean;
   constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
   ngOnInit(): void {
@@ -24,6 +27,7 @@ export class SearchComponent implements OnInit {
       (t) => {
         this.allOeuvres = t;     
         console.log(this.allOeuvres)  
+        this.length = this.allOeuvres.length > 10 ?  true : false;
         
       },
       (error) => {
@@ -34,7 +38,7 @@ export class SearchComponent implements OnInit {
     )
 
     this.config = {
-      itemsPerPage: 8,
+      itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.allOeuvres.length
     
