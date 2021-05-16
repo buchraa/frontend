@@ -565,7 +565,7 @@ mat-accordion {
 
 #homePage {
   margin: 0 auto !important;
-  max-width: 1000px;
+  /*max-width: 1000px;*/
   min-height: 120vh;
   background-position:center center; 
   background-size: cover;

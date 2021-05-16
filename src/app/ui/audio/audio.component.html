@@ -5,14 +5,15 @@
       <mat-expansion-panel *ngFor="let file of files; let i = index" hideToggle>
       <mat-expansion-panel-header (click)="openFile(file, i)">
         <mat-panel-title>
-          {{ file.titreOeuvre }} <span>{{ file.titre }}</span>
+          {{ file.titreOeuvre }}
         </mat-panel-title>
         <mat-panel-description>
-           {{ file.artist }}
+           <p>{{ file.titre }}</p>
           <mat-icon color="primary" *ngIf="currentFile.index === i && !state?.error">volume_up</mat-icon>
           <h6 *ngIf="currentFile.index === i && state?.error">ERROR</h6>
         </mat-panel-description>
       </mat-expansion-panel-header>
+      <p id="description">{{ file.description }}</p>
       <div class="media-footer">
         <mat-toolbar color="primary">
           <mat-toolbar-row>

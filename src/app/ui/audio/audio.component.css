@@ -7,6 +7,10 @@
     margin-right: 5px !important;
 }
 
-mat-panel-title span {
-    margin-left: 10rem !important;
+ p#description {
+    background-color: #fff !important;
+    color: #000 !important;
+    padding: 1rem 1rem !important;
+    margin: 0 !important;
 }
+
