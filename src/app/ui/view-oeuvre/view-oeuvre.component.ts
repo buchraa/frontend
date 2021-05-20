@@ -88,7 +88,7 @@ export class ViewOeuvreComponent implements OnInit {
                 this.videoSrc = this.object.mediaOeuvre;
                 // get the pdfUrl and the Title
                 this.pdfUrl = this.object.urlOeuvre;
-                this.titreOeuvre = this.object.titreOeuvre;
+                this.titreOeuvre = this.object.titre;
                 console.log(this.object.mediaOeuvre);                
               });
             }
