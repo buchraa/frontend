@@ -75,13 +75,7 @@ export class ViewTraductionComponent implements OnInit {
 
   }
 
-  sortByPremium(objectItem: any){
-    var items = objectItem;
-    console.log("Array",items);
-    items.sort(function (a, b) {
-    return a.numVers - b.numVers;
-    });
-  }
+ 
  
   
 

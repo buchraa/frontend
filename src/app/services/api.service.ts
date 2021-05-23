@@ -162,7 +162,7 @@ return this.images[Math.floor(Math.random() * Math.floor(this.images.length))];
     var items = objectItem;
     console.log("Array",items);
     items.sort(function (a, b) {
-    return a.numVers - b.numVers;
+    return a.versId - b.versId;
     });
   }
 
