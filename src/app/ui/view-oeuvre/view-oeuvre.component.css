@@ -51,10 +51,10 @@
        margin: 5px 10px;
    }
 
-   .collection span {
+   /*.collection span {
     position: absolute;
     right: 2% !important;
-   }
+   }*/
 
 
    .collection .collection-item.active {
@@ -177,3 +177,17 @@ ol {
   font-size: 1.5rem;
 }
 
+div.collection p {
+  margin: 1em 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 0.7em;
+
+}
+p span{
+  padding: 0.1em 1em;
+}
+div p {
+  margin: 0.5em 0.5em !important;
+}
