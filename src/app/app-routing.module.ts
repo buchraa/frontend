@@ -58,7 +58,7 @@ const routes: Routes = [
   { path: '', component:HomePageComponent},
   { path: 'login', component:LoginComponent},
   { path: 'guest-login', component:GuestLoginComponent},
-  { path: 'guest-register', component:GuestRegisterComponent},
+  { path: 'register', component:GuestRegisterComponent},
   { path: 'administration', component:AdminComponent},
   { path: 'oeuvre-manage', component:OeuvreManageComponent},
   { path: 'ver-manage', component:VersManageComponent},
@@ -88,7 +88,8 @@ const routes: Routes = [
   { path: 'add-ver', component:AddVerComponent},
   { path: 'add-verTrad', component:AddVersTradComponent},
   { path: 'verTrad-manage', component:VersTradManagerComponent},
-  { path: 'signup',  component:SignupComponent},
+  /* admin sigup form
+  { path: 'signup',  component:SignupComponent},*/
   { path: 'Accueil', component:HomePageComponent},
   { path: 'Modules', canActivate:[GuestConnectedGuard], component:ModulesComponent},
   { path: 'Paramètres', canActivate:[GuestConnectedGuard], component:SettingComponent},

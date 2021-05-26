@@ -52,7 +52,7 @@ export class GuestLoginComponent implements OnInit {
   }
 
   public register() {
-    this.router.navigate(['/guest-register']);
+    this.router.navigate(['/register']);
 
   }
 
