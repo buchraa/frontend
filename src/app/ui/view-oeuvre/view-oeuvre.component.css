@@ -136,6 +136,13 @@ iframe {
     position: relative;
     display: flex;
   }
+
+  @media only screen and (min-width: 800px) {
+    div.collection, div.meta {         
+         padding: 1em 0.2em;
+         font-size: 18px !important; 
+    }
+  }
 /*
   li::before {
    position: absolute;
@@ -180,7 +187,19 @@ ol {
 div.collection p {
   margin: 1em 1em;
   display: flex;
+  display: flex;
+  display: -webkit-box;
+display: -ms-flexbox;
   flex-direction: row;
+  -ms-flex-line-pack: center;
+  align-content: center;
+-webkit-box-align: start;
+  -ms-flex-align: start;
+      align-items: flex-start;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  justify-content: space-between;
   justify-content: space-around;
   border-radius: 0.7em;
 
@@ -191,3 +210,5 @@ p span{
 div p {
   margin: 0.5em 0.5em !important;
 }
+
+

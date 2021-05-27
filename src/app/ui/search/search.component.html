@@ -1,3 +1,4 @@
+<section>
 <div class="wrap">
     <div class="search">
        <input type="text" class="searchTerm" [(ngModel)]="searchText" placeholder="search text goes here">
@@ -5,11 +6,16 @@
         <span class="material-icons">search</span>
       </button>
     </div>
- </div>
+ </div> 
+
  <div *ngFor="let oeuvre of allOeuvres | paginate: config | filter : searchText; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
-  <p> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> <div *ngIf="isAdmin" (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
+  <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> <div *ngIf="isAdmin" (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
 </div>
-<pagination-controls (pageChange)="pageChanged($event)" *ngIf="length"></pagination-controls>   
+
+<div>
+<pagination-controls (pageChange)="pageChanged($event)" *ngIf="length"></pagination-controls>
+</div>
+</section>
 
 <app-loader></app-loader>
  

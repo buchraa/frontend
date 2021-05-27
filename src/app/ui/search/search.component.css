@@ -104,11 +104,30 @@
    div.collection {
     margin: 1em 0.5em;
     display: flex;
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; 
     flex-direction: row;
+    -ms-flex-line-pack: center;
+    align-content: center;
+-webkit-box-align: start;
+    -ms-flex-align: start;
+        align-items: flex-start;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+    -ms-flex-direction: row;
     justify-content: space-between;
     border-radius: 0.7em;
-    padding: 0.1em 0.2em;
-
+    padding: 0.5em 0.2em;
+    width: 95vw !important;
+  }
+ 
+  p span{
+    padding: 0.1em 1em;
+  }
+  div p {
+    margin: 0.5em 0.5em !important;
+  
   }
   
 
@@ -117,23 +136,50 @@
     color: #000 !important;
  }
 
- @media only screen and (min-width: 1200px) {
-  .search, .wrap {
-    width: 40vw !important;
-    position: relative;
-    display: flex;
-   
-  }
-
-  .searchTerm {
-    width: 30vw !important;    
-  }
-
- 
-}
-
-span {
+p, span {
   cursor: pointer;
 }
 
+section {
+  margin-bottom: 5rem !important;
+  padding-bottom: 5rem !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .search, .wrap {
+    width: 40vw !important;
+    position: relative;
+    display: flex;   
+  }
+  .searchTerm {
+    width: 30vw !important;    
+  } 
+}
+
+
+@media only screen and (min-width: 800px) {
+  div.collection {
+       width: 600px !important;
+       padding: 1em 0.2em;
+       font-size: 18px !important; 
+  }
+}
 

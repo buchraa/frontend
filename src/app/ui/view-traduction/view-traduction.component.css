@@ -112,6 +112,18 @@ div.collection {
   margin: 1em 0.5em;
   display: flex;
   flex-direction: row;
+  display: flex;
+  display: -webkit-box;
+display: -ms-flexbox;
+  -ms-flex-line-pack: center;
+  align-content: center;
+-webkit-box-align: start;
+  -ms-flex-align: start;
+      align-items: flex-start;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  justify-content: space-between;
   justify-content: space-between;
   border-radius: 0.7em;
   padding: 0.1em 0.2em;
@@ -127,4 +139,11 @@ div.collection {
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.7); /* 0.0 - transparent */
 
+}
+
+@media only screen and (min-width: 800px) {
+  div.collection, div.meta {         
+       padding: 1em 0.2em;
+       font-size: 18px !important; 
+  }
 }

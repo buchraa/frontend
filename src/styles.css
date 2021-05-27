@@ -620,12 +620,6 @@ label {
 }
 
 
-pagination-controls {
-  position:  absolute !important;
-  bottom: -2% !important;
-  padding-top: 2rem !important;
-  text-align: center !important;
-}
 
 .ngx-pagination a, .ngx-pagination button {
   color: #fff !important;

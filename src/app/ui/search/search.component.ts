@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
   config: any;
   isAdmin = this.auth.isAdmin();
   length: Boolean;
-  constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
+  constructor( public api: ApiService, private router: Router, public auth: AuthService, public filter: FilterPipe) { }
 
   ngOnInit(): void {
     
@@ -55,6 +55,10 @@ export class SearchComponent implements OnInit {
 
   editItem(object: Oeuvre) {
     this.router.navigate(["/edit-oeuvre", object.oeuvreId]);
+  }
+
+  viewTraduc(object: Oeuvre) {
+    this.router.navigate(["/view-traduction", object.oeuvreId]);
   }
 
 
