@@ -25,25 +25,6 @@ export class ViewModuleComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    this.api.getList('Categories').subscribe(
-      (t) => {
-        this.allCategories = t;       
-        for (var i = 0; i < this.allCategories.length; i++) {
-                  if(this.allCategories[i].module.moduleId == this.ObjetId){
-                 this.categories.push(this.allCategories[i]);          
-          }      
-      }
-      this.spinner.hide();
-      console.log(this.categories);
-      },
-      (error) => {
-        
-       console.log(error);
-     }
-
-    )
-
-
     this.object = new Module();     
     this.routingSubscription = 
         this.route.params.subscribe(params => {
@@ -58,11 +39,32 @@ export class ViewModuleComponent implements OnInit {
               this.api.getById('Module', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                this.getCategories(this.ObjetId);
                 console.log(this.object);                
               });
             }
         });
     
+  }
+
+  public getCategories(uuid: any){
+    this.api.getList('Categories').subscribe(
+      (t) => {
+        this.allCategories = t;       
+        for (var i = 0; i < this.allCategories.length; i++) {
+                  if(this.allCategories[i].module.moduleId == uuid){
+                 this.categories.push(this.allCategories[i]);          
+          }      
+      }
+      this.spinner.hide();
+      console.log(this.categories);
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
   }
 
   goDetails(object: Category) {

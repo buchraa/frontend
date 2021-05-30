@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 
-const baseUrl = environment. apiUrl;
+const baseUrl = environment.apiUrl;
 const assetUrl = "../src/assets/images";
 
 @Injectable({

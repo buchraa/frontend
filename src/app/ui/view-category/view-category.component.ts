@@ -22,25 +22,7 @@ export class ViewCategoryComponent implements OnInit {
   constructor(public dialog: MatDialog, private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
   ngOnInit(): void {
-    this.api.getList('oeuvres').subscribe(
-      (t) => {
-        this.allOeuvres = t;     
-        console.log(this.allOeuvres)  
-        for (var i = 0; i < this.allOeuvres.length; i++) {
-                  if(this.allOeuvres[i].category.categoryId == this.ObjetId){
-                 this.oeuvres.push(this.allOeuvres[i]);          
-          }      
-      }
-      console.log(this.oeuvres);
-      },
-      (error) => {
-        
-       console.log(error);
-     }
-
-    )
-
-    this.object = new Category();     
+      this.object = new Category();     
     this.routingSubscription = 
         this.route.params.subscribe(params => {
             console.log(params["id"]);
@@ -53,11 +35,32 @@ export class ViewCategoryComponent implements OnInit {
               this.api.getById('Categorie', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                this.getOeuvres(this.ObjetId);
                 console.log(this.object);                
               });
             }
         });
     
+  }
+
+  public getOeuvres(uiid: any){
+    this.api.getList('oeuvres').subscribe(
+      (t) => {
+        this.allOeuvres = t;     
+        console.log(this.allOeuvres)  
+        for (var i = 0; i < this.allOeuvres.length; i++) {
+                  if(this.allOeuvres[i].category.categoryId == uiid){
+                 this.oeuvres.push(this.allOeuvres[i]);          
+          }      
+      }
+      console.log(this.oeuvres);
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
   }
   
   goDetails(object: Oeuvre) {

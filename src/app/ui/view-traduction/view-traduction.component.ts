@@ -24,27 +24,6 @@ export class ViewTraductionComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    this.api.getList('vers').subscribe(
-      (t) => {
-        this.allVers = t;     
-        console.log(this.allVers)  
-        for (var i = 0; i < this.allVers.length; i++) {
-                  if(this.allVers[i].oeuvre.oeuvreId == this.ObjetId){
-                 this.vers.push(this.allVers[i]);          
-          }      
-      }
-      this.api.sortByPremium(this.vers)
-      console.log(this.vers);
-      },
-      (error) => {
-        
-       console.log(error);
-     }
-
-    )
-
-
     this.object = new Oeuvre();     
     this.routingSubscription = 
         this.route.params.subscribe(params => {
@@ -58,11 +37,34 @@ export class ViewTraductionComponent implements OnInit {
               this.api.getById('Oeuvre', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                this.getVers(this.ObjetId);
                 console.log(this.object);                
               });
             }
         });
     
+  }
+
+  public getVers(uuid: any) {
+    
+    this.api.getList('vers').subscribe(
+      (t) => {
+        this.allVers = t;     
+        console.log(this.allVers)  
+        for (var i = 0; i < this.allVers.length; i++) {
+                  if(this.allVers[i].oeuvre.oeuvreId == uuid){
+                 this.vers.push(this.allVers[i]);          
+          }      
+      }
+      this.api.sortByPremium(this.vers)
+      console.log(this.vers);
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
   }
 
   public getTraduc(object: VersTraduction){

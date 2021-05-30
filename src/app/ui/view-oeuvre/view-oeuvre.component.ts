@@ -49,7 +49,7 @@ export class ViewOeuvreComponent implements OnInit {
       this.state = state;
     });
 
-    this.api.getList('vers').subscribe(
+    /*this.api.getList('vers').subscribe(
       (t) => {
         this.allVers = t;     
         console.log(this.allVers)  
@@ -66,14 +66,14 @@ export class ViewOeuvreComponent implements OnInit {
        console.log(error);
      }
 
-    )
+    )*/
 
 
     this.object = new Oeuvre();     
     this.routingSubscription = 
         this.route.params.subscribe(params => {
             console.log(params["id"]);
-            if (params["id"]) {           
+            if (params["id"]) {          
        
               this.ObjetId = params["id"]
               this.object.oeuvreId = params["id"]            
@@ -82,6 +82,7 @@ export class ViewOeuvreComponent implements OnInit {
               this.api.getById('Oeuvre', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                this.getVers(this.ObjetId);
                 //get the audioUrl
                 this.file = this.object.audioOeuvre;
                 //get the videoSrc
@@ -94,6 +95,27 @@ export class ViewOeuvreComponent implements OnInit {
             }
         });
     
+  }
+
+  public getVers(uuid: any) {
+    this.api.getList('vers').subscribe(
+      (t) => {
+        this.allVers = t;     
+        console.log(this.allVers)  
+        for (var i = 0; i < this.allVers.length; i++) {
+                  if(this.allVers[i].oeuvre.oeuvreId == uuid){
+                 this.vers.push(this.allVers[i]);          
+          }      
+      }
+      console.log(this.vers);
+      this.api.sortByPremium(this.vers)
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
   }
 
   public getTraduc(object: VersTraduction){
