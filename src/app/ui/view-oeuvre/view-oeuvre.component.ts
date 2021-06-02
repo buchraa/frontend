@@ -8,6 +8,7 @@ import { DialogContentPdfComponent } from '../dialog-content-pdf/dialog-content-
 import { AudioService } from "../../services/audio.service";
 import { StreamState } from "../../interfaces/stream-state";
 import { DomSanitizer } from '@angular/platform-browser';
+import { Vers } from 'src/app/model/vers.model';
 
 
 
@@ -36,6 +37,8 @@ export class ViewOeuvreComponent implements OnInit {
   panelOpenState = false;
   played: Boolean = false;
   videoSrc: string;
+  typeVers=[];
+  typeProse=[];
 
   constructor(public matDialog: MatDialog, public audioService: AudioService, private router: Router, private route: ActivatedRoute, public api: ApiService, private _sanitizer: DomSanitizer) {
     //pdfDefaultOptions.assetsFolder = 'bleeding-edge';
@@ -48,26 +51,6 @@ export class ViewOeuvreComponent implements OnInit {
      this.audioService.getState().subscribe(state => {
       this.state = state;
     });
-
-    /*this.api.getList('vers').subscribe(
-      (t) => {
-        this.allVers = t;     
-        console.log(this.allVers)  
-        for (var i = 0; i < this.allVers.length; i++) {
-                  if(this.allVers[i].oeuvre.oeuvreId == this.ObjetId){
-                 this.vers.push(this.allVers[i]);          
-          }      
-      }
-      console.log(this.vers);
-      this.api.sortByPremium(this.vers)
-      },
-      (error) => {
-        
-       console.log(error);
-     }
-
-    )*/
-
 
     this.object = new Oeuvre();     
     this.routingSubscription = 
@@ -102,13 +85,29 @@ export class ViewOeuvreComponent implements OnInit {
       (t) => {
         this.allVers = t;     
         console.log(this.allVers)  
+
+        // get vers for this oeuvre
         for (var i = 0; i < this.allVers.length; i++) {
                   if(this.allVers[i].oeuvre.oeuvreId == uuid){
                  this.vers.push(this.allVers[i]);          
           }      
       }
       console.log(this.vers);
-      this.api.sortByPremium(this.vers)
+      
+      // dispatch type vers and prose
+
+      for (var i = 0; i < this.vers.length; i++) {
+        if(this.vers[i].typeVers == "Prose"){
+       this.typeProse.push(this.vers[i]);          
+        }
+        else this.typeVers.push(this.vers[i]);      
+      }
+
+      //sort array
+
+      this.api.sortByVerId(this.typeProse)
+      this.api.sortByVerId(this.typeVers)
+     
       },
       (error) => {
         
@@ -116,6 +115,12 @@ export class ViewOeuvreComponent implements OnInit {
      }
 
     )
+  }
+
+  public sliceArray(object: Vers){
+
+
+    
   }
 
   public getTraduc(object: VersTraduction){

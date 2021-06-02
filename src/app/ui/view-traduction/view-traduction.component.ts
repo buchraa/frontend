@@ -56,7 +56,7 @@ export class ViewTraductionComponent implements OnInit {
                  this.vers.push(this.allVers[i]);          
           }      
       }
-      this.api.sortByPremium(this.vers)
+      this.api.sortByVerId(this.vers)
       console.log(this.vers);
       },
       (error) => {

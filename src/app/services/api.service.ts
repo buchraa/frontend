@@ -158,7 +158,7 @@ return this.images[Math.floor(Math.random() * Math.floor(this.images.length))];
    }
   }
 
-  sortByPremium(objectItem: any){
+  sortByVerId(objectItem: any){
     var items = objectItem;
     console.log("Array",items);
     items.sort(function (a, b) {
