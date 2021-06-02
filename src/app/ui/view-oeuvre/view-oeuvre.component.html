@@ -67,7 +67,7 @@
         <!-- list vers -->
           <div class="panel" dir="RTL">
               <ol>
-                  <li *ngFor="let ver of vers">{{ ver.texteVersAR1 }}</li>                       
+                  <li *ngFor="let ver of vers">{{ ver.texteVersAR1 }} <br/> <span *ngIf="ver.texteVersAR2 != NULL">{{ ver.texteVersAR2}}</span></li>                       
               </ol>              
           </div>
        
