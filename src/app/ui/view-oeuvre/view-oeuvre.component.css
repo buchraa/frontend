@@ -204,6 +204,7 @@ display: -ms-flexbox;
 }
 p span{
   padding: 0.1em 1em;
+  font-family: 'Traditional Arabic';
 }
 div p {
   margin: 0.5em 0.5em !important;
