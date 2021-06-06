@@ -42,7 +42,7 @@
   .wrap{
     width: 80vw;
     margin: 2em auto !important;
-    padding-top: 15vh;
+    padding: 2.5em auto;
     text-align: center;
     }
     .wrap span {
@@ -160,6 +160,8 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+          padding-top: 0 !important;
+          margin-top: 0 !important;
 
 }
 

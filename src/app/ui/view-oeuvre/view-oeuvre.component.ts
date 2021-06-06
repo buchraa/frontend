@@ -37,15 +37,14 @@ export class ViewOeuvreComponent implements OnInit {
   panelOpenState = false;
   played: Boolean = false;
   videoSrc: string;
-  typeVers=[];
-  typeProse=[];
+ 
 
   constructor(public matDialog: MatDialog, public audioService: AudioService, private router: Router, private route: ActivatedRoute, public api: ApiService, private _sanitizer: DomSanitizer) {
     //pdfDefaultOptions.assetsFolder = 'bleeding-edge';
    }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
 
      // listen to stream state
      this.audioService.getState().subscribe(state => {
@@ -80,6 +79,10 @@ export class ViewOeuvreComponent implements OnInit {
     
   }
 
+  public customStyle(word: String) {
+    return word != "Vers" ? true : false ;
+  }
+
   public getVers(uuid: any) {
     this.api.getList('vers').subscribe(
       (t) => {
@@ -93,20 +96,11 @@ export class ViewOeuvreComponent implements OnInit {
           }      
       }
       console.log(this.vers);
-      
-      // dispatch type vers and prose
-
-      for (var i = 0; i < this.vers.length; i++) {
-        if(this.vers[i].typeVers == "Prose"){
-       this.typeProse.push(this.vers[i]);          
-        }
-        else this.typeVers.push(this.vers[i]);      
-      }
+     
 
       //sort array
-
-      this.api.sortByVerId(this.typeProse)
-      this.api.sortByVerId(this.typeVers)
+      this.api.sortByVerId(this.vers)
+     
      
       },
       (error) => {
@@ -194,5 +188,7 @@ closeModal() {
 public getMediaPath(url) {
    return (this._sanitizer.bypassSecurityTrustResourceUrl(url) as any);
 }
+
+
 
 }
