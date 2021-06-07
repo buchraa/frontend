@@ -4,22 +4,20 @@ import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { FilterPipe} from 'src/app/filter.pipe';
 
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
-  providers: [ FilterPipe]
+  styleUrls: ['./search.component.css']  
 })
 export class SearchComponent implements OnInit {
-  allOeuvres=[];
+  allOeuvres=[Oeuvre];
   searchText: string;
   config: any;
   isAdmin = this.auth.isAdmin();
   length: Boolean;
-  constructor( public api: ApiService, private router: Router, public auth: AuthService, public filter: FilterPipe) { }
+  constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
   ngOnInit(): void {
     

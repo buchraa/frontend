@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FilterPipe} from './filter.pipe';
+import { FilterPipe } from './filter.pipe';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { PwaService } from './services/pwa.service';
@@ -112,8 +112,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     OeuvreMouridismeComponent,
     RechercheMouridismeComponent,
     MediathequeMouridismeComponent,
-    NotFoundComponent,
-    FilterPipe,
+    NotFoundComponent,    
     SearchComponent,
     ViewOeuvreComponent,
     ViewTraductionComponent,
@@ -140,6 +139,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     CategoryDetailComponent,
     AuthorDetailComponent,
     DialogContentDeleteComponent,
+    FilterPipe,
      ],
   imports: [
     BrowserModule,
