@@ -37,7 +37,8 @@ export class ViewOeuvreComponent implements OnInit {
   panelOpenState = false;
   played: Boolean = false;
   videoSrc: string;
- 
+ versIntro=[];
+ typeVer=[];
 
   constructor(public matDialog: MatDialog, public audioService: AudioService, private router: Router, private route: ActivatedRoute, public api: ApiService, private _sanitizer: DomSanitizer) {
     //pdfDefaultOptions.assetsFolder = 'bleeding-edge';
@@ -97,9 +98,17 @@ export class ViewOeuvreComponent implements OnInit {
       }
       console.log(this.vers);
      
+      for (var i = 0; i < this.vers.length; i++) {
+        if(this.vers[i].typeVers == "Prose"){
+       this.versIntro.push(this.vers[i]);          
+      }
+      else this.typeVer.push(this.vers[i]);
+}
 
       //sort array
       this.api.sortByVerId(this.vers)
+      this.api.sortByVerId(this.versIntro)
+      this.api.sortByVerId(this.typeVer)
      
      
       },
