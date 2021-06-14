@@ -13,21 +13,50 @@ import { DialogContentDeleteComponent } from '../dialog-content-delete/dialog-co
 export class VersManageComponent implements OnInit {
   items= [];
   pageOfItems: Array<any>;
+  pageNb= 0;
+  limit=8;
+  totalPage: number;
+  pageNumber: number;
+  isdisabled: Boolean;
   constructor(public matDialog: MatDialog, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
-    this.api.getList('vers').subscribe(
+    this.getVers();
+
+    }
+
+  public getVers(){
+    this.api.getOeuvreList('vers', this.pageNb, this.limit).subscribe(
       (t) => {
-        this.items = t;
-        console.log(this.items);
-       
-      },
-      (error) => {
-        
-       console.log(error);
-     }
+        this.items = t.content; 
+        this.totalPage = t.totalPages;  
+        this.pageNumber = t.pageable.pageNumber;    
+        console.log(t)  
+     },
+      (error) => { console.log(error) }
     )
+  }
+
+  
+  public next(){   
+    this.pageNb += 1;
+    this.getVers();
+    console.log(this.pageNb)
+  }
+
+  public preview(){   
+    this.pageNb -= 1;
+    this.getVers();
+    console.log(this.pageNb)
+  }
+
+  public disablePrev(){
+    return this.pageNumber == 0 ? true : false
+  }
+  
+  public disable(){
+    return this.pageNumber == (this.totalPage - 1) ? true : false
   }
 
   onChangePage(pageOfItems: Array<any>) {

@@ -17,30 +17,68 @@ export class SearchComponent implements OnInit {
   config: any;
   isAdmin = this.auth.isAdmin();
   length: Boolean;
+  pageNb= 0;
+  limit=10;
+  totalPage: number;
+  pageNumber: number;
+  isdisabled: Boolean;
   constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
-  ngOnInit(): void {
-    
-    this.api.getList('oeuvres').subscribe(
-      (t) => {
-        this.allOeuvres = t;     
-        console.log(this.allOeuvres)  
-        this.length = this.allOeuvres.length > 10 ?  true : false;
-        
-      },
-      (error) => {
-        
-       console.log(error);
-     }
 
+  ngOnInit(): void {    
+    this. getOeuvres();
+  }
+
+  public getOeuvres(){
+    this.api.getOeuvreList('oeuvres', this.pageNb, this.limit).subscribe(
+      (t) => {
+        this.allOeuvres = t.content; 
+        this.totalPage = t.totalPages;  
+        this.pageNumber = t.pageable.pageNumber;    
+        console.log(t)  
+     },
+      (error) => { console.log(error) }
+    )
+  }
+
+  public next(){   
+    this.pageNb += 1;
+    this.getOeuvres();
+    console.log(this.pageNb)
+  }
+
+  public preview(){   
+    this.pageNb -= 1;
+    this.getOeuvres();
+    console.log(this.pageNb)
+  }
+
+  public SearchOeuvre(){
+    this.api.SearchOeuvre(this.searchText).subscribe(
+      (t) => {
+        this.allOeuvres = t; 
+        console.log(t)  
+     },
+      (error) => { console.log(error) }
     )
 
-    this.config = {
-      itemsPerPage: 10,
-      currentPage: 1,
-      totalItems: this.allOeuvres.length
-    
-    };
+  }
+
+
+  onUploadChange(evt: any) {
+    const target = evt.target.value; 
+    this.searchText = target;
+    this.SearchOeuvre();
+    console.log(target)
+   
+  }
+  
+  public disablePrev(){
+    return this.pageNumber == 0 ? true : false
+  }
+  
+  public disable(){
+    return this.pageNumber == (this.totalPage - 1) ? true : false
   }
 
   pageChanged(event){
@@ -58,6 +96,8 @@ export class SearchComponent implements OnInit {
   viewTraduc(object: Oeuvre) {
     this.router.navigate(["/view-traduction", object.oeuvreId]);
   }
+
+
 
 
 }

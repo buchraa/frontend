@@ -8,7 +8,7 @@
                     <a [routerLink]="['/add-ver']"  class="btn-floating btn-large waves-effect waves-light plusIcon"><i class="material-icons">add</i></a>
                 </div>
               
-                <div *ngFor="let ver of pageOfItems" class="adminItem">                   
+                <div *ngFor="let ver of items" class="adminItem">                   
                     <p class="estateTitle">{{ ver.typeVers }}</p>       
                     <p class="estateTitle">{{ ver.texteVersAR1 }}</p>
                     <input class="estateId" type="hidden" [value]="ver.versId">
@@ -20,8 +20,10 @@
                 </div>
             </div>
         </div>
+        <div id="controls">
+            <a mat-flat-button (click)="preview()" [ngClass]="{'disabled': disablePrev()}">précédent</a>
+            <a mat-flat-button (click)="next()" [ngClass]="{'disabled': disable()}">suivant</a>
+          </div>
     </div>
-    <div class="card-footer pb-0 pt-3">
-        <jw-pagination [items]="items" (changePage)="onChangePage($event)" [pageSize]="4"></jw-pagination>
-    </div>
+  
 </section>

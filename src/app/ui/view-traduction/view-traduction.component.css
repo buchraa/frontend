@@ -147,3 +147,41 @@ display: -ms-flexbox;
        font-size: 18px !important; 
   }
 }
+
+.card-footer {
+  position: relative !important;
+  top: -2% !important; 
+ padding: 4rem 1rem !important;
+
+}
+
+.pagination li.active {
+  background-color: #558303 !important;
+}
+
+.disabled {
+  display: none !important;
+}
+
+
+li {
+  counter-increment: li;
+  margin: 1em 0em;
+  font-size: 16px !important;
+  line-height: 1em !important;
+  text-align: center !important;
+  max-width: 600px;
+  margin: 1em auto !important;
+}
+
+ol li {
+  font-size: 16px !important;
+  text-align: center !important; 
+  
+}
+
+
+li.ng-star-inserted {
+  padding-right: 0 !important;
+}
+

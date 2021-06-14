@@ -18,6 +18,11 @@ export class ViewCategoryComponent implements OnInit {
   allOeuvres=[];
   oeuvres=[];
   searchText: string;
+  pageNb= 0;
+  limit=10;
+ totalPage: number;
+ pageNumber: number;
+ isdisabled: Boolean;
 
   constructor(public dialog: MatDialog, private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
@@ -43,6 +48,49 @@ export class ViewCategoryComponent implements OnInit {
     
   }
 
+
+  public next(){   
+    this.pageNb += 1;
+    this.getOeuvres(this.ObjetId);
+    console.log(this.pageNb)
+  }
+
+  public preview(){   
+    this.pageNb -= 1;
+    this.getOeuvres(this.ObjetId);
+    console.log(this.pageNb)
+  }
+
+
+  
+  public disablePrev(){
+    return this.pageNumber == 0 ? true : false
+  }
+  public disable(){
+    return this.pageNumber == (this.totalPage - 1) ? true : false
+  }
+
+  
+   public getOeuvres(uiid: any){
+    this.api.findOeuvresForCategories(uiid, this.pageNb, this.limit).subscribe(
+      (t) => {
+        this.oeuvres = t.content;   
+        this.totalPage = t.totalPages;  
+        this.pageNumber = t.pageable.pageNumber;
+        console.log(this.oeuvres)  
+        
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+
+    )
+  }
+  
+  
+  
+/*
   public getOeuvres(uiid: any){
     this.api.getList('oeuvres').subscribe(
       (t) => {
@@ -61,7 +109,7 @@ export class ViewCategoryComponent implements OnInit {
      }
 
     )
-  }
+  }*/
   
   goDetails(object: Oeuvre) {
     this.router.navigate(["/view-oeuvre", object.oeuvreId]);

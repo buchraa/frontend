@@ -14,11 +14,17 @@ export class OeuvreManageComponent implements OnInit {
   items= [];
   object: Oeuvre;
   pageOfItems: Array<any>;
+  pageNb= 0;
+  limit=8;
+  totalPage: number;
+  pageNumber: number;
+  isdisabled: Boolean;
   constructor(public matDialog: MatDialog, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
-
-    this.api.getList('oeuvres').subscribe(
+  
+    this.getOeuvres();
+    /*this.api.getList('oeuvres').subscribe(
       (t) => {
         this.items = t;
         console.log(this.items);
@@ -28,9 +34,41 @@ export class OeuvreManageComponent implements OnInit {
         
        console.log(error);
      }
-    )    
+    )   */ 
   }
 
+  public getOeuvres(){
+    this.api.getOeuvreList('oeuvres', this.pageNb, this.limit).subscribe(
+      (t) => {
+        this.items = t.content; 
+        this.totalPage = t.totalPages;  
+        this.pageNumber = t.pageable.pageNumber;    
+        console.log(t)  
+     },
+      (error) => { console.log(error) }
+    )
+  }
+
+  
+  public next(){   
+    this.pageNb += 1;
+    this.getOeuvres();
+    console.log(this.pageNb)
+  }
+
+  public preview(){   
+    this.pageNb -= 1;
+    this.getOeuvres();
+    console.log(this.pageNb)
+  }
+
+  public disablePrev(){
+    return this.pageNumber == 0 ? true : false
+  }
+  
+  public disable(){
+    return this.pageNumber == (this.totalPage - 1) ? true : false
+  }
   onChangePage(pageOfItems: Array<any>) {
     // update current page of items
     this.pageOfItems = pageOfItems;

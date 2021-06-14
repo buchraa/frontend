@@ -58,6 +58,34 @@ saveOrUpdateItem(url: string, item): Observable<any> {
 
 }
 
+SearchOeuvre(query: string): Observable<any>  {
+  const opts = { params: new HttpParams({fromString: `titre=${query}`}) };
+  return this.http.get(`${baseUrl}/oeuvres/query`, opts);
+
+}
+getOeuvreList(url: string, pageNB: number, limit: number): Observable<any>  {
+  const opts = { params: new HttpParams({fromString: `pageNo=${pageNB}&pageSize=${limit}`}) };
+  return this.http.get(`${baseUrl}/${url}`, opts);
+
+}
+
+findOeuvresForCategories(uiid: number, pageNB: number, limit: number): Observable<any>  {
+  const opts = { params: new HttpParams({fromString: `pageNo=${pageNB}&pageSize=${limit}`}) };
+  return this.http.get(`${baseUrl}/OeuvresForCategory/${uiid}`, opts);
+
+}
+
+findItems(uiid: number): Observable<any>  {
+  return this.http.get(`${baseUrl}/VersForOeuvre/${uiid}`);
+
+}
+
+
+getVersList(url: string): Observable<any>  {
+  return this.http.get(`${baseUrl}/${url}`);
+}
+
+
 
  deleteItem(url: string, Id: number): Observable<any> {
     return this.http.delete(`${baseUrl}/${url}/${Id}`);

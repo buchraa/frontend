@@ -50,6 +50,7 @@ export class ViewModuleComponent implements OnInit {
   public getCategories(uuid: any){
     this.api.getList('Categories').subscribe(
       (t) => {
+        console.log(t);
         this.allCategories = t;       
         for (var i = 0; i < this.allCategories.length; i++) {
                   if(this.allCategories[i].module.moduleId == uuid){

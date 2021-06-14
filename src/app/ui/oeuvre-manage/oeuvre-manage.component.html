@@ -1,5 +1,7 @@
 <app-menu></app-menu>
+
 <section id="pageAdmin">   
+  
     <div>        
         <div id="admin-content">
             <div id="admin-items">
@@ -8,7 +10,7 @@
                     <a [routerLink]="['/add-oeuvre']"  class="btn-floating btn-large waves-effect waves-light plusIcon" ><i class="material-icons">add</i></a>
                 </div>
               
-                <div *ngFor="let oeuvre of pageOfItems" class="adminItem">                   
+                <div *ngFor="let oeuvre of items" class="adminItem">                   
                     <p class="estateTitle">{{ oeuvre.titreOeuvre }}</p>       
                     <p class="estateTitle">{{ oeuvre.presentattion }}</p>
                                        
@@ -21,10 +23,14 @@
                 </div>
             </div>
         </div>
+        <div id="controls">
+            <a mat-flat-button (click)="preview()" [ngClass]="{'disabled': disablePrev()}">précédent</a>
+            <a mat-flat-button (click)="next()" [ngClass]="{'disabled': disable()}">suivant</a>
+        </div>
     </div>  
-    <div class="card-footer pb-0 pt-3">
-        <jw-pagination [items]="items" (changePage)="onChangePage($event)" [pageSize]="4"></jw-pagination>
-    </div>
+  
     
    </section>
+   
+  
 

@@ -75,7 +75,6 @@ import { ChapterDetailComponent } from './ui/chapter-detail/chapter-detail.compo
 import { CategoryDetailComponent } from './ui/category-detail/category-detail.component';
 import { AuthorDetailComponent } from './ui/author-detail/author-detail.component';
 import { DialogContentDeleteComponent } from './ui/dialog-content-delete/dialog-content-delete.component';
-import { CacheInterceptor } from './cache.interceptor';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -159,7 +158,6 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
     {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true}
    ],
   bootstrap: [AppComponent],

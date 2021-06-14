@@ -82,5 +82,17 @@
 }
 
 .collection span {
-    font-family: 'Traditional Arabic' !important;
+    font-family: "Traditional Arabic" !important;
 }
+
+.collection span{
+    font-size: 1.5em !important;
+  }
+
+  .collection{
+    font-size: 16px !important;
+  } 
+
+  .disabled {
+    display: none !important;
+  }

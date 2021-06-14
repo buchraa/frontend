@@ -6,7 +6,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff;}
 
 @font-face {
-  font-family: 'Traditional Arabic';
+  font-family: "Traditional Arabic";
   src: url('/assets/fonts/trado.ttf') format("truetype");
 }
 /*body {  background-position:center center; 
@@ -491,7 +491,7 @@ img {
 #pageTitle{
   display: flex;
   justify-content: center;
-  padding-top: 2em;
+  padding: 2em;
 
 }
 
@@ -755,3 +755,20 @@ li a .first-item {
     background-color: #fff !important;
     color: #000 !important;
 }
+
+
+#controls{
+  width: 100%;
+  text-align: center !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  -ms-flex-align: center;
+}
+
+#controls a {
+      padding: 0.5em;
+      margin: 0.5em;
+      background-color: #558303 !important;
+}
+

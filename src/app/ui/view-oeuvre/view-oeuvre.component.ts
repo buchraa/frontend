@@ -85,32 +85,19 @@ export class ViewOeuvreComponent implements OnInit {
   }
 
   public getVers(uuid: any) {
-    this.api.getList('vers').subscribe(
+    this.api.findItems(uuid).subscribe(
       (t) => {
-        this.allVers = t;     
-        console.log(this.allVers)  
+        this.vers = t;     
+        console.log(this.vers)  
 
-        // get vers for this oeuvre
-        for (var i = 0; i < this.allVers.length; i++) {
-                  if(this.allVers[i].oeuvre.oeuvreId == uuid){
-                 this.vers.push(this.allVers[i]);          
-          }      
-      }
-      console.log(this.vers);
-     
+            
       for (var i = 0; i < this.vers.length; i++) {
         if(this.vers[i].typeVers == "Prose"){
        this.versIntro.push(this.vers[i]);          
       }
       else this.typeVer.push(this.vers[i]);
 }
-
-      //sort array
-      this.api.sortByVerId(this.vers)
-      this.api.sortByVerId(this.versIntro)
-      this.api.sortByVerId(this.typeVer)
-     
-     
+    
       },
       (error) => {
         
@@ -120,11 +107,7 @@ export class ViewOeuvreComponent implements OnInit {
     )
   }
 
-  public sliceArray(object: Vers){
-
-
-    
-  }
+  
 
   public getTraduc(object: VersTraduction){
     if(object.codeLangue == "FR") {

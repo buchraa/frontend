@@ -18,22 +18,23 @@ export class ViewTraductionComponent implements OnInit {
   routingSubscription: any; 
   allVers=[];
   vers=[];
-  searchText: string;
-
+  items = [];
+  pageOfItems: Array<any>;
+  length: number;
+  disabled: boolean;
+  versIntro=[];
+ typeVer=[];
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.object = new Oeuvre();     
     this.routingSubscription = 
         this.route.params.subscribe(params => {
             console.log(params["id"]);
-            if (params["id"]) {           
-       
+            if (params["id"]) {  
               this.ObjetId = params["id"]
-              this.object.oeuvreId = params["id"]            
-
-           
+              this.object.oeuvreId = params["id"]   
               this.api.getById('Oeuvre', params["id"]).subscribe(
                 response => {
                 this.object = response;
@@ -46,26 +47,26 @@ export class ViewTraductionComponent implements OnInit {
   }
 
   public getVers(uuid: any) {
-    
-    this.api.getList('vers').subscribe(
+    this.api.findItems(uuid).subscribe(
       (t) => {
-        this.allVers = t;     
-        console.log(this.allVers)  
-        for (var i = 0; i < this.allVers.length; i++) {
-                  if(this.allVers[i].oeuvre.oeuvreId == uuid){
-                 this.vers.push(this.allVers[i]);          
-          }      
-      }
-      this.api.sortByVerId(this.vers)
-      console.log(this.vers);
+        this.vers = t;   
+        console.log(this.vers)  
+        for (var i = 0; i < this.vers.length; i++) {
+          if(this.vers[i].typeVers == "Prose"){
+         this.versIntro.push(this.vers[i]);          
+        }
+        else this.typeVer.push(this.vers[i]);
+  }
       },
       (error) => {
-        
-       console.log(error);
+        console.log(error);
      }
 
     )
   }
+
+ 
+
 
   public getTraduc(object: VersTraduction){
     if(object.codeLangue == "FR") {
@@ -78,6 +79,10 @@ export class ViewTraductionComponent implements OnInit {
   }
 
  
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+  }
  
   
 

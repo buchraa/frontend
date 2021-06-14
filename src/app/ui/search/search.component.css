@@ -188,3 +188,6 @@ section {
   }
 }
 
+.disabled {
+  display: none !important;
+}

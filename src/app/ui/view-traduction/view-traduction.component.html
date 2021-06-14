@@ -24,12 +24,21 @@
           <a><span class="material-icons">description</span></a></div>-->
 
           <div class="panel">
-              <ul *ngFor="let ver of vers">
+
+            <ul>
+              <li *ngFor="let ver of versIntro">
+                    <ul >
+                      <li *ngFor="let traduction of ver.traductions">{{ getTraduc(traduction) }}</li>
+                    </ul>  
+              </li>       
+            </ul> 
+              <ol>
+                <li *ngFor="let ver of typeVer">
                       <ul >
                         <li *ngFor="let traduction of ver.traductions">{{ getTraduc(traduction) }}</li>
-                      </ul>   
-                    </ul>                
-
+                      </ul>  
+                </li>       
+              </ol>  
           </div>
 
           <app-loader></app-loader>
