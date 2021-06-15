@@ -48,7 +48,7 @@ export class SearchComponent implements OnInit {
     this.api.getList('manageoeuvres').subscribe(
       (t) => {
         this.filtredOeuvres = t;  
-        this.filtred = true;   
+        //this.filtred = true;   
         console.log(this.filtredOeuvres)  
         
       },
@@ -60,6 +60,11 @@ export class SearchComponent implements OnInit {
     )
   }
  
+  public clear() {
+    this.filtred = false;
+    this.searchText = '';
+
+  }
 
   public next(){   
     this.pageNb += 1;
@@ -85,12 +90,8 @@ export class SearchComponent implements OnInit {
   }
 
 
-  onUploadChange(evt: any) {
-    const target = evt.target.value; 
-    this.searchText = target;
-    this.SearchOeuvre();
-    console.log(target)
-   
+  onUploadChange() {
+    this.filtred = true;   
   }
   
   public disablePrev(){
