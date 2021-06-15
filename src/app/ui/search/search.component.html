@@ -1,14 +1,19 @@
 <section>
 <div class="wrap">
     <div class="search">
-       <input type="text" class="searchTerm" (change)="onUploadChange($event)" [(ngModel)]="searchText" placeholder="Rechercher dans la bibliothèque">
+       <input type="text" class="searchTerm" [(ngModel)]="searchText" placeholder="Rechercher dans la bibliothèque">
        <button type="submit" class="searchButton">
         <span class="material-icons">search</span>
       </button>
     </div>
  </div> 
 
- <div *ngFor="let oeuvre of allOeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
+ <ng-container  *ngIf="filtred">
+  <div *ngFor="let oeuvre of filtredOeuvres | filter : searchText; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
+  <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> <div *ngIf="isAdmin" (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
+  </div> 
+</ng-container>
+<div *ngFor="let oeuvre of allOeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
   <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> <div *ngIf="isAdmin" (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
 </div>
 <div>

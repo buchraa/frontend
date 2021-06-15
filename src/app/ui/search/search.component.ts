@@ -13,6 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SearchComponent implements OnInit {
   allOeuvres=[Oeuvre];
+  filtredOeuvres=[Oeuvre];
   searchText: string;
   config: any;
   isAdmin = this.auth.isAdmin();
@@ -22,11 +23,13 @@ export class SearchComponent implements OnInit {
   totalPage: number;
   pageNumber: number;
   isdisabled: Boolean;
+  filtred = false;
   constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
 
   ngOnInit(): void {    
-    this. getOeuvres();
+    this.getOeuvres();
+    this.getList();
   }
 
   public getOeuvres(){
@@ -40,6 +43,23 @@ export class SearchComponent implements OnInit {
       (error) => { console.log(error) }
     )
   }
+
+  public getList(){
+    this.api.getList('manageoeuvres').subscribe(
+      (t) => {
+        this.filtredOeuvres = t;  
+        this.filtred = true;   
+        console.log(this.filtredOeuvres)  
+        
+      },
+      (error) => {
+        
+       console.log(error);
+     }
+  
+    )
+  }
+ 
 
   public next(){   
     this.pageNb += 1;
