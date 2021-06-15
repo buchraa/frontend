@@ -18,7 +18,7 @@ export class AddVersTradComponent implements OnInit {
 
   ngOnInit(): void {
     this.object = new VersTraduction;
-    this.api.getList('vers').subscribe(
+    this.api.getList('managevers').subscribe(
       (t) => {
         this.vers = t;
         console.log(this.vers);       

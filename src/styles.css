@@ -387,6 +387,31 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
     background-color:#fff;
     border:1px solid lightseagreen;
   }
+
+
+  
+  .back{
+    font-family: 'Roboto',sans-serif;
+  
+    display:block;
+    background-color:rgb(226, 28, 28);
+    color:#FFF;
+    height:35px;
+    width:200px;
+    margin:20px auto;
+    line-height: 35px;
+    text-align:center;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border:1px solid rgb(221, 18, 18);
+  }
+  
+  .back:hover{
+    color:rgb(224, 118, 18);
+    background-color:#fff;
+    border:1px solid #b26720;
+  }
   
   .mat-tab-list {
     background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */  }

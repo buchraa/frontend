@@ -30,7 +30,7 @@ export class AddChapterComponent implements OnInit {
               });
             }
         });
-    this.api.getList('oeuvres').subscribe(
+    this.api.getList('manageoeuvres').subscribe(
       (t) => {
         this.oeuvres = t;
         console.log(this.oeuvres);       
