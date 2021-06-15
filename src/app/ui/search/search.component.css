@@ -142,8 +142,8 @@ p, span {
 }
 
 section {
-  margin-bottom: 5rem !important;
-  padding-bottom: 5rem !important;
+  text-align: center !important;
+  margin: 5rem auto!important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
