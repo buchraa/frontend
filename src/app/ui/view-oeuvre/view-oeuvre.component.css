@@ -171,8 +171,8 @@ iframe {
 ol {
   list-style-type: arabic-indic;
   -moz-arabic-indic: arabic-indic;
-  font-size: 1.5rem;
-}
+  font-size: 1.3rem;
+  }
 
 div.collection p {
   margin: 1em 1em;
@@ -202,9 +202,8 @@ div p {
   margin: 0.5em 0.5em !important;
 }
 
-
 ol li {
-  font-size: 1.5em !important;
+  font-size: 1.8em !important;
   text-align: center !important;
   margin: 1em auto !important;
   font-family: "Traditional Arabic";
@@ -254,20 +253,13 @@ section {
   font-size: 2em !important;
 }
 
-@media only screen and (max-width: 800px) {
 
+@media only screen and (max-width: 600px) {
   ol li {
     font-size: 1.3em !important;
-    
+    text-align: center !important;
+    margin: 1em auto !important;
+    font-family: "Traditional Arabic";
   }
-}
-
-@media only screen and (min-width: 800px) {
-
-  .panel {
-      width: 600px !important;
-      text-align: center !important;
-      margin: 0 auto;
-      font-size: 20px;
-    }
+  
   }
