@@ -165,7 +165,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-          padding: 0 auto !important;
+          padding-bottom: 5rem !important;
 }
 
 
