@@ -62,32 +62,17 @@
    }
  .panel {
      margin: 2em 0;
-     padding: 1em 0.5em;
-     padding-bottom: 4em;
+     padding: 1em 1em !important;
+     padding-bottom: 4em !important;
      background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
 
  }
-/*
- li::before {
-  margin: 0.5em 0.5em;   
-  content: counter(li);   
-  color: #000;
-  display: inline-block; 
-  width: 2em;
-  text-align: center;
-  background-color: #fff;
-  background-image: url('/assets/images/bordure.jpg');
-  background-position:center center; 
-  background-repeat: no-repeat;
- font-size: 18px;
- position: absolute;
- right: 0%;
-}*/
 
-li {
+
+ol li, ul li {
   counter-increment: li;
   margin: 1em 0em;
-  font-size: 1.5em !important;
+  font-size: 3rem !important;
   line-height: 1em !important;
  
 }
@@ -139,20 +124,6 @@ iframe {
     display: flex;
   }
 
-  @media only screen and (min-width: 800px) {
-    div.collection, div.meta {         
-         padding: 1em 0.2em;
-         font-size: 18px !important; 
-    }
-
-    
-  }
-/*
-  li::before {
-   position: absolute;
-   right: 15%;
-  }*/
-
   }
  
 
@@ -171,7 +142,6 @@ iframe {
 ol {
   list-style-type: arabic-indic;
   -moz-arabic-indic: arabic-indic;
-  font-size: 1.3rem;
   }
 
 div.collection p {
@@ -202,11 +172,10 @@ div p {
   margin: 0.5em 0.5em !important;
 }
 
-ol li {
-  font-size: 1.8em !important;
+ol li, ul li {
   text-align: center !important;
   margin: 1em auto !important;
-  font-family: "Traditional Arabic";
+  font-family: "Traditional Arabic" !important;
 }
 
 
@@ -255,11 +224,30 @@ section {
 
 
 @media only screen and (max-width: 600px) {
-  ol li {
-    font-size: 1.3em !important;
+  ol li, ul li {
+    font-size: 2.5em !important;
     text-align: center !important;
     margin: 1em auto !important;
     font-family: "Traditional Arabic";
   }
   
   }
+
+
+  ol, ul {
+    display: flex !important;
+    flex-direction: column !important;
+    -ms-flex-line-pack: center !important;
+  align-content: center !important;
+-webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+      align-items: center !important;
+-webkit-box-orient: vertical !important;
+-webkit-box-direction: normal !important;
+margin-block-start: 1em !important;
+margin-block-end: 1em !important;
+margin-inline-start: 10px !important;
+margin-inline-end: 0px !important;
+padding-inline-start: 40px !important;
+   
+}
