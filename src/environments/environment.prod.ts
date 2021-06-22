@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://vps-8aea0a63.vps.ovh.net:8085'  
+  apiUrl:   'https://bibliotechmouride.herokuapp.com' // 'http://vps-8aea0a63.vps.ovh.net:8085'  
  
 };
