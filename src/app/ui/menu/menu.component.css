@@ -79,7 +79,7 @@ header {
    left:0;
    height:1px;
    width:0%;
-   background-color:goldenrod;
+   background-color: #fff;
    -webkit-transition:width ease 1s;
    -o-transition:width ease 1s;
    transition:width ease 1s;
