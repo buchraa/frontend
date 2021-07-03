@@ -22,7 +22,7 @@ export class LoaderInterceptor implements HttpInterceptor {
 
             .pipe ( tap (
 
-                    //event => console.log(event),
+                    event => console.log(event),
 
                     error => console.log( error )
 

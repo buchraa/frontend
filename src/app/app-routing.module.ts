@@ -60,6 +60,7 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'guest-login', component:GuestLoginComponent},
   { path: 'register', component:GuestRegisterComponent},
+  { path: 'add-user', canActivate:[ConnectedGuard], component:SignupComponent},
   { path: 'administration', canActivate:[ConnectedGuard], component:AdminComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'oeuvre-manage', canActivate:[ConnectedGuard], component:OeuvreManageComponent},
@@ -90,8 +91,6 @@ const routes: Routes = [
   { path: 'add-ver', canActivate:[ConnectedGuard], component:AddVerComponent},
   { path: 'add-verTrad', canActivate:[ConnectedGuard], component:AddVersTradComponent},
   { path: 'verTrad-manage', canActivate:[ConnectedGuard], component:VersTradManagerComponent},
-  /* admin sigup form
-  { path: 'signup',  component:SignupComponent},*/
   { path: 'Modules', canActivate:[GuestConnectedGuard], component:ModulesComponent},
   { path: 'Paramètres', canActivate:[GuestConnectedGuard], component:SettingComponent},
   { path: 'Plus', canActivate:[GuestConnectedGuard], component:HomePageComponent},

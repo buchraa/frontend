@@ -10,7 +10,7 @@
   .example-small-box {
     height: 100px;
     width: 100px;
-    background-color: lightseagreen;
+    background-color: #007470;
     cursor: pointer;
     border-radius: 8px;
     margin: 1rem;
@@ -21,6 +21,6 @@
   }
   
   .mat-tab-labels, .mat-tab-label-container, .mat-tab-list, .mat-tab-header {
-    background-color: lightseagreen !important;  
+    background-color: #007470 !important;  
   }
  

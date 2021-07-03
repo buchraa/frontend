@@ -32,8 +32,8 @@ export class GuestRegisterComponent implements OnInit {
        this.router.navigate(['/guest-login']);
            },
       (error) => {
-       this.loading = false;
-       this.handleError(error);
+       this.loading = false;     
+      this.handleError(error);
 
      }
     );

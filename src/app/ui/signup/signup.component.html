@@ -1,4 +1,4 @@
-
+<app-menu></app-menu>
 <section id="signupSection">
     <div class="container">
       <div id="FormErrors">
@@ -7,28 +7,30 @@
           </ng-container>
       </div>
         <div class="container-title" *ngIf="!isSaved">
-            <h2>S&rsquo;inscrire</h2>
-            <a [routerLink]="['/login']" alt="Se connecter" title="Connexion">ou se connecter</a>
+            <h2>Créer un utilisateur</h2>
         </div>
         <form id="signupForm" *ngIf="!isSaved">
             <label for="username"><b>Identifiant</b></label>
             <input type="text" id="username" placeholder="ex : serigne28" name="username"  [(ngModel)]="newUser.username" required>
             <label for="first"><b>Mot de passe</b></label>
-            <input type="password" placeholder="Enter Password" id="first" name="first" [(ngModel)]="newUser.password" required>            
+            <input type="password" placeholder="Enter Password" id="password" name="password" [(ngModel)]="newUser.password" required>            
             <label for="email"><b>Email</b></label>
-            <input type="text" id="email" placeholder="ex : serigne28@gmail.com" name="email" [(ngModel)]="newUser.email" required>
+            <input type="email" id="email" placeholder="ex : serigne28@gmail.com" name="email" [(ngModel)]="newUser.email" required>
 
             <mat-form-field >
                 <label>Role</label>
                 <mat-select   id="role" name="role" [(ngModel)]="newUser.role" multiple="true">
-                  <mat-option value="user">USER</mat-option>
-                  <mat-option value="trad" >TRANSLATOR</mat-option>
+                  <mat-option value="trad">TRANSLATOR</mat-option>
                   <mat-option value="admin">ADMIN</mat-option>
                 </mat-select>
             </mat-form-field>
             
                
-            <button type="submit" (click)="signUp()">Inscription</button>
+            <button type="submit" (click)="signUp()">Valider</button>
+
+            <a class="back" [routerLink]="['/admin']"  alt="Annuler"
+            title="Annuler" style="border-radius: 10px; font-style: normal; font-size: 20px;">Annuler</a>    
+  
            
         </form>
         
