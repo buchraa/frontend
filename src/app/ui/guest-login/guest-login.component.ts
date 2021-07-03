@@ -30,22 +30,23 @@ export class GuestLoginComponent implements OnInit {
     this.auth.postToken(this.credentials).subscribe(
       (t) => {
         this.response = t;
-
+        console.log(this.response)
         if(this.auth.handleToken(t.token))
         {
             this.auth.setToken(t.token);
             this.auth.setRole(t.roles);
         }  
         window.location.assign('/Accueil')
-       /* if(t.roles.includes('ROLE_ADMIN')){
+        if(t.roles.includes('ROLE_ADMIN')){
           window.location.assign('/admin');
 
         }      
-        else {window.location.assign('/');}*/
+        else {window.location.assign('/');}
 
       },
       (error) => {
         this.loading = false;
+        console.log(error)
         this.handleError(error);
       }
     );

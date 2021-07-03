@@ -28,10 +28,11 @@ export class SignupComponent implements OnInit {
       (t) => {
        this.isSaved = true;
        this.loading = false;
-       this.router.navigate(['/login']);
+       this.router.navigate(['/admin']);
            },
       (error) => {
        this.loading = false;
+       console.log(error)
        this.handleError(error);
 
      }

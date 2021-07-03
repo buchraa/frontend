@@ -15,15 +15,17 @@
     
   
     <nav id="profile-links"  class="profile-links-hidden">
-      <a [routerLink]="['/Accueil']" alt="Home" title="Home">Accueil</a> 
+      <a [routerLink]="['/Accueil']" alt="Home" title="Home">Accueil</a>
+      <a [routerLink]="['/add-user']" alt="Auteurs" title="Auteurs">Utilisateurs</a> 
       <a [routerLink]="['/author-manage']" alt="Auteurs" title="Auteurs">Auteurs</a> 
       <a [routerLink]="['/category-manage']" alt="Categories" title="Categories">Categories</a>
       <a [routerLink]="['/chapter-manage']" alt="Chapitres" title="Chapitres">Chapitres</a>
       <a [routerLink]="['/diwan-manage']" alt="Diwans" title="Diwans">Diwans</a>
       <a [routerLink]="['/module-manage']" alt="Modules" title="Modules">Modules</a>
       <a [routerLink]="['/oeuvre-manage']" alt="Oeuvre" title="Oeuvre">Oeuvre</a>
+      <a [routerLink]="['/verTrad-manage']" alt="Themes" title="VersTrad">VersTrad</a> 
       <a [routerLink]="['/ver-manage']" alt="Vers" title="Vers">Vers</a>      
-      <a [routerLink]="['/verTrad-manage']" alt="Themes" title="Themes">VersTrad</a> 
+      
      <a><button (click)="logout()" alt="Se déconnecter" title="Déconnection">Log-out</button></a>
     </nav>
   </header>

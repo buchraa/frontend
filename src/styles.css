@@ -103,7 +103,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
   }
   #admin-content #admin-items .adminItemValidated {
   
-    background-color:lightseagreen;
+    background-color:#007470;
     color:#fff;
   }
   
@@ -369,7 +369,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
     font-family: 'Roboto',sans-serif;
   
     display:block;
-    background-color:lightseagreen;
+    background-color:#007470;
     color:#FFF;
     height:35px;
     width:200px;
@@ -379,13 +379,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
     cursor: pointer;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    border:1px solid lightseagreen;
+    border:1px solid #007470;
   }
   
   .SAVEMYESTATECTA:hover{
-    color:lightseagreen;
+    color:#007470;
     background-color:#fff;
-    border:1px solid lightseagreen;
+    border:1px solid #007470;
   }
 
 
