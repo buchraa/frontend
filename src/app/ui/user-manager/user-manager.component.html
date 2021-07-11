@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<section id="pageAdmin">
+   
+    <div>        
+        <div id="admin-content">
+            <div id="admin-items">
+                <h3 style="margin-top: 50px;">Gestion des auteurs</h3>
+                <div>
+                    <a [routerLink]="['/add-user']"  class="btn-floating btn-large waves-effect waves-light plusIcon"><i class="material-icons">add</i></a>
+                </div>
+                <div *ngFor="let user of items" class="adminItem">
+                   
+                    <p class="estateTitle">{{ user.username }}</p>
+                    <input class="estateId" type="hidden" [value]="user.id">
+                    <div class="estateOptions">
+                        <div  (click)="editItem(user)"><span class="material-icons">create</span></div>
+                        <div (click)="openModal(user)"><span class="material-icons">clear</span></div> 
+                       <div *ngIf="user.role?.includes('ROLE_ADMIN')"><span class="material-icons-outlined">admin_panel_settings</span></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+            <a mat-flat-button (click)="preview()" [ngClass]="{'disabled': disablePrev()}">précédent</a>
+            <a mat-flat-button (click)="next()" [ngClass]="{'disabled': disable()}">suivant</a>
+        </div>
+    </div>  
+    
+</section>

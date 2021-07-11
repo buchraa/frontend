@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,  HttpParams } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import {Observable, throwError} from 'rxjs';
@@ -8,6 +8,8 @@ import {User} from './../model/user.model';
 
 
 const API_URL = environment.apiUrl;
+
+
 
 @Injectable({
     providedIn: 'root'
@@ -18,16 +20,23 @@ export class UserService {
         private http: HttpClient
     ) { }
 
-    public getUsers() {
-      return this.http.get(API_URL + '/users');
+
+    getUserList(pageNB: number, limit: number): Observable<any>  {
+      const opts = { params: new HttpParams({fromString: `pageNo=${pageNB}&pageSize=${limit}`}) };
+      return this.http.get(`${API_URL}/api/auth/users`, opts);
+    
     }
 
-    public getUser(uuid:string): Observable<User> {
-      return this.http.get<User>(API_URL + '/user/'+uuid);
+    public getUsers(): Observable<any>  {
+      return this.http.get(`${API_URL}/api/auth/users`);
+    }
+
+    public deleteUser(id: number): Observable<any> {
+      return this.http.delete(`${API_URL}/user/${id}`);
     }
 
     public getUserCurrent(): Observable<User> {
-      return this.http.get<User>(API_URL + '/api/auth/user/current');
+      return this.http.get<User>(`${API_URL}/api/auth/user/current`);
     }
 
     public postUser(user:User): Observable<User> {
@@ -44,7 +53,7 @@ export class UserService {
       return this.http.patch<User>(API_URL + '/user/current', user);
     }
 
-    public patchUserSpecific(uuid:string, user:User): Observable<User> {
-      return this.http.patch<User>(API_URL + '/user' +uuid, user);
+    public patchUserSpecific(user:User): Observable<any> {
+      return this.http.post(`${API_URL}/api/auth/updateUser`, user);
     }
 }

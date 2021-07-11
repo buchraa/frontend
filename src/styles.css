@@ -797,4 +797,10 @@ li a .first-item {
       background-color: #558303 !important;
 }
 
+.mat-select-arrow-wrapper .ng-tns-c93-1, .mat-form-field-underline .ng-tns-c91-0 .ng-star-inserted {
+  color: #000 !important;
+}
 
+label {
+  font-size: 18px !important;
+}
