@@ -14,13 +14,13 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SearchComponent implements OnInit {
   allOeuvres=[Oeuvre];
   filtredOeuvres=[Oeuvre];
-  searchText: string;
+  searchText = '';
   config: any;
   isAdmin = this.auth.isAdmin();
   length: Boolean;
   pageNb= 0;
-  limit=10;
-  totalPage = 1;
+  limit=30;
+  totalPage = 0;
   pageNumber = 0;
   isdisabled: Boolean;
   filtred = false;
@@ -66,6 +66,8 @@ export class SearchComponent implements OnInit {
   public clear() {
     this.filtred = false;
     this.searchText = '';
+    this.totalPage = 0;
+  this.pageNumber = 0;
 
   }
 
@@ -104,7 +106,7 @@ export class SearchComponent implements OnInit {
   }
   
   public disable(){
-    return this.pageNumber == (this.totalPage - 1) ? true : false
+    return this.pageNumber >= (this.totalPage - 1) ? true : false
   }
 
   pageChanged(event){

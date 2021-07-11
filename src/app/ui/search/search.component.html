@@ -8,7 +8,7 @@
       </button>
     </div>
  </div> 
-
+<!--
  <ng-container  *ngIf="filtred">
   <div *ngFor="let oeuvre of filtredOeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
   <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> 
@@ -18,7 +18,12 @@
   </div> 
 </ng-container>
 
-<!--
+
+
+
+
+
+
   <div *ngFor="let oeuvre of allOeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
     <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p>
       <span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> 
@@ -27,6 +32,32 @@
 -->
 <div>
 </div>
+
+
+
+
+
+<ng-container  *ngIf="filtred">
+
+<mat-card *ngFor="let oeuvre of filtredOeuvres; let i=index">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title (click)="viewTraduc(oeuvre)">{{ oeuvre.titreOeuvre }}</mat-card-title>
+    <mat-card-subtitle (click)="goDetails(oeuvre)">{{ oeuvre.titre }} </mat-card-subtitle>
+  </mat-card-header>
+  <div mat-card-image></div>
+  <mat-card-content>
+    <p>
+      <span *ngIf="oeuvre.texteVersAR1"> {{ oeuvre.texteVersAR1 }} </span><br>
+      <span *ngIf="oeuvre.texteVersAR2"> {{ oeuvre.texteVersAR2 }} </span><br>
+      <span *ngIf="oeuvre.texteVersAR3"> {{ oeuvre.texteVersAR3 }} </span><br>
+      <span *ngIf="oeuvre.texteVersAR4"> {{ oeuvre.texteVersAR4 }} </span><br>
+    </p>
+  </mat-card-content>
+
+</mat-card>
+</ng-container>
+
 <div id="controls">
   <a mat-flat-button (click)="preview()" [ngClass]="{'disabled': disablePrev()}">précédent</a>
   <a mat-flat-button (click)="next()" [ngClass]="{'disabled': disable()}">suivant</a>
