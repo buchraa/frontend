@@ -52,6 +52,7 @@ import { ChapterDetailComponent } from './ui/chapter-detail/chapter-detail.compo
 import { CategoryDetailComponent } from './ui/category-detail/category-detail.component';
 import { DiwanDetailComponent } from './ui/diwan-detail/diwan-detail.component';
 import { UserManagerComponent } from './ui/user-manager/user-manager.component';
+import { ViewVersComponent } from './ui/view-vers/view-vers.component';
 
 
 
@@ -100,6 +101,7 @@ const routes: Routes = [
   { path: 'view-category/:id', canActivate:[GuestConnectedGuard], component:ViewCategoryComponent},
   { path: 'view-module/:id', canActivate:[GuestConnectedGuard], component:ViewModuleComponent},
   { path: 'view-oeuvre/:id', canActivate:[GuestConnectedGuard], component:ViewOeuvreComponent},
+  { path: 'view-vers/:id', canActivate:[GuestConnectedGuard], component:ViewVersComponent},
   { path: 'view-traduction/:id', canActivate:[GuestConnectedGuard], component:ViewTraductionComponent},
   { path: 'Recherche', canActivate:[GuestConnectedGuard], component:SearchComponent},
   { path: 'Modules/ecrit-mouridisme', canActivate:[GuestConnectedGuard],  component:LesEcritsComponent},

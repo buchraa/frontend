@@ -1,35 +1,14 @@
 <section>
 <div class="wrap">
     <div class="search">
-       <input type="text" class="searchTerm" [(ngModel)]="searchText" (change)="onUploadChange()" placeholder="Rechercher dans la bibliothèque"> 
-       <span id="clearButton" class="material-icons" *ngIf="searchText" (click)="clear()">clear</span>
+       <input type="text" class="searchTerm" placeholder="Rechercher dans la bibliothèque" #input> 
+       <!--<span id="clearButton" class="material-icons" *ngIf="searchText" (click)="clear()">clear</span>-->
        <button type="submit" class="searchButton">
         <span class="material-icons">search</span>
       </button>
     </div>
  </div> 
-<!--
- <ng-container  *ngIf="filtred">
-  <div *ngFor="let oeuvre of filtredOeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
-  <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p><span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> 
-  <span> {{ oeuvre.texteVersAR1 }} </span><br>
-  <span> {{ oeuvre.texteVersAR2 }} </span>
-  <div *ngIf="isAdmin" (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
-  </div> 
-</ng-container>
 
-
-
-
-
-
-
-  <div *ngFor="let oeuvre of allOeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
-    <p (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}  </p>
-      <span (click)="goDetails(oeuvre)"> {{ oeuvre.titre }} </span> 
-      <div *ngIf="isAdmin" (click)="editItem(oeuvre)" ><span class="material-icons">create</span></div>
-  </div>
--->
 <div>
 </div>
 
@@ -47,7 +26,7 @@
   </mat-card-header>
   <div mat-card-image></div>
   <mat-card-content>
-    <p>
+    <p (click)="viewVers(oeuvre.versId)">
       <span *ngIf="oeuvre.texteVersAR1"> {{ oeuvre.texteVersAR1 }} </span><br>
       <span *ngIf="oeuvre.texteVersAR2"> {{ oeuvre.texteVersAR2 }} </span><br>
       <span *ngIf="oeuvre.texteVersAR3"> {{ oeuvre.texteVersAR3 }} </span><br>
@@ -64,5 +43,5 @@
 </div>
 </section>
 
-<app-loader></app-loader>
+
  

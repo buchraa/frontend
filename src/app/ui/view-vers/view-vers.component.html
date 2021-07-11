@@ -1,0 +1,36 @@
+<section>
+    <div id="pageTitle">
+        <div>
+          <img [src]="api.getImage(object?.oeuvre.category.name)"  class="circle module"  width="100" height="100"/>
+        </div>
+        <div>
+          <h1>{{ object?.oeuvre.category.traductions[0]?.name }}</h1>
+          <hr style="height: 2px; color: #839D2D; background-color: #839D2D; width: 100%; border: none;"/>
+          <h1>{{ object?.oeuvre.category.name }}</h1>
+        </div>
+    </div>
+    
+    <div class="collection">
+        <p class="collection-item active">{{ object?.oeuvre.titreOeuvre }}<span>{{ object?.oeuvre.titre }}</span></p>
+        
+    </div>
+    <div class="meta">
+      <p class="collection-item active">Numéro Vers: {{ object?.numVers }} - Thèmes: {{ object?.oeuvre.themePrincipal.name }} - Nombre de vers: {{ object?.oeuvre.nbVers }} - Datation: {{ object?.oeuvre.periode }}</p>  
+    </div>
+     
+          
+    
+    
+            <!-- list textAR -->
+              <div class="panel" dir="RTL">
+                <ul>
+                   <li *ngIf="object?.texteVersAR1">{{ object?.texteVersAR1}}</li>   
+                   <li *ngIf="object?.texteVersAR2">{{ object?.texteVersAR2}}</li>     
+                   <li *ngIf="object?.texteVersAR3">{{ object?.texteVersAR3}}</li>     
+                   <li *ngIf="object?.texteVersAR4">{{ object?.texteVersAR4}}</li>                         
+                </ul>  
+                             
+              </div>
+           
+    </section>
+              <app-loader></app-loader>

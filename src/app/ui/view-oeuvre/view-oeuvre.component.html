@@ -68,11 +68,11 @@
         <!-- list vers -->
           <div class="panel" dir="RTL">
             <ul>
-              <li *ngFor="let ver of versIntro" class="typeVer">{{ ver.texteVersAR1 }} <br/> <span *ngIf="ver.texteVersAR2 != NULL">{{ ver.texteVersAR2}}</span></li>                       
+              <li *ngFor="let ver of versIntro" class="typeVer">{{ ver.texteVersAR1 }} <br/> <span *ngIf="ver.texteVersAR2">{{ ver.texteVersAR2}}</span></li>                       
             </ul>  
               
               <ol>
-                  <li *ngFor="let ver of typeVer" >{{ ver.texteVersAR1 }} <br/> <span *ngIf="ver.texteVersAR2 != NULL">{{ ver.texteVersAR2}}</span></li>                       
+                  <li *ngFor="let ver of typeVer" >{{ ver.texteVersAR1 }} <br/> <span *ngIf="ver.texteVersAR2">{{ ver.texteVersAR2}}</span></li>                       
               </ol>              
           </div>
        
