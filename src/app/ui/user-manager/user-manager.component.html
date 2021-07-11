@@ -8,16 +8,32 @@
                 <div>
                     <a [routerLink]="['/add-user']"  class="btn-floating btn-large waves-effect waves-light plusIcon"><i class="material-icons">add</i></a>
                 </div>
-                <div *ngFor="let user of items" class="adminItem">
-                   
-                    <p class="estateTitle">{{ user.username }}</p>
-                    <input class="estateId" type="hidden" [value]="user.id">
-                    <div class="estateOptions">
-                        <div  (click)="editItem(user)"><span class="material-icons">create</span></div>
-                        <div (click)="openModal(user)"><span class="material-icons">clear</span></div> 
-                       <div *ngIf="user.role?.includes('ROLE_ADMIN')"><span class="material-icons-outlined">admin_panel_settings</span></div> 
-                    </div>
-                </div>
+              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of items">
+                            <td>{{user.username}}</td>
+                            <td><span *ngFor="let role of user.roles">-{{role.name}}</span></td>
+                            <td>{{user.email}}</td>
+                            <td>
+                                <input class="estateId" type="hidden" [value]="user.id">
+                                <div (click)="editItem(user)"><span class="material-icons">create</span></div>
+                                <div (click)="openModal(user)"><span class="material-icons">clear</span></div> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
             </div>
         </div>
         <div id="controls">

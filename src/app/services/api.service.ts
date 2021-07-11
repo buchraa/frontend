@@ -67,7 +67,11 @@ SearchOeuvre(query: string): Observable<any>  {
 getOeuvreList(url: string, pageNB: number, limit: number): Observable<any>  {
   const opts = { params: new HttpParams({fromString: `pageNo=${pageNB}&pageSize=${limit}`}) };
   return this.http.get(`${baseUrl}/${url}`, opts);
+}
 
+getFiltredList(url: string, searchText: string, pageNB: number, limit: number): Observable<any>  {
+  const opts = { params: new HttpParams({fromString: `searchText=${searchText}$pageNo=${pageNB}&pageSize=${limit}`}) };
+  return this.http.get(`${baseUrl}/${url}`, opts);
 }
 
 findOeuvresForCategories(uiid: number, pageNB: number, limit: number): Observable<any>  {
