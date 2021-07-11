@@ -202,4 +202,24 @@ section {
   padding: 10px 0px !important;
 }
 
+.mat-card {
+  color: #000 !important;
+  background-color: #fff !important;
+  width: 100% !important;
+  margin: 5px 5px !important;
+  padding: 5px 2px !important;
+}
 
+.mat-card-subtitle, .mat-card-title, .mat-card-content {
+  color: #000 !important;
+  font-size: 18px !important;
+}
+
+.mat-card-content {
+  padding: 0px 5px !important;
+}
+
+.colored {
+  background-color: #558303 !important;
+  color: #fff !important;
+}

@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<section id="pageAdmin">
+   
+    <div>        
+        <div id="admin-content">
+            <div id="admin-items">
+                <h3 style="margin-top: 50px;">Gestion des auteurs</h3>
+                <div>
+                    <a [routerLink]="['/add-user']"  class="btn-floating btn-large waves-effect waves-light plusIcon"><i class="material-icons">add</i></a>
+                </div>
+              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of items">
+                            <td>{{user.username}}</td>
+                            <td><span *ngFor="let role of user.roles">-{{role.name}}</span></td>
+                            <td>{{user.email}}</td>
+                            <td>
+                                <input class="estateId" type="hidden" [value]="user.id">
+                                <div (click)="editItem(user)"><span class="material-icons">create</span></div>
+                                <div (click)="openModal(user)"><span class="material-icons">clear</span></div> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+        <div id="controls">
+            <a mat-flat-button (click)="preview()" [ngClass]="{'disabled': disablePrev()}">précédent</a>
+            <a mat-flat-button (click)="next()" [ngClass]="{'disabled': disable()}">suivant</a>
+        </div>
+    </div>  
+    
+</section>

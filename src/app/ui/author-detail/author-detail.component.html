@@ -3,7 +3,7 @@
 <div class="col s12 m7">
     <div class="card horizontal">
       <div class="card-image">
-        <img [src]="imageUrl">
+        <img *ngIf="object.imageUrl" [src]="object.imageUrl">
       </div>
       <div class="card-stacked">
         <div class="card-title">

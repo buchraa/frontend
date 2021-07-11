@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.model';
+import { ApiService } from 'src/app/services/api.service';
+import { Router, ActivatedRoute  } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -16,35 +17,35 @@ export class EditUserComponent implements OnInit {
   loading: boolean = false;
   errors = [];
   isSaved = false;
-  role = ["user"];
-  
-  constructor(private userService: UserService, public userServie: UserService, private router: Router) { }
+  role = ["ROLE_USER", "ROLE_TRANSLATOR", "ROLE_ADMIN"];
+  routingSubscription: any; 
+
+  constructor(private userService: UserService, public api: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   
   ngOnInit(): void {
-    this.user = new User();
-    this.userServie.getUserCurrent().subscribe(
-      t => {
-        this.user = t;
-        console.log(this.user)
-      },
-      (error) => {
-        
-       console.log(error);
-     }
-
-    )
+    this.user = new User();     
+    this.routingSubscription = 
+        this.route.params.subscribe(params => {
+            console.log(params["id"]);
+            if (params["id"]) {
+              this.user.id = params["id"]
+              this.api.getById('api/auth/user', params["id"]).subscribe(
+                response => {
+                this.user = response;
+              });
+            }
+        });
   }
 
   public signUp() {
     this.loading = true;
-    this.newUser.role = this.role;
-    console.log(this.newUser);
-   this.userService.postUser(this.newUser).subscribe(
+    console.log(this.user);
+   this.userService.patchUserSpecific(this.user).subscribe(
       (t) => {
        this.isSaved = true;
        this.loading = false;
-       this.router.navigate(['/guest-login']);
+       this.router.navigate(['/manage-user']);
            },
       (error) => {
        this.loading = false;
@@ -52,6 +53,13 @@ export class EditUserComponent implements OnInit {
 
      }
     );
+  }
+
+   
+  updateEnv(service: any, event) {
+    if (event.target.checked) {
+      this.user.role.push(service);
+    }
   }
   private handleError(error){
     this.errors = [];

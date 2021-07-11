@@ -30,21 +30,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
   flex-direction: row;
 }
 
+section#pageAdmin, #admin-content #admin-items {
+
+  justify-content: center !important;
+    align-content: center !important;
+    align-items: center !important;
+}
+
 
 /* All Dashboard */
 #admin-content #admin-items {
-    /*background-color: #fff;*/
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 2rem 1rem;
     margin-bottom: 5rem;
-    height: auto;
-    /*min-height: 100vh;
-    /*width: 100%;*/
+    height: auto;   
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;    
-    text-align: center;
+    display: flex;  
+    
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -58,8 +62,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #fff
   #admin-content {
     position: relative;
     margin: 1rem auto !important;
-    width: 96vw;
+    min-width: 900px !important
   }
+  
   
   #admin-items {
     -webkit-filter: blur(0px);
@@ -797,4 +802,10 @@ li a .first-item {
       background-color: #558303 !important;
 }
 
+.mat-select-arrow-wrapper .ng-tns-c93-1, .mat-form-field-underline .ng-tns-c91-0 .ng-star-inserted {
+  color: #000 !important;
+}
 
+label {
+  font-size: 18px !important;
+}

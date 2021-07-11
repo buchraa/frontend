@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpRequest, HttpResponse, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 
 import { environment } from '../../environments/environment';
@@ -63,10 +63,15 @@ SearchOeuvre(query: string): Observable<any>  {
   return this.http.get(`${baseUrl}/oeuvres/query`, opts);
 
 }
+
 getOeuvreList(url: string, pageNB: number, limit: number): Observable<any>  {
   const opts = { params: new HttpParams({fromString: `pageNo=${pageNB}&pageSize=${limit}`}) };
   return this.http.get(`${baseUrl}/${url}`, opts);
+}
 
+getFiltredList(url: string, searchText: string, pageNB: number, limit: number): Observable<any>  {
+  const opts = { params: new HttpParams({fromString: `searchText=${searchText}&pageNo=${pageNB}&pageSize=${limit}`}) };
+  return this.http.get(`${baseUrl}/${url}`, opts);
 }
 
 findOeuvresForCategories(uiid: number, pageNB: number, limit: number): Observable<any>  {

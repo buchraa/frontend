@@ -14,22 +14,23 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SearchComponent implements OnInit {
   allOeuvres=[Oeuvre];
   filtredOeuvres=[Oeuvre];
-  searchText: string;
+  searchText = '';
   config: any;
   isAdmin = this.auth.isAdmin();
   length: Boolean;
   pageNb= 0;
-  limit=10;
-  totalPage: number;
-  pageNumber: number;
+  limit=30;
+  totalPage = 0;
+  pageNumber = 0;
   isdisabled: Boolean;
   filtred = false;
   constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
 
   ngOnInit(): void {    
-    this.getOeuvres();
-    this.getList();
+    //this.getOeuvres();
+    //this.getList();
+    this.searchText= '';
   }
 
   public getOeuvres(){
@@ -45,9 +46,11 @@ export class SearchComponent implements OnInit {
   }
 
   public getList(){
-    this.api.getList('manageoeuvres').subscribe(
+    this.api.getFiltredList('generalsearch', this.searchText, this.pageNb, this.limit).subscribe(
       (t) => {
-        this.filtredOeuvres = t;  
+        this.filtredOeuvres = t.content;  
+        this.totalPage = t.totalPages;  
+        this.pageNumber = t.pageable.pageNumber;  
         //this.filtred = true;   
         console.log(this.filtredOeuvres)  
         
@@ -63,18 +66,20 @@ export class SearchComponent implements OnInit {
   public clear() {
     this.filtred = false;
     this.searchText = '';
+    this.totalPage = 0;
+  this.pageNumber = 0;
 
   }
 
   public next(){   
     this.pageNb += 1;
-    this.getOeuvres();
+    this.getList();
     console.log(this.pageNb)
   }
 
   public preview(){   
     this.pageNb -= 1;
-    this.getOeuvres();
+    this.getList();
     console.log(this.pageNb)
   }
 
@@ -91,7 +96,9 @@ export class SearchComponent implements OnInit {
 
 
   onUploadChange() {
+    console.log(this.searchText)
     this.filtred = true;   
+    this.getList();
   }
   
   public disablePrev(){
@@ -99,7 +106,7 @@ export class SearchComponent implements OnInit {
   }
   
   public disable(){
-    return this.pageNumber == (this.totalPage - 1) ? true : false
+    return this.pageNumber >= (this.totalPage - 1) ? true : false
   }
 
   pageChanged(event){

@@ -51,6 +51,7 @@ import { ModuleDetailComponent } from './ui/module-detail/module-detail.componen
 import { ChapterDetailComponent } from './ui/chapter-detail/chapter-detail.component';
 import { CategoryDetailComponent } from './ui/category-detail/category-detail.component';
 import { DiwanDetailComponent } from './ui/diwan-detail/diwan-detail.component';
+import { UserManagerComponent } from './ui/user-manager/user-manager.component';
 
 
 
@@ -61,6 +62,8 @@ const routes: Routes = [
   { path: 'guest-login', component:GuestLoginComponent},
   { path: 'register', component:GuestRegisterComponent},
   { path: 'add-user', canActivate:[ConnectedGuard], component:SignupComponent},
+  { path: 'edit-user/:id', canActivate:[ConnectedGuard], component:EditUserComponent},
+  { path: 'manage-user', canActivate:[ConnectedGuard], component:UserManagerComponent},
   { path: 'administration', canActivate:[ConnectedGuard], component:AdminComponent},
   { path: 'admin', canActivate:[ConnectedGuard], component:DashboardComponent},
   { path: 'oeuvre-manage', canActivate:[ConnectedGuard], component:OeuvreManageComponent},

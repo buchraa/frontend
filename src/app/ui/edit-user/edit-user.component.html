@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <section id="signupSection">
     <div class="container">
       <div id="FormErrors">
@@ -7,18 +8,34 @@
       </div>
 
         <div class="container-title">
-            <h2>S&rsquo;inscrire</h2>
-            <a [routerLink]="['/login']" alt="Se connecter" title="Connexion">ou se connecter</a>
+            <h2>{{user.username}}</h2>
+            <p> Roles:  </p>
+            <ul>
+                <li *ngFor="let role of user.roles" style="color: #000;">{{ role.name }}</li>
+            </ul>
         </div>
         <form id="signupForm">
-            <label for="username"><b>Identifiant</b></label>
-            <input type="text" id="username" placeholder="ex : toto28" name="username"  [(ngModel)]="user.username" required>
-            <label for="first"><b>Mot de passe</b></label>
-            <input type="password" placeholder="Enter Password" id="first" name="first" [(ngModel)]="user.password" required>            
-            <label for="email"><b>Email</b></label>
-            <input type="text" id="email" placeholder="ex : saitama@heroassociation.gov" name="email" [(ngModel)]="user.email" required>               
+            
+            <input type="hidden"  id="username" placeholder="ex : toto28" name="username"  [(ngModel)]="user.username"  #username="ngModel" required>
+           
+            <input type="hidden"  placeholder="Enter Password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>            
+            
+            <input type="hidden"  id="email" placeholder="ex : saitama@heroassociation.gov" name="email" [(ngModel)]="user.email" #email="ngModel" required> 
+            
+            <mat-form-field >
+                
+                <label>Modifier Role</label> 
+                <mat-select   id="role" name="role" [(ngModel)]="user.role" #role="ngModel" multiple="true">
+                  <mat-option value="trad">TRANSLATOR</mat-option>
+                  <mat-option value="admin">ADMIN</mat-option>
+                  <mat-option value="user">USER</mat-option>
+                </mat-select>
+            </mat-form-field>
                
-            <button type="submit" (click)="signUp()">Inscription</button>
+            <button type="submit" (click)="signUp()">Valider</button>
+
+            <a class="back" [routerLink]="['/admin']"  alt="Annuler"
+            title="Annuler" style="border-radius: 10px; font-style: normal; font-size: 20px;">Annuler</a>    
            
         </form>
         
