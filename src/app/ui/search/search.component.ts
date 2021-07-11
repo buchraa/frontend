@@ -20,16 +20,17 @@ export class SearchComponent implements OnInit {
   length: Boolean;
   pageNb= 0;
   limit=10;
-  totalPage: number;
-  pageNumber: number;
+  totalPage = 1;
+  pageNumber = 0;
   isdisabled: Boolean;
   filtred = false;
   constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
 
 
   ngOnInit(): void {    
-    this.getOeuvres();
-    this.getList();
+    //this.getOeuvres();
+    //this.getList();
+    this.searchText= '';
   }
 
   public getOeuvres(){
@@ -45,9 +46,11 @@ export class SearchComponent implements OnInit {
   }
 
   public getList(){
-    this.api.getList('manageoeuvres').subscribe(
+    this.api.getFiltredList('generalsearch', this.searchText, this.pageNb, this.limit).subscribe(
       (t) => {
-        this.filtredOeuvres = t;  
+        this.filtredOeuvres = t.content;  
+        this.totalPage = t.totalPages;  
+        this.pageNumber = t.pageable.pageNumber;  
         //this.filtred = true;   
         console.log(this.filtredOeuvres)  
         
@@ -68,13 +71,13 @@ export class SearchComponent implements OnInit {
 
   public next(){   
     this.pageNb += 1;
-    this.getOeuvres();
+    this.getList();
     console.log(this.pageNb)
   }
 
   public preview(){   
     this.pageNb -= 1;
-    this.getOeuvres();
+    this.getList();
     console.log(this.pageNb)
   }
 
@@ -91,7 +94,9 @@ export class SearchComponent implements OnInit {
 
 
   onUploadChange() {
+    console.log(this.searchText)
     this.filtred = true;   
+    this.getList();
   }
   
   public disablePrev(){

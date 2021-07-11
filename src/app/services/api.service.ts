@@ -70,7 +70,7 @@ getOeuvreList(url: string, pageNB: number, limit: number): Observable<any>  {
 }
 
 getFiltredList(url: string, searchText: string, pageNB: number, limit: number): Observable<any>  {
-  const opts = { params: new HttpParams({fromString: `searchText=${searchText}$pageNo=${pageNB}&pageSize=${limit}`}) };
+  const opts = { params: new HttpParams({fromString: `searchText=${searchText}&pageNo=${pageNB}&pageSize=${limit}`}) };
   return this.http.get(`${baseUrl}/${url}`, opts);
 }
 
