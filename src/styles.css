@@ -62,7 +62,7 @@ section#pageAdmin, #admin-content #admin-items {
   #admin-content {
     position: relative;
     margin: 1rem auto !important;
-    min-width: 900px !important
+    /*min-width: 900px !important*/
   }
   
   
@@ -213,8 +213,8 @@ section#pageAdmin, #admin-content #admin-items {
   
   section {
     width: 100%;
-    height: 100%;
-    /*background-color:#fff;*/
+    /*height: 100%;
+    background-color:#fff;*/
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding-top: 1em;

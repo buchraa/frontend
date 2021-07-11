@@ -16,7 +16,7 @@ export class UserManagerComponent implements OnInit {
   object: User;
   length: Boolean;
   pageNb= 0;
-  limit=8;
+  limit= 4;
   totalPage: number;
   pageNumber: number;
   isdisabled: Boolean;

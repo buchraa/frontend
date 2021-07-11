@@ -1,39 +1,27 @@
 <app-menu></app-menu>
-<section id="pageAdmin">
-   
+
+
+<section id="pageAdmin">   
+  
     <div>        
         <div id="admin-content">
             <div id="admin-items">
-                <h3 style="margin-top: 50px;">Gestion des auteurs</h3>
+                <h3 style="margin-top: 50px;">Gestion des utilisateurs</h3>
                 <div>
-                    <a [routerLink]="['/add-user']"  class="btn-floating btn-large waves-effect waves-light plusIcon"><i class="material-icons">add</i></a>
+                    <a [routerLink]="['/add-user']"  class="btn-floating btn-large waves-effect waves-light plusIcon" ><i class="material-icons">add</i></a>
                 </div>
               
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Identifiant</th>
-                            <th>Role</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let user of items">
-                            <td>{{user.username}}</td>
-                            <td><span *ngFor="let role of user.roles">-{{role.name}}</span></td>
-                            <td>{{user.email}}</td>
-                            <td>
-                                <input class="estateId" type="hidden" [value]="user.id">
-                                <div (click)="editItem(user)"><span class="material-icons">create</span></div>
-                                <div (click)="openModal(user)"><span class="material-icons">clear</span></div> 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-
+                <div *ngFor="let user of items" class="adminItem">                   
+                    <p class="estateTitle">{{user.username}}</p>       
+                    <p class="estateTitle" *ngFor="let role of user.roles">-{{role.name}}</p>
+                    <p class="estateTitle">{{user.email}}</p>
+                                       
+                    <input class="estateId" type="hidden" [value]="user.id">
+                    <div class="estateOptions">
+                        <div (click)="editItem(user)"><span class="material-icons">create</span></div>
+                        <div (click)="openModal(user)"><span class="material-icons">clear</span></div> 
+                    </div>
+                </div>
             </div>
         </div>
         <div id="controls">
@@ -41,5 +29,7 @@
             <a mat-flat-button (click)="next()" [ngClass]="{'disabled': disable()}">suivant</a>
         </div>
     </div>  
+  
     
-</section>
+   </section>
+
