@@ -76,6 +76,7 @@ import { CategoryDetailComponent } from './ui/category-detail/category-detail.co
 import { AuthorDetailComponent } from './ui/author-detail/author-detail.component';
 import { DialogContentDeleteComponent } from './ui/dialog-content-delete/dialog-content-delete.component';
 import { UserManagerComponent } from './ui/user-manager/user-manager.component';
+import { ViewVersComponent } from './ui/view-vers/view-vers.component';
 
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
@@ -141,6 +142,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     DialogContentDeleteComponent,
     FilterPipe,
     UserManagerComponent,
+    ViewVersComponent,
      ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit, ElementRef, AfterViewInit, ViewChild  } from '@angular/core';
+import {fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,6 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./search.component.css']  
 })
 export class SearchComponent implements OnInit {
+  @ViewChild('input') input: ElementRef;
   allOeuvres=[Oeuvre];
   filtredOeuvres=[Oeuvre];
   searchText = '';
@@ -19,7 +21,7 @@ export class SearchComponent implements OnInit {
   isAdmin = this.auth.isAdmin();
   length: Boolean;
   pageNb= 0;
-  limit=30;
+  limit=4;
   totalPage = 0;
   pageNumber = 0;
   isdisabled: Boolean;
@@ -33,17 +35,23 @@ export class SearchComponent implements OnInit {
     this.searchText= '';
   }
 
-  public getOeuvres(){
-    this.api.getOeuvreList('oeuvres', this.pageNb, this.limit).subscribe(
-      (t) => {
-        this.allOeuvres = t.content; 
-        this.totalPage = t.totalPages;  
-        this.pageNumber = t.pageable.pageNumber;    
-        console.log(t)  
-     },
-      (error) => { console.log(error) }
+ngAfterViewInit() {
+    // server-side search
+fromEvent(this.input.nativeElement,'keyup')
+    .pipe(     
+        filter(Boolean),   
+        debounceTime(150),
+        distinctUntilChanged(),
+        tap((text) => {
+          console.log(this.input.nativeElement.value)
+          this.searchText = this.input.nativeElement.value
+          this.getList();
+        })
     )
-  }
+    .subscribe();
+}
+
+ 
 
   public getList(){
     this.api.getFiltredList('generalsearch', this.searchText, this.pageNb, this.limit).subscribe(
@@ -51,7 +59,7 @@ export class SearchComponent implements OnInit {
         this.filtredOeuvres = t.content;  
         this.totalPage = t.totalPages;  
         this.pageNumber = t.pageable.pageNumber;  
-        //this.filtred = true;   
+        this.filtred = true;   
         console.log(this.filtredOeuvres)  
         
       },
@@ -67,7 +75,7 @@ export class SearchComponent implements OnInit {
     this.filtred = false;
     this.searchText = '';
     this.totalPage = 0;
-  this.pageNumber = 0;
+    this.pageNumber = 0;
 
   }
 
@@ -83,22 +91,15 @@ export class SearchComponent implements OnInit {
     console.log(this.pageNb)
   }
 
-  public SearchOeuvre(){
-    this.api.SearchOeuvre(this.searchText).subscribe(
-      (t) => {
-        this.allOeuvres = t; 
-        console.log(t)  
-     },
-      (error) => { console.log(error) }
-    )
+ 
 
-  }
-
-
-  onUploadChange() {
-    console.log(this.searchText)
-    this.filtred = true;   
-    this.getList();
+  onUploadChange(searchValue: string): void{
+    console.log(searchValue);
+    this.searchText = searchValue;
+    if(this.searchText.length > 2) {
+      this.getList();
+    }
+    
   }
   
   public disablePrev(){
@@ -124,6 +125,11 @@ export class SearchComponent implements OnInit {
   viewTraduc(object: Oeuvre) {
     this.router.navigate(["/view-traduction", object.oeuvreId]);
   }
+
+  viewVers(id: number) {
+    this.router.navigate(["/view-vers", id]);
+  }
+
 
 
 
