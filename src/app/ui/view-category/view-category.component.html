@@ -11,7 +11,7 @@
 </div>
 
 <div *ngFor="let oeuvre of oeuvres; let i=index" [ngClass]="{'colored': i % 2 != 0, 'simple' : i % 2 == 0, collection:true}" >
-  <p   (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }}</p> <span (click)="goDetails(oeuvre)" > {{ oeuvre.titre }} </span> 
+  <p   (click)="viewTraduc(oeuvre)"> {{ oeuvre.titreOeuvre }} <span (click)="goDetails(oeuvre)" > {{ oeuvre.titre }} </span> </p>
 </div>
 <div id="controls">
   <a mat-flat-button (click)="preview()" [ngClass]="{'disabled': disablePrev()}">précédent</a>

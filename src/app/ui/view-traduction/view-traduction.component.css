@@ -48,7 +48,7 @@
     background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
 }
 .colored{
-    background-color: #558303 !important;
+    background-color: #a4b389 !important;
     color: #fff;
 }
 .mat-expansion-panel p {
@@ -94,7 +94,7 @@
 
 
    .collection .collection-item.active {
-    background-color: #558303 !important;
+    background-color: #a4b389 !important;
    }
    
  .panel {
@@ -156,7 +156,7 @@ display: -ms-flexbox;
 }
 
 .pagination li.active {
-  background-color: #558303 !important;
+  background-color: #a4b389 !important;
 }
 
 .disabled {

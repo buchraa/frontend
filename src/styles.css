@@ -458,13 +458,13 @@ section#pageAdmin, #admin-content #admin-items {
   }
 
   .title {
-    height: 3em;
+    /*height: 3em;*/
     color: #fff;
-    font-size: medium;
-    
+    font-size: medium;    
 }
+
 img {
-    border: 5px solid  #558303;
+    border: 5px solid  #a4b389;
 }
 
 @media only screen and (min-width: 481px) {
@@ -515,13 +515,13 @@ img {
     font-size: medium;
 }
 img {
-    border: 5px solid  #558303;
+    border: 5px solid  #a4b389;
 }
 
 #pageTitle{
   display: flex;
   justify-content: center;
-  padding: 2em;
+  padding: 0.15em 0.5em;
 
 }
 
@@ -594,7 +594,7 @@ mat-accordion {
 }
 
 .colored{
-  background-color: #558303 !important;
+  background-color: #a4b389 !important;
   color: #fff !important;
 }
 
@@ -799,7 +799,7 @@ li a .first-item {
 #controls a {
       padding: 0.5em;
       margin: 0.5em;
-      background-color: #558303 !important;
+      background-color: #a4b389 !important;
 }
 
 .mat-select-arrow-wrapper .ng-tns-c93-1, .mat-form-field-underline .ng-tns-c91-0 .ng-star-inserted {
@@ -808,4 +808,13 @@ li a .first-item {
 
 label {
   font-size: 18px !important;
+}
+
+.mat-typography h1 {
+  margin: 0 0 6px !important
+}
+
+.collection .collection-item {
+  padding: 10px 0px !important;
+ 
 }
