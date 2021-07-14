@@ -145,7 +145,7 @@ ol {
   }
 
 div.collection p {
-  margin: 1em 1em;
+  margin: 1em 0.2em;
   display: flex;
   display: flex;
   display: -webkit-box;
@@ -159,13 +159,13 @@ display: -ms-flexbox;
 -webkit-box-orient: horizontal;
 -webkit-box-direction: normal;
   -ms-flex-direction: row;
-  justify-content: space-between;
-  justify-content: space-around;
+  justify-content: space-between; 
   border-radius: 0.7em;
 
 }
+
 p span{
-  padding: 0.1em 1em;
+  padding: 0.1em;
   font-family: "Traditional Arabic";
 }
 div p {
