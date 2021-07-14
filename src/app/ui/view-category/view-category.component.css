@@ -122,3 +122,6 @@ div.collection {
     
     }
 
+    p, span {
+      cursor: pointer;
+    }

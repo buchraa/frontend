@@ -25,14 +25,16 @@
 
           <div class="panel">
 
+            <h3 *ngIf="!dispo">Traduction bientot disponible</h3>
+
             <ul>
               <li *ngFor="let ver of versIntro">
-                    <ul >
+                    <ul >                      
                       <li *ngFor="let traduction of ver.traductions">{{ getTraduc(traduction) }}</li>
                     </ul>  
               </li>       
             </ul> 
-            
+
             <ul>
               <li id="divider"></li>
             </ul>

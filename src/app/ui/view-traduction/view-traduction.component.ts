@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Oeuvre } from 'src/app/model/oeuvre.model';
 import { VersTraduction } from 'src/app/model/verTraduction.model';
 import { ApiService } from 'src/app/services/api.service';
-import * as $ from "jquery";
+import { Vers } from 'src/app/model/vers.model';
 
 @Component({
   selector: 'app-view-traduction',
@@ -24,6 +24,7 @@ export class ViewTraductionComponent implements OnInit {
   disabled: boolean;
   versIntro=[];
  typeVer=[];
+ dispo=false;
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
 
@@ -73,10 +74,9 @@ export class ViewTraductionComponent implements OnInit {
       this.viezText = true;
       return object.texte;
     }
-
     else return null;
-
   }
+
 
  
   onChangePage(pageOfItems: Array<any>) {
