@@ -57,8 +57,8 @@ import { ViewVersComponent } from './ui/view-vers/view-vers.component';
 
 
 const routes: Routes = [
-  { path: '', component:HomePageComponent},
-  { path: 'Accueil', component:HomePageComponent},
+  { path: '', canActivate:[GuestConnectedGuard], component:ModulesComponent},
+  { path: 'Accueil', canActivate:[GuestConnectedGuard], component:ModulesComponent},
   { path: 'login', component:LoginComponent},
   { path: 'guest-login', component:GuestLoginComponent},
   { path: 'register', component:GuestRegisterComponent},

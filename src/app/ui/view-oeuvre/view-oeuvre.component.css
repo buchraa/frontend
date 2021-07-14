@@ -8,7 +8,7 @@
     background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
 }
 .colored{
-    background-color: #558303 !important;
+    background-color: #a4b389 !important;
     color: #fff;
 }
 .mat-expansion-panel p {
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     padding-top: 2em;
-  }
+}
 
  #pageTitle span {
      font-size: 40px;
@@ -51,17 +51,11 @@
        margin: 5px 10px;
    }
 
-   /*.collection span {
-    position: absolute;
-    right: 2% !important;
-   }*/
-
 
    .collection .collection-item.active {
-    background-color: #558303 !important;
+    background-color: #a4b389 !important;
    }
  .panel {
-     margin: 2em 0;
      padding: 1em 1em !important;
      padding-bottom: 4em !important;
      background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
@@ -142,12 +136,12 @@ iframe {
 ol {
   list-style-type: arabic-indic;
   -moz-arabic-indic: arabic-indic;
+  list-style-position: inside;
   }
 
 div.collection p {
-  margin: 1em 1em;
-  display: flex;
-  display: flex;
+  margin: 1em 0.2em;
+  display: flex !important;
   display: -webkit-box;
 display: -ms-flexbox;
   flex-direction: row;
@@ -159,22 +153,23 @@ display: -ms-flexbox;
 -webkit-box-orient: horizontal;
 -webkit-box-direction: normal;
   -ms-flex-direction: row;
-  justify-content: space-between;
-  justify-content: space-around;
+  justify-content: space-between; 
   border-radius: 0.7em;
 
 }
+
 p span{
-  padding: 0.1em 1em;
+  padding: 0.1em;
   font-family: "Traditional Arabic";
 }
+
 div p {
   margin: 0.5em 0.5em !important;
 }
 
 ol li, ul li {
   text-align: center !important;
-  margin: 1em auto !important;
+  margin: 0.5em auto !important;
   font-family: "Traditional Arabic" !important;
 }
 
@@ -225,16 +220,20 @@ section {
 
 @media only screen and (max-width: 600px) {
   ol li, ul li {
-    font-size: 2.5em !important;
+    font-size: 2em !important;
     text-align: center !important;
-    margin: 1em auto !important;
+    margin: 0.5em auto !important;
     font-family: "Traditional Arabic";
   }
+
+  #pageTitle{   
+    padding-top: 0.5em;
+    }
   
   }
 
 
-  ol, ul {
+ol, ul {
     display: flex !important;
     flex-direction: column !important;
     -ms-flex-line-pack: center !important;
@@ -244,10 +243,31 @@ section {
       align-items: center !important;
 -webkit-box-orient: vertical !important;
 -webkit-box-direction: normal !important;
-margin-block-start: 1em !important;
-margin-block-end: 1em !important;
-margin-inline-start: 10px !important;
+margin-block-start: 0em !important;
+margin-block-end: 0em !important;
+margin-inline-start: 0px !important;
 margin-inline-end: 0px !important;
-padding-inline-start: 40px !important;
+padding-inline-start: 0px !important;
    
 }
+
+#div{
+  background-image: url('../../../assets/images/divider1000.png');
+  background-position:center center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 600px;
+}
+
+@media only screen and (max-width: 600px) {
+  #div{
+    background-image: url('../../../assets/images/divider.png');
+    background-position:center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 300px;
+  }
+}
+
