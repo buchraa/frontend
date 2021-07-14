@@ -169,7 +169,7 @@ div p {
 
 ol li, ul li {
   text-align: center !important;
-  margin: 1em auto !important;
+  margin: 0.5em auto !important;
   font-family: "Traditional Arabic" !important;
 }
 
@@ -222,7 +222,7 @@ section {
   ol li, ul li {
     font-size: 2em !important;
     text-align: center !important;
-    margin: 1em auto !important;
+    margin: 0.5em auto !important;
     font-family: "Traditional Arabic";
   }
 
@@ -249,5 +249,25 @@ margin-inline-start: 0px !important;
 margin-inline-end: 0px !important;
 padding-inline-start: 0px !important;
    
+}
+
+#div{
+  background-image: url('../../../assets/images/divider1000.png');
+  background-position:center center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 600px;
+}
+
+@media only screen and (max-width: 600px) {
+  #div{
+    background-image: url('../../../assets/images/divider.png');
+    background-position:center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 300px;
+  }
 }
 

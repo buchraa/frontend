@@ -199,3 +199,24 @@ div p {
 ul {
   font-style: oblique 90deg;
 }
+
+
+
+#divider{
+  background-image: url('../../../assets/images/divider1000.png');
+  background-position:center center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  #divider{
+    background-image: url('../../../assets/images/divider.png');
+    background-position:center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+  }
+}
+

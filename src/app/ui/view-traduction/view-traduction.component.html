@@ -32,13 +32,19 @@
                     </ul>  
               </li>       
             </ul> 
-              <ol>
+            
+            <ul>
+              <li id="divider"></li>
+            </ul>
+           
+            
+            <ol>
                 <li *ngFor="let ver of typeVer">
                       <ul >
                         <li *ngFor="let traduction of ver.traductions">{{ getTraduc(traduction) }}</li>
                       </ul>  
                 </li>       
-              </ol>  
+            </ol>  
           </div>
 
           <app-loader></app-loader>
