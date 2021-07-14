@@ -57,8 +57,7 @@
 
 #pageTitle{
     display: flex;
-    justify-content: center;
-    padding-top: 2em;
+    justify-content: center;    
   }
 
  #pageTitle span {
@@ -95,6 +94,8 @@
 
    .collection .collection-item.active {
     background-color: #a4b389 !important;
+    margin: 0.15em !important;
+    padding-bottom: 4em;
    }
    
  .panel {
@@ -109,26 +110,11 @@
 li {counter-increment: li;}
 
 div.collection {
-  margin: 1em 0.5em;
-  display: flex;
-  flex-direction: row;
-  display: flex;
-  display: -webkit-box;
-display: -ms-flexbox;
-  -ms-flex-line-pack: center;
-  align-content: center;
--webkit-box-align: start;
-  -ms-flex-align: start;
-      align-items: flex-start;
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  justify-content: space-between;
-  justify-content: space-between;
+  margin: 0.15em !important;
   border-radius: 0.7em;
-  padding: 0.1em 0.2em;
-
+  border: none !important;
 }
+
 
  div.meta {
   margin: 0.5em 0.5em;
@@ -185,3 +171,29 @@ li.ng-star-inserted {
   padding-right: 0 !important;
 }
 
+div.collection p {
+  display: flex !important;
+  display: -webkit-box;
+  flex-direction: row;
+  -ms-flex-line-pack: center;
+  align-content: center;
+-webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  justify-content: space-between; 
+  border-radius: 0.7em;
+
+}
+
+p span{
+  padding: 0.1em;
+  font-size: 2em !important;
+  font-family: "Traditional Arabic";
+}
+
+div p {
+  margin: 0.5em 0.5em !important;
+}

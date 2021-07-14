@@ -64,7 +64,7 @@ div.collection {
  }
 
  section {
-   margin: 2rem auto !important;
+   margin: 0.5em auto !important;
    text-align: center;
  }
 
@@ -75,7 +75,7 @@ div.collection {
       padding: 1em 0.2em;
       font-size: 18px !important; 
   }
-
+ 
 }
 
 .collection span {
@@ -113,3 +113,12 @@ div.collection {
     border-radius: 0.7em;
   
   }
+
+  @media only screen and (max-width: 600px) {
+    
+    #pageTitle{   
+      padding-top: 0.5em;
+      }
+    
+    }
+

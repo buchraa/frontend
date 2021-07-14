@@ -213,11 +213,9 @@ section#pageAdmin, #admin-content #admin-items {
   
   section {
     width: 100%;
-    /*height: 100%;
-    background-color:#fff;*/
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding-top: 1em;
+   /* padding-top: 1em;*/
   }
   
   #add-estate {
@@ -825,3 +823,16 @@ p {
   margin-block-end: 0px !important;
  
 }
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #a4b389 !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  #pageTitle{   
+    padding-top: 0.5em;
+    }
+  
+  }

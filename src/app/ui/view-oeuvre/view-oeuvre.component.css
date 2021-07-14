@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     padding-top: 2em;
-  }
+}
 
  #pageTitle span {
      font-size: 40px;
@@ -56,8 +56,7 @@
     background-color: #a4b389 !important;
    }
  .panel {
-     margin: 2em 0;
-     padding: 2em 4em !important;
+     padding: 1em 1em !important;
      padding-bottom: 4em !important;
      background-color: rgba(2, 6, 8, 0.2); /* 0.0 - transparent */
 
@@ -137,12 +136,12 @@ iframe {
 ol {
   list-style-type: arabic-indic;
   -moz-arabic-indic: arabic-indic;
+  list-style-position: inside;
   }
 
 div.collection p {
   margin: 1em 0.2em;
-  display: flex;
-  display: flex;
+  display: flex !important;
   display: -webkit-box;
 display: -ms-flexbox;
   flex-direction: row;
@@ -163,6 +162,7 @@ p span{
   padding: 0.1em;
   font-family: "Traditional Arabic";
 }
+
 div p {
   margin: 0.5em 0.5em !important;
 }
@@ -225,6 +225,10 @@ section {
     margin: 1em auto !important;
     font-family: "Traditional Arabic";
   }
+
+  #pageTitle{   
+    padding-top: 0.5em;
+    }
   
   }
 
@@ -246,3 +250,4 @@ margin-inline-end: 0px !important;
 padding-inline-start: 0px !important;
    
 }
+
