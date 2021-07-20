@@ -16,10 +16,10 @@ export class UserManagerComponent implements OnInit {
   object: User;
   length: Boolean;
   pageNb= 0;
-  limit= 4;
-  totalPage: number;
-  pageNumber: number;
-  isdisabled: Boolean;
+  limit = 4;
+ totalPage: number;
+ pageNumber: number;
+ isdisabled: Boolean;
   constructor(public matDialog: MatDialog, private router: Router, private route: ActivatedRoute, private api: UserService) { }
 
   ngOnInit(): void {
@@ -94,7 +94,6 @@ export class UserManagerComponent implements OnInit {
   public disablePrev(){
     return this.pageNumber == 0 ? true : false
   }
-  
   public disable(){
     return this.pageNumber == (this.totalPage - 1) ? true : false
   }

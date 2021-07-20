@@ -9,6 +9,7 @@ import { AudioService } from "../../services/audio.service";
 import { StreamState } from "../../interfaces/stream-state";
 import { DomSanitizer } from '@angular/platform-browser';
 import { Vers } from 'src/app/model/vers.model';
+import { Category } from 'src/app/model/category.model';
 
 
 
@@ -24,6 +25,7 @@ export class ViewOeuvreComponent implements OnInit {
   viezText: boolean;
   object:Oeuvre; 
   ObjetId: string;
+  categoryId: number;
   routingSubscription: any; 
   allVers=[];
   vers=[];
@@ -65,6 +67,8 @@ export class ViewOeuvreComponent implements OnInit {
               this.api.getById('Oeuvre', params["id"]).subscribe(
                 response => {
                 this.object = response;
+                //get categoryId
+                this.categoryId = response.category.categoryId
                 this.getVers(this.ObjetId);
                 //get the audioUrl
                 this.file = this.object.audioOeuvre;
@@ -181,6 +185,8 @@ public getMediaPath(url) {
    return (this._sanitizer.bypassSecurityTrustResourceUrl(url) as any);
 }
 
-
+goDetails() {
+  this.router.navigate(["/view-category", this.categoryId]);
+}
 
 }

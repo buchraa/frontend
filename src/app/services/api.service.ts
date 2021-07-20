@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable, from } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
+import { Module } from '../model/module.model';
 
 const baseUrl = environment.apiUrl;
 const assetUrl = "../src/assets/images";
@@ -16,7 +19,7 @@ export class ApiService {
   
   images: any = ["/assets/images/ecrits.jpg","/assets/images/oeuvres.jpg","/assets/images/rechercher.jpg","/assets/images/media.jpg","/assets/images/qasidas.jpg","/assets/images/ouvrages.jpg"]
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
 httpOptions = {headers : new HttpHeaders({
   'Access-Control-Allow-Headers':'content-type, origin',
@@ -24,28 +27,28 @@ httpOptions = {headers : new HttpHeaders({
   'Access-Control-Allow-Origin':'*'
 })}; 
   
-getById(url: string, uuId: string): Observable<any> {
-  return this.http.get(`${baseUrl}/${url}/${uuId}`);
+getById(url: string, uiid: number): Observable<any> {
+  return this.http.get(`${baseUrl}/${url}/${uiid}`);
 }
 
-get(url: string, uuId: string): Observable<any> {
-  return this.http.get(`${baseUrl}/${url}/${uuId}`);
+get(url: string, uiid: string): Observable<any> {
+  return this.http.get(`${baseUrl}/${url}/${uiid}`);
 }
 
 getOeuvre(uuId: string): Observable<any> {
   return this.http.get(`${baseUrl}/Oeuvre/ByTitre/${uuId}`);
 }
 
-getModule(uuId: string): Observable<any> {
-  return this.http.get(`${baseUrl}/Module/ByName/${uuId}`);
+getModule(uiid: string): Observable<any> {
+  return this.http.get(`${baseUrl}/Module/ByName/${uiid}`);
 }
 
 getObjectByName(object: string, name: string): Observable<any> {
   return this.http.get(`${baseUrl}/${object}/ByName/${name}`);
 }
 
-getCategory(uuId: string): Observable<any> {
-  return this.http.get(`${baseUrl}/Categorie/ByName/${uuId}`);
+getCategory(uiid: string): Observable<any> {
+  return this.http.get(`${baseUrl}/Categorie/ByName/${uiid}`);
 }
 
 getList(url: string): Observable<any>  {
@@ -209,4 +212,29 @@ return this.images[Math.floor(Math.random() * Math.floor(this.images.length))];
             return "/assets/images/biographie.jpg" ;    
     }
 
+
+
+    goToPage(object: any) {
+      switch(object.name)
+      {
+        case "Ecrits de Cheikh A. Bamba":
+          this.router.navigate(["/Modules/ecrit-mouridisme"]);
+        break;
+  
+        case "Oeuvres du Mouridisme":
+          this.router.navigate(["/Modules/oeuvre-mouridisme"]);
+          break;
+        
+        case "Recherche sur le Mouridisme":
+          this.router.navigate(["/Modules/recherche-mouridisme"]);
+          break;   
+        case "Médiathèque du Mouridisme":
+          this.router.navigate(["/Modules/mediatheque-mouridisme"]);
+          break;
+        default:
+          this.router.navigate(["/"]);  
+      }
+    }
+
 }
+
