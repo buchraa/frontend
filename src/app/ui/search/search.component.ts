@@ -20,10 +20,10 @@ export class SearchComponent implements OnInit {
   config: any;
   isAdmin = this.auth.isAdmin();
   length: Boolean;
-  pageNb= 0;
-  limit=4;
-  totalPage = 0;
-  pageNumber = 0;
+  pageNb = 0;
+  limit = 4;
+  totalPage: number;
+  pageNumber: number;
   isdisabled: Boolean;
   filtred = false;
   constructor( public api: ApiService, private router: Router, public auth: AuthService) { }
@@ -105,9 +105,8 @@ fromEvent(this.input.nativeElement,'keyup')
   public disablePrev(){
     return this.pageNumber == 0 ? true : false
   }
-  
   public disable(){
-    return this.pageNumber >= (this.totalPage - 1) ? true : false
+    return this.pageNumber == (this.totalPage - 1) ? true : false
   }
 
   pageChanged(event){

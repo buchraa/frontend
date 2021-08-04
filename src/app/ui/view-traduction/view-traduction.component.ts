@@ -15,6 +15,7 @@ export class ViewTraductionComponent implements OnInit {
   viezText: boolean;
   object:Oeuvre; 
   ObjetId: string;
+  categoryId: number;
   routingSubscription: any; 
   allVers=[];
   vers=[];
@@ -40,6 +41,9 @@ export class ViewTraductionComponent implements OnInit {
                 response => {
                 this.object = response;
                 this.getVers(this.ObjetId);
+                //get categoryId
+                this.categoryId = response.category.categoryId
+                console.log(this.object)
                 console.log(this.object);                
               });
             }
@@ -84,6 +88,8 @@ export class ViewTraductionComponent implements OnInit {
     this.pageOfItems = pageOfItems;
   }
  
-  
+  goDetails() {
+    this.router.navigate(["/view-category", this.categoryId]);
+  }
 
 }
