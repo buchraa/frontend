@@ -191,9 +191,6 @@ section {
   }
 }
 
-.disabled {
-  display: none !important;
-}
 
 #clearButton {
   background-color: #fff !important;
@@ -236,4 +233,8 @@ section {
     font-family: "Traditional Arabic";
   }
   
+  }
+
+  .disabled {
+    display: none !important;
   }
