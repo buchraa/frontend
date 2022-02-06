@@ -1,39 +1,14 @@
 #backClicked {
-    color: #fff !important;
+    color: #000 !important;
     font-weight: 900;
     font-size: xx-large;
     position: absolute;
     top: 0.2em;
 }
 
-.image {
-    margin: 0 auto !important;
-   /* max-width: 1000px;*/
-    min-height: 120vh;
-    background-position:center center; 
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-image:url('src/assets/images/Bgrnd_1080_1920.png');
-}
 
 
 
-@media only screen and (max-width: 767px) {
-  #guest-nav{
-    width: 100% !important;
-  }
-    .image {     
-      margin: 0 auto !important;
-      max-width: 1000px;
-      min-height: 120vh;
-      background-position:center center; 
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-image: url('src/assets/images/Bgrnd_828_1792.png');
-    }
-  }
 
   nav #guest-nav {
     background-color: rgba(0, 0, 255, 0) !important
@@ -63,12 +38,12 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     border-radius: 2px;
-    color: #fff;
+    color: #000 !important;
     position: relative;
   
   }
   #guest-nav a:hover {
-    color: #fff;
+    color: #000 !important;
     position: relative;
   }
   #guest-nav a:after {
@@ -99,9 +74,8 @@
 
 
 
-@media only screen and (min-width: 890px) {
 
-  .mat-toolbar {
-     display: none !important;
-    }
+  .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+     -webkit-box-shadow: none !important;
+    box-shadow: none !important; 
   }

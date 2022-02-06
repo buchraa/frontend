@@ -33,6 +33,8 @@ export class SearchComponent implements OnInit {
     //this.getOeuvres();
     //this.getList();
     this.searchText= '';
+console.log( "disable" + " " + this.disable() + " " + this.pageNumber)
+console.log( "disablePrev" + " " +  this.disablePrev())
   }
 
 ngAfterViewInit() {
@@ -103,10 +105,10 @@ fromEvent(this.input.nativeElement,'keyup')
   }
   
   public disablePrev(){
-    return this.pageNumber == 0 ? true : false
+    return (this.pageNumber == 0) || (this.pageNumber == undefined)  ? true : false
   }
   public disable(){
-    return this.pageNumber == (this.totalPage - 1) ? true : false
+    return this.pageNumber == (this.totalPage - 1) || (this.pageNumber == undefined) ? true : false
   }
 
   pageChanged(event){

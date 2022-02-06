@@ -24,7 +24,8 @@ export class UserManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser()
-     
+    console.log( "disable" + " " + this.disable())
+    console.log( "disablePrev" + " " + this.disablePrev())
   }
 
  getUser() {

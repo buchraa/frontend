@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:  'http://vps-8aea0a63.vps.ovh.net:8085'  //'https://bibliotechmouride.herokuapp.com' //
+  apiUrl:  'http://localhost:8085'  //'https://bibliotechmouride.herokuapp.com' //
 };
 /*
  * For easier debugging in development mode, you can import the following file

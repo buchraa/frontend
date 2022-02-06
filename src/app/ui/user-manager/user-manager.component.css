@@ -1,8 +1,8 @@
-.disabled {
-    display: none !important;
-  }
 
   #controls a {
     background-color: #007470 !important;
+}
+.disabled {
+  display: none !important;
 }
 
